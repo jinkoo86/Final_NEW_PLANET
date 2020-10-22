@@ -11,16 +11,22 @@ public class NextStage : MonoBehaviour
     }
     public void ClickNextStage()
     {
-        StageManager.instance.NextStage(1);
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            StageManager.instance.NextStage(1);
+            print("오른쪽 키 입력");
+        }
+        
     }
-    private void OnTriggerEnter(Collider other)
+    
+    /*private void OnTriggerEnter(Collider other)
     {
         ClickNextStage();
         print("터치");
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {
-        
+        ClickNextStage();
     }
 }
