@@ -20,10 +20,13 @@ public class RayCast_Hand : MonoBehaviour
     {
 
     }
-
     void Update()
     {
+        MenuControll();
 
+    }
+    public void MenuControll()
+    {
         ray = new Ray(transform.position, transform.forward); ;
         //Debug.Log("aa");
 
@@ -54,46 +57,38 @@ public class RayCast_Hand : MonoBehaviour
                             isPlay = false;
                         }
                     }
-
+                    break;
+                case "Vib":
+                    if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+                    {
+                        if (isOn == false)
+                        {
+                            vibrationManager.SetActive(true);
+                            vibText.text = "Viration On";
+                            isOn = true;
+                        }
+                        else
+                        {
+                            vibrationManager.SetActive(false);
+                            vibText.text = "Viration Off";
+                            isOn = false;
+                        }
+                    }
+                    break;
+                case "Close":
+                    if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+                    {
+                        menu.SetActive(false);
+                    }
+                    break;
+                case "Exit":
+                    if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+                    {
+                        SceneManager.LoadScene("WaitingRoom");
+                    }
                     break;
             }
-
-        }
-        if (hitinfo.transform.gameObject.name == "Vib")
-        {
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
-            {
-                if (isOn == false)
-                {
-                    vibrationManager.SetActive(true);
-                    vibText.text = "Viration On";
-                    isOn = true;
-                }
-                else
-                {
-                    vibrationManager.SetActive(false);
-                    vibText.text = "Viration Off";
-                    isOn = false;
-                }
-            }
-        }
-
-        if (hitinfo.transform.gameObject.name == "Close")
-        {
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
-            {
-                menu.SetActive(false);
-            }
-        }
-        if (hitinfo.transform.gameObject.name.Contains("Exit"))
-        {
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
-            {
-                SceneManager.LoadScene("WaitingRoom");
-            }
-
         }
     }
-
 }
 
