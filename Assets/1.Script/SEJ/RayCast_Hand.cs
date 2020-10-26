@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-//레이캐스트를 쏘아서 앞에 있는 물체의 이름을 알아내고싶다. 
+using UnityEngine.UI;
 
 public class RayCast_Hand : MonoBehaviour
 {
@@ -13,7 +12,10 @@ public class RayCast_Hand : MonoBehaviour
     public GameObject vibrationManager;
     bool isOn = false;
     public GameObject menu;
-
+    public Text volText;
+    public Text vibText;
+    
+    Ray ray;
     void Start()
     {
 
@@ -21,48 +23,77 @@ public class RayCast_Hand : MonoBehaviour
 
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.Start))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
 
-            if (Physics.Raycast(ray, out hitinfo, 1.5f))
+        ray = new Ray(transform.position, transform.forward); ;
+        //Debug.Log("aa");
+
+        if (Physics.Raycast(ray, out hitinfo, 100000f))
+        {
+            switch (hitinfo.transform.gameObject.name)
             {
-                if (hitinfo.transform.gameObject.name == "Vol")
+                case "Vol":
+                    Debug.Log("vol Hit switch");
+
+                    if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+                    {
+                        Debug.Log("vol down");
+
+                        if (isPlay == false)
+                        {
+                            //soundManager.SetActive(true);
+                            SoundManager.soundMN.GetComponent<AudioSource>().volume = 0.6f;
+                            volText.text = "Volume On";
+                            Debug.Log("vol On");
+                            isPlay = true;
+                        }
+                        else
+                        {
+                            SoundManager.soundMN.GetComponent<AudioSource>().volume = 0;
+                            volText.text = "Volume Off";
+                            Debug.Log("vol Off");
+                            isPlay = false;
+                        }
+                    }
+
+                    break;
+            }
+
+        }
+        if (hitinfo.transform.gameObject.name == "Vib")
+        {
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+            {
+                if (isOn == false)
                 {
-                    if (isPlay == false)
-                    {
-                        soundManager.SetActive(true);
-                        isPlay = true;
-                    }
-                    else
-                    {
-                        soundManager.SetActive(false);
-                        isPlay = false;
-                    }
+                    vibrationManager.SetActive(true);
+                    vibText.text = "Viration On";
+                    isOn = true;
                 }
-                if (hitinfo.transform.gameObject.name == "Vib")
+                else
                 {
-                    if (isOn == false)
-                    {
-                        vibrationManager.SetActive(true);
-                        isOn = true;
-                    }
-                    else
-                    {
-                        vibrationManager.SetActive(false);
-                        isOn = false;
-                    }
-                }
-                if (hitinfo.transform.gameObject.name == "Close")
-                {
-                    menu.SetActive(false);
-                }
-                if (hitinfo.transform.gameObject.name == "Exit")
-                {
-                    SceneManager.LoadScene("WaitingRoom");
+                    vibrationManager.SetActive(false);
+                    vibText.text = "Viration Off";
+                    isOn = false;
                 }
             }
         }
-        
+
+        if (hitinfo.transform.gameObject.name == "Close")
+        {
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+            {
+                menu.SetActive(false);
+            }
+        }
+        if (hitinfo.transform.gameObject.name.Contains("Exit"))
+        {
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
+            {
+                SceneManager.LoadScene("WaitingRoom");
+            }
+
+        }
     }
+
 }
+

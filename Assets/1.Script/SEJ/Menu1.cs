@@ -7,6 +7,7 @@ public class Menu1 : MonoBehaviour
 {
     bool menuYN;
     public GameObject menu;
+    public GameObject pos;
     
 
     void Start()
@@ -16,9 +17,10 @@ public class Menu1 : MonoBehaviour
 
     void Update()
     {
+        transform.position = pos.transform.position;
         if (SceneManager.GetActiveScene().name == "WaitingRoom")
         {
-            if (OVRInput.Get(OVRInput.Button.Start))
+            if (OVRInput.GetDown(OVRInput.Button.Start))
             {
                 //메뉴 UI가 false일 때 
                 if (!menuYN)
