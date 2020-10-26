@@ -62,9 +62,9 @@ public class StageManager : MonoBehaviour
     void Update()
     {
         SetStageInfo();
-        SetPlanet();
+        //SetPlanet();
     }
-    public void SetPlanet()
+    /*public void SetPlanet()
     {
         pos = GameObject.Find("Planet_Pos");
 
@@ -74,7 +74,7 @@ public class StageManager : MonoBehaviour
         }
         planetList[myStage - 1].transform.position = pos.transform.position;
         print(planetList[myStage - 1].transform.position);
-    }
+    }*/
     /*public void SetPlanetModel()
     {
         planets = GameObject.FindGameObjectsWithTag("Planet");//행성들 삽입
@@ -93,7 +93,7 @@ public class StageManager : MonoBehaviour
     }*/
     public void SetStageInfo()//update에서 스테이지 정보 갱신
     {
-        textStage = GameObject.Find("StageInfo");
+        textStage = GameObject.Find("Planet_Text");
         textStage.GetComponent<Text>().text = "PLANET: " + myStage.ToString();//스테이지 넘버 입력
         SetStars();
 

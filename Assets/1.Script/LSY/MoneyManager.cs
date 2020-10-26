@@ -5,7 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadDB : MonoBehaviour
+public class MoneyManager : MonoBehaviour
 {
     GameObject textMoney;
     int myMoney;

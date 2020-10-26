@@ -20,5 +20,6 @@ public class EquipRotate : MonoBehaviour
     {
         //장비 y축 기준으로 시계방향 회전
         transform.Rotate(new Vector3(0, 90, 0), speed * Time.deltaTime);
+        
     }
 }
