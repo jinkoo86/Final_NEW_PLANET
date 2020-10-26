@@ -198,6 +198,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
     /// </summary>
     [NonSerialized]
     static readonly List<RaycastHit> s_SortedGraphics = new List<RaycastHit>();
+
     private void GraphicRaycast(Canvas canvas, Ray ray, List<RaycastHit> results)
     {
         //This function is based closely on :
