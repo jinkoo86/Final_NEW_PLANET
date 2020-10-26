@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Star
+  - Planet
+  - PlanetPos
   layers:
   - Default
   - TransparentFX

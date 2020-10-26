@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NextStage : MonoBehaviour
 {
+    bool triggerClick = false;
     // Start is called before the first frame update
     void Start()
     {

@@ -17,7 +17,7 @@ public class StageManager : MonoBehaviour
     SqliteConnection con;
     IDbCommand dbcmd;
     string sqlQuery;
-    int[] planetPos;
+
     public static StageManager instance;
     private void Awake()
     {
@@ -33,7 +33,15 @@ public class StageManager : MonoBehaviour
     GameObject textStage;
     GameObject[] stars;
     StageNum stageNum;
+    GameObject pos;
+    /*GameObject[] planets;
+    GameObject[] planetPos;
+    int[] pos;*/
+    //public GameObject[] planets;
+    public List<GameObject> planetList;
 
+    public GameObject fac;
+    GameObject fac2;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,17 +49,48 @@ public class StageManager : MonoBehaviour
         LoadStageDB();//최초 스테이지 넘버, 별점을 가져온다
 
         stars = new GameObject[3];
-        planetPos = new int[3];
-
+        //planetList = new List<GameObject>();
+        //tempList = new List<GameObject>();
+        //planets = new GameObject[5];
+        /*planetPos = new GameObject[3];
+        planets = new GameObject[3];
+        pos = new int[3];*/
+/*      fac2 = Instantiate(fac);
+        pos = GameObject.Find("Planet_Pos");
+        fac2.transform.position = pos.transform.position;*/
     }
     void Update()
     {
         SetStageInfo();
+        SetPlanet();
     }
-    public void SetPlanetPosition()
+    public void SetPlanet()
     {
-        
+        pos = GameObject.Find("Planet_Pos");
+
+        for (int i = 0; i < planetList.Count; i++)
+        {
+            //planetList[i] = Instantiate(planetList[i]);
+        }
+        planetList[myStage - 1].transform.position = pos.transform.position;
+        print(planetList[myStage - 1].transform.position);
     }
+    /*public void SetPlanetModel()
+    {
+        planets = GameObject.FindGameObjectsWithTag("Planet");//행성들 삽입
+    }
+    public void SetPlanetPosition(int myStage)
+    {
+        SetPlanetModel();
+        planetPos = GameObject.FindGameObjectsWithTag("PlanetPos");//행성들 위치정보 삽입
+
+        for (int i = 0; i < planetPos.Length; i++)
+        {
+            planets[0].transform.position = planetPos[myStage].transform.position;
+            planets[1].transform.position = planetPos[myStage - 1].transform.position;
+            planets[2].transform.position = planetPos[myStage + 1].transform.position;
+        }
+    }*/
     public void SetStageInfo()//update에서 스테이지 정보 갱신
     {
         textStage = GameObject.Find("StageInfo");
