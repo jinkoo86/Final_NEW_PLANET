@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 4375782121084873523}
   - component: {fileID: 4375782121084873522}
   - component: {fileID: 4375782121084873521}
-  - component: {fileID: 4375782121084873532}
   m_Layer: 5
   m_Name: Vol
   m_TagString: Untagged
@@ -198,7 +197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4375782121084873532}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClickVol
         m_Mode: 1
         m_Arguments:
@@ -209,20 +208,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4375782121084873532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4375782121084873527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1f12d6bcce4a64aa264c4cc2834359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  soundManager: {fileID: 0}
 --- !u!1 &4375782121098799085
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +220,6 @@ GameObject:
   - component: {fileID: 4375782121098799081}
   - component: {fileID: 4375782121098799080}
   - component: {fileID: 4375782121098799087}
-  - component: {fileID: 4375782121098799082}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -343,7 +327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4375782121098799082}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClose
         m_Mode: 1
         m_Arguments:
@@ -354,19 +338,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4375782121098799082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4375782121098799085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72819a5598e05946be8cd67c7ae4fff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 8655463818319744760}
 --- !u!1 &4375782121173242073
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +350,6 @@ GameObject:
   - component: {fileID: 4375782121173241893}
   - component: {fileID: 4375782121173241892}
   - component: {fileID: 4375782121173242075}
-  - component: {fileID: 4375782121173241894}
   m_Layer: 5
   m_Name: Vib
   m_TagString: Untagged
@@ -487,7 +457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4375782121173241894}
+      - m_Target: {fileID: 0}
         m_MethodName: OnVibration
         m_Mode: 1
         m_Arguments:
@@ -498,20 +468,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4375782121173241894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4375782121173242073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0dc57692f4e0544a0f1469862373b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vibrationManager: {fileID: 0}
-  text: {fileID: 0}
 --- !u!1 &4375782121889631447
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 8655463818319744760}
+  pos: {fileID: 0}
 --- !u!1 &8655463818319744760
 GameObject:
   m_ObjectHideFlags: 0
