@@ -1867,7 +1867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetList: []
-  fac: {fileID: 0}
 --- !u!1001 &554887934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3935,7 +3934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1150832561}
   m_Layer: 0
-  m_Name: Stars
+  m_Name: Stars_Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

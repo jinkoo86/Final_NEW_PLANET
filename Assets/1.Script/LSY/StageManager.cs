@@ -36,6 +36,8 @@ public class StageManager : MonoBehaviour
     GameObject textStage;
     GameObject[] stars;
     GameObject tempStars;
+    GameObject[] planets;
+    GameObject tempPlanets;
     StageNum stageNum;
     GameObject pos;
 
@@ -45,20 +47,44 @@ public class StageManager : MonoBehaviour
     void Start()
     {
 
-        //stars = GameObject.FindGameObjectsWithTag("Star");// star태그로 검색해 starts에 배열저장
-
     }
     void Update()
     {
         
     }
+    public void SetPlanets()
+    {
+        planets = new GameObject[5];
+        tempPlanets = GameObject.Find("Planets");
+        for(int i= 0; i< planets.Length; i++)//행성 정보를 넣어준다
+        {
+            planets[i] = tempPlanets.transform.GetChild(i).gameObject;
+            planets[i].SetActive(false);
+        }
 
-    public void SetStageInfo()//update에서 스테이지 정보 갱신
+        for (int j = 0; j < myStage; j++)//현재 스테이지의 행성을 활성화해준다
+        {
+            planets[j].SetActive(true);
+        }
+        for(int j = myStage; j<planets.Length; j++)//현재 스테이지를 제외하고 행성을 비활성화 해준다
+        {
+            planets[j].SetActive(false);
+        }
+        //if(myStage > 1)
+        //{
+        for (int j = myStage - 2; j >= 0; j--)
+        {
+            planets[j].SetActive(false);
+        }
+        //}
+
+    }
+    public void SetStageInfo()//스테이지 정보 갱신
     {
         textStage = GameObject.Find("Planet_Text");
         textStage.GetComponent<Text>().text = "PLANET: " + myStage.ToString();//스테이지 넘버 입력
         SetStars();
-
+        SetPlanets();
     }
     public void NextStage(int stage)
     {
@@ -113,7 +139,7 @@ public class StageManager : MonoBehaviour
                 dbcmd = con.CreateCommand();
                 sqlQuery = string.Empty;
 
-                sqlQuery = "SELECT StageLevel, StageStar FROM Stage WHERE StageLevel =" + myStage;//myStage+1인(다음스테이지) 스테이지 레벨을 가져온다 
+                sqlQuery = "SELECT StageLevel, StageStar FROM Stage WHERE StageLevel =" + myStage;//myStage-1인(이전스테이지) 스테이지 레벨을 가져온다 
                 dbcmd.CommandText = sqlQuery;
                 reader = dbcmd.ExecuteReader();
 
