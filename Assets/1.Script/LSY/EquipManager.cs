@@ -55,7 +55,7 @@ public class EquipManager : MonoBehaviour
     {
         hammer.GetComponentInChildren<GameObject>();
     }
-    public void LoadEquipDB()
+    public void LoadEquipDB()//
     {
         try
         {

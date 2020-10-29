@@ -35,14 +35,14 @@ public class MoneyManager : MonoBehaviour
         textMoney.GetComponent<Text>().text = myMoney.ToString();
 
     }
-    public void UseMoney(string name, int money)
+    public void UseMoney(string name, int money)//구매 버튼을 누르면 호출, 버튼이 비 활성화 되면 호출 안되어야 하는데 호출 된다
     {
         try
         {
             con.Open();
             dbcmd = con.CreateCommand();//여기부터 sql입력을 위한 코드 
             sqlQuery = string.Empty;
-            if(myMoney < money || myMoney <= 0)
+            if(myMoney < money || myMoney <= 0)//잔액이 부족한 경우: 내 돈이 0원보다 적거나 아이템보다 적은 돈이 있거나 
             {
                 print("잔액 부족");
                 print("money"+money);

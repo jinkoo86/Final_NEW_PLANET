@@ -68,16 +68,16 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
-    public void NoMoney(string name)
+    public void NoMoney(string name)//돈이 없다는 것을 표시 
     {
         switch (name)
         {
-            case "heart" :
+            case "heart" ://하트면
                 noMoney.transform.position = PosHeart.transform.position;
                 Invoke("NoMoneyMsgOff", 2.0f);
                 noMoney.SetActive(true);
                 break;
-            case "timer":
+            case "timer"://타이머면 
                 noMoney.transform.position = PosTimer.transform.position;
                 Invoke("NoMoneyMsgOff", 2.0f);
                 noMoney.SetActive(true);
@@ -108,11 +108,43 @@ public class UIManager : MonoBehaviour
         }
         if (ItemManager.instance.HeartStock == 0)
         {
-            buyBtntimer.interactable = true;
+            buyBtnHeart.interactable = true;
         }
         if (ItemManager.instance.TimerStock == 0)
         {
             buyBtntimer.interactable = true;
+        }
+    }
+    public void BtnCheck(string name)
+    {
+        switch (name)
+        {
+            case "heart":
+                if (ItemManager.instance.HeartStock == 1)
+                {
+                    buyBtnHeart.interactable = false;
+                }
+                if (ItemManager.instance.HeartStock == 0)
+                {
+                    buyBtnHeart.interactable = true;
+                    noMoney.transform.position = PosHeart.transform.position;
+                    Invoke("NoMoneyMsgOff", 2.0f);
+                    noMoney.SetActive(true);
+                }
+                break;
+            case "timer":
+                if (ItemManager.instance.TimerStock == 1)
+                {
+                    buyBtnHeart.interactable = false;
+                }
+                if (ItemManager.instance.TimerStock == 0)
+                {
+                    buyBtntimer.interactable = false;
+                    noMoney.transform.position = PosTimer.transform.position;
+                    Invoke("NoMoneyMsgOff", 2.0f);
+                    noMoney.SetActive(true);
+                }
+                break;
         }
     }
     public void SetBuyUI(string name)
