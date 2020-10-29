@@ -21,6 +21,9 @@ public class StageManager : MonoBehaviour
     public static StageManager instance;
     private void Awake()
     {
+        SetDBPath();//디비 path설정
+        LoadStageDB();//최초 스테이지 넘버, 별점을 가져온다
+        SetStageInfo();
         instance = this;
     }
     private int stageStar;
@@ -32,65 +35,24 @@ public class StageManager : MonoBehaviour
     }
     GameObject textStage;
     GameObject[] stars;
+    GameObject tempStars;
     StageNum stageNum;
     GameObject pos;
-    /*GameObject[] planets;
-    GameObject[] planetPos;
-    int[] pos;*/
-    //public GameObject[] planets;
+
     public List<GameObject> planetList;
 
-    public GameObject fac;
-    GameObject fac2;
     // Start is called before the first frame update
     void Start()
     {
-        SetDBPath();//디비 path설정
-        LoadStageDB();//최초 스테이지 넘버, 별점을 가져온다
 
-        stars = new GameObject[3];
-        //planetList = new List<GameObject>();
-        //tempList = new List<GameObject>();
-        //planets = new GameObject[5];
-        /*planetPos = new GameObject[3];
-        planets = new GameObject[3];
-        pos = new int[3];*/
-/*      fac2 = Instantiate(fac);
-        pos = GameObject.Find("Planet_Pos");
-        fac2.transform.position = pos.transform.position;*/
+        //stars = GameObject.FindGameObjectsWithTag("Star");// star태그로 검색해 starts에 배열저장
+
     }
     void Update()
     {
-        SetStageInfo();
-        //SetPlanet();
+        
     }
-    /*public void SetPlanet()
-    {
-        pos = GameObject.Find("Planet_Pos");
 
-        for (int i = 0; i < planetList.Count; i++)
-        {
-            //planetList[i] = Instantiate(planetList[i]);
-        }
-        planetList[myStage - 1].transform.position = pos.transform.position;
-        print(planetList[myStage - 1].transform.position);
-    }*/
-    /*public void SetPlanetModel()
-    {
-        planets = GameObject.FindGameObjectsWithTag("Planet");//행성들 삽입
-    }
-    public void SetPlanetPosition(int myStage)
-    {
-        SetPlanetModel();
-        planetPos = GameObject.FindGameObjectsWithTag("PlanetPos");//행성들 위치정보 삽입
-
-        for (int i = 0; i < planetPos.Length; i++)
-        {
-            planets[0].transform.position = planetPos[myStage].transform.position;
-            planets[1].transform.position = planetPos[myStage - 1].transform.position;
-            planets[2].transform.position = planetPos[myStage + 1].transform.position;
-        }
-    }*/
     public void SetStageInfo()//update에서 스테이지 정보 갱신
     {
         textStage = GameObject.Find("Planet_Text");
@@ -125,6 +87,7 @@ public class StageManager : MonoBehaviour
                 reader.Close();
                 //
                 con.Close();
+                SetStageInfo();
             }
             catch (Exception e)
             {
@@ -164,6 +127,7 @@ public class StageManager : MonoBehaviour
                 reader.Close();
                 //
                 con.Close();
+                SetStageInfo();
             }
             catch (Exception e)
             {
@@ -178,7 +142,12 @@ public class StageManager : MonoBehaviour
     }
     public void SetStars()
     {
-        stars = GameObject.FindGameObjectsWithTag("Star");// star태그로 검색해 starts에 배열저장
+        stars = new GameObject[3];
+        tempStars = GameObject.Find("Stars_Img");
+        for (int i = 0; i < stars.Length; i++)
+        {
+            stars[i] = tempStars.transform.GetChild(i).gameObject;
+        }
         for (int i = 0; i < stageStar; i++)//별개수 만큼 별이미지 활성화
         {
             stars[i].GetComponent<Image>().enabled = true;
