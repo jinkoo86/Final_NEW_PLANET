@@ -9,10 +9,7 @@ language governing permissions and limitations under the license.
 
 ************************************************************************************/
 
-using Microsoft.Win32.SafeHandles;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEngine.SceneManagement;
@@ -78,7 +75,6 @@ namespace OculusSampleFramework
 
         protected override void Start()
         {
-
             base.Start();
 
             // Basic hack to guess at max grab distance based on player size.
@@ -98,8 +94,6 @@ namespace OculusSampleFramework
             {
                 Debug.LogError("m_parentHeldObject incompatible with DistanceGrabber. Setting to false.");
                 m_parentHeldObject = false;
-
-                
             }
 
             DistanceGrabber[] grabbers = FindObjectsOfType<DistanceGrabber>();
@@ -144,8 +138,6 @@ namespace OculusSampleFramework
             DistanceGrabbable closestGrabbable = m_target;
             Collider closestGrabbableCollider = m_targetCollider;
 
-            
-
             GrabVolumeEnable(false);
 
             if (closestGrabbable != null)
@@ -173,7 +165,6 @@ namespace OculusSampleFramework
                     m_grabbedObjectPosOff = relPos;
                     Quaternion relOri = Quaternion.Inverse(transform.rotation) * m_grabbedObj.transform.rotation;
                     m_grabbedObjectRotOff = relOri;
-
                 }
                 else
                 {
