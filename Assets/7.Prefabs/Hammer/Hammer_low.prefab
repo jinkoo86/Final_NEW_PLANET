@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7182524798526752754}
   - component: {fileID: 2231096563521830340}
   - component: {fileID: 5605569676116214077}
-  - component: {fileID: 8296172668182572727}
   m_Layer: 0
   m_Name: Hammer_low
   m_TagString: Untagged
@@ -80,15 +79,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8296172668182572727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6194188807807038945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6948fae724771364eb7c85f1be740218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
