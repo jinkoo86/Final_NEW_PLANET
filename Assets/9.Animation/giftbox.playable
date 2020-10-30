@@ -53,19 +53,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -74,48 +62,16 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
         time: 1.3166667
         value: {x: 12.188001, y: -23.127, z: -2.503}
         inSlope: {x: 36.787693, y: 0, z: 0}
         outSlope: {x: 36.787693, y: 0, z: 0}
-=======
-        time: 1.1
-        value: {x: 12.188001, y: -23.127, z: -2.503}
-        inSlope: {x: 53.13778, y: 0, z: 0}
-        outSlope: {x: 53.13778, y: 0, z: 0}
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        time: 1.3166667
-        value: {x: 12.188001, y: -23.127, z: -2.503}
-        inSlope: {x: 36.787693, y: 0, z: 0}
-        outSlope: {x: 36.787693, y: 0, z: 0}
-<<<<<<< HEAD
-=======
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 23.912, y: -10.485001, z: 36.652}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -132,19 +88,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 0, y: 0, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -153,48 +97,16 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
         time: 1.3166667
         value: {x: -0.294, y: 0.535, z: 0}
         inSlope: {x: -0.6584615, y: 1.14, z: 0}
         outSlope: {x: -0.6584615, y: 1.14, z: 0}
-=======
-        time: 1.1
-        value: {x: -0.294, y: 0.535, z: 0}
-        inSlope: {x: -0.95111114, y: 1.6466666, z: 0}
-        outSlope: {x: -0.95111114, y: 1.6466666, z: 0}
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        time: 1.3166667
-        value: {x: -0.294, y: 0.535, z: 0}
-        inSlope: {x: -0.6584615, y: 1.14, z: 0}
-        outSlope: {x: -0.6584615, y: 1.14, z: 0}
-<<<<<<< HEAD
-=======
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: -0.428, y: 0.741, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -236,19 +148,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<< HEAD
     m_StopTime: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_StopTime: 1.4666667
-=======
-    m_StopTime: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-    m_StopTime: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -268,19 +168,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -289,48 +177,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
         time: 1.3166667
         value: 12.188001
         inSlope: 36.787693
         outSlope: 36.787693
-=======
-        time: 1.1
-        value: 12.188001
-        inSlope: 53.13778
-        outSlope: 53.13778
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        time: 1.3166667
-        value: 12.188001
-        inSlope: 36.787693
-        outSlope: 36.787693
-<<<<<<< HEAD
-=======
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 23.912
         inSlope: 0
         outSlope: 0
@@ -349,19 +205,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -370,19 +214,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.3166667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.3166667
-=======
-        time: 1.1
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.3166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -23.127
         inSlope: 0
         outSlope: 0
@@ -391,19 +223,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -10.485001
         inSlope: 0
         outSlope: 0
@@ -422,19 +242,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -443,19 +251,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.3166667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.3166667
-=======
-        time: 1.1
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.3166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -2.503
         inSlope: 0
         outSlope: 0
@@ -464,19 +260,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 36.652
         inSlope: 0
         outSlope: 0
@@ -495,19 +279,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -516,48 +288,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
         time: 1.3166667
         value: -0.294
         inSlope: -0.6584615
         outSlope: -0.6584615
-=======
-        time: 1.1
-        value: -0.294
-        inSlope: -0.95111114
-        outSlope: -0.95111114
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        time: 1.3166667
-        value: -0.294
-        inSlope: -0.6584615
-        outSlope: -0.6584615
-<<<<<<< HEAD
-=======
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -0.428
         inSlope: 0
         outSlope: 0
@@ -576,19 +316,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -597,48 +325,16 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         time: 1.3166667
         value: 0.535
         inSlope: 1.14
         outSlope: 1.14
-<<<<<<< HEAD
-=======
-=======
-        time: 1.1
-        value: 0.535
-        inSlope: 1.6466666
-        outSlope: 1.6466666
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.3166667
-        value: 0.535
-        inSlope: 1.14
-        outSlope: 1.14
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.741
         inSlope: 0
         outSlope: 0
@@ -657,19 +353,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.81666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.81666666
-=======
-        time: 0.8
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.81666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -678,19 +362,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.3166667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.3166667
-=======
-        time: 1.1
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.3166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -699,19 +371,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.4666667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.4666667
-=======
-        time: 1.25
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.4666667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -791,62 +451,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: {x: -0.000254035, y: -0.00036799908, z: 0}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: {x: -0.000254035, y: -0.00036799908, z: 0}
-=======
-        time: 0
-        value: {x: -0.00029349327, y: -0.00050377846, z: 0}
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.51666665
-        value: {x: 0, y: 0, z: 0}
-=======
-        time: 0.1
-        value: {x: 0.00012719631, y: 0.00018393993, z: 0}
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        value: {x: -0.00029349327, y: -0.00050377846, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.35
-        value: {x: -0.00029349327, y: -0.00050377846, z: 0}
-=======
-        time: 0.28333333
-        value: {x: -0.000254035, y: -0.00036799908, z: 0}
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -872,16 +478,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1
-=======
-<<<<<<< HEAD
-        time: 0.6166667
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 0.00012719631, y: 0.00018393993, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -890,28 +487,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.2166667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.68333334
-        value: {x: -0.00029349327, y: -0.00050377846, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: -0.00029349327, y: -0.00050377846, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -928,23 +504,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: {x: 0.1942613, y: 0.1942613, z: 0.1942613}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: {x: 0.1942613, y: 0.1942613, z: 0.1942613}
-=======
-        time: 0
-        value: {x: 0.20272805, y: 0.20272805, z: 0.20272805}
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.28333333
-        value: {x: 0.1942613, y: 0.1942613, z: 0.1942613}
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -952,23 +513,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
         value: {x: 0.15962839, y: 0.15962839, z: 0.15962839}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.51666665
-        value: {x: 0.15962839, y: 0.15962839, z: 0.15962839}
-=======
-        time: 0.1
-        value: {x: 0.13843285, y: 0.13843285, z: 0.13843285}
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.51666665
-        value: {x: 0.15962839, y: 0.15962839, z: 0.15962839}
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -976,28 +522,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
-        value: {x: 0.2013921, y: 0.2013921, z: 0.2013921}
-        inSlope: {x: 0.021375183, y: 0.021375183, z: 0.021375183}
-        outSlope: {x: 0.021375183, y: 0.021375183, z: 0.021375183}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.35
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 0.20272805, y: 0.20272805, z: 0.20272805}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -1006,16 +531,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.48333332
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 0.13843285, y: 0.13843285, z: 0.13843285}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -1024,49 +540,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.2166667
-=======
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.55
-        value: {x: 0.20272805, y: 0.20272805, z: 0.20272805}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.6166667
-=======
-        time: 1
->>>>>>> parent of 76fb609... 2020-10-30
-        value: {x: 0.13843285, y: 0.13843285, z: 0.13843285}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.68333334
-        value: {x: 0.2013921, y: 0.2013921, z: 0.2013921}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: {x: 0.2013921, y: 0.2013921, z: 0.2013921}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -1086,13 +560,6 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
     genericBindings:
     - serializedVersion: 2
       path: 0
@@ -1108,34 +575,13 @@ AnimationClip:
       typeID: 4
       customType: 0
       isPPtrCurve: 0
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-    genericBindings: []
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<< HEAD
     m_StopTime: 1.2166667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_StopTime: 1.2166667
-=======
-    m_StopTime: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-    m_StopTime: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1155,23 +601,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: 0.1942613
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: 0.1942613
-=======
-        time: 0
-        value: 0.20272805
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.28333333
-        value: 0.1942613
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1179,23 +610,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
         value: 0.15962839
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.51666665
-        value: 0.15962839
-=======
-        time: 0.1
-        value: 0.13843285
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.51666665
-        value: 0.15962839
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1203,28 +619,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
-        value: 0.2013921
-        inSlope: 0.021375183
-        outSlope: 0.021375183
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.35
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.20272805
         inSlope: 0
         outSlope: 0
@@ -1233,15 +628,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.48333332
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.13843285
         inSlope: 0
         outSlope: 0
@@ -1250,50 +637,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.2166667
-=======
-        time: 0.55
-        value: 0.20272805
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.6166667
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1
->>>>>>> parent of 76fb609... 2020-10-30
-        value: 0.13843285
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.68333334
-        value: 0.2013921
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.2013921
         inSlope: 0
         outSlope: 0
@@ -1312,23 +656,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: 0.1942613
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: 0.1942613
-=======
-        time: 0
-        value: 0.20272805
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.28333333
-        value: 0.1942613
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1336,23 +665,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
         value: 0.15962839
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.51666665
-        value: 0.15962839
-=======
-        time: 0.1
-        value: 0.13843285
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.51666665
-        value: 0.15962839
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1360,28 +674,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
-        value: 0.2013921
-        inSlope: 0.021375183
-        outSlope: 0.021375183
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.35
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.20272805
         inSlope: 0
         outSlope: 0
@@ -1390,16 +683,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.48333332
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.13843285
         inSlope: 0
         outSlope: 0
@@ -1408,49 +692,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.2166667
-=======
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.55
-        value: 0.20272805
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.6166667
-=======
-        time: 1
->>>>>>> parent of 76fb609... 2020-10-30
-        value: 0.13843285
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.68333334
-        value: 0.2013921
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.2013921
         inSlope: 0
         outSlope: 0
@@ -1469,23 +711,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: 0.1942613
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: 0.1942613
-=======
-        time: 0
-        value: 0.20272805
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.28333333
-        value: 0.1942613
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1493,23 +720,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
         value: 0.15962839
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.51666665
-        value: 0.15962839
-=======
-        time: 0.1
-        value: 0.13843285
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.51666665
-        value: 0.15962839
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1517,28 +729,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
-        value: 0.2013921
-        inSlope: 0.021375183
-        outSlope: 0.021375183
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.35
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.20272805
         inSlope: 0
         outSlope: 0
@@ -1547,16 +738,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.48333332
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.13843285
         inSlope: 0
         outSlope: 0
@@ -1565,49 +747,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.2166667
-=======
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.55
-        value: 0.20272805
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.6166667
-=======
-        time: 1
->>>>>>> parent of 76fb609... 2020-10-30
-        value: 0.13843285
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.68333334
-        value: 0.2013921
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0.2013921
         inSlope: 0
         outSlope: 0
@@ -1626,19 +766,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: -0.000254035
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: -0.000254035
-=======
-        time: 0
-        value: -0.00029349327
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1646,18 +775,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
         value: 0
-=======
-<<<<<<< HEAD
-        time: 0.51666665
-        value: 0
-=======
-        time: 0.1
-        value: 0.00012719631
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1665,71 +784,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-        value: -0.00029349327
-=======
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        value: -0.00029349327
-=======
-        time: 0.28333333
-        value: -0.000254035
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 1
-        value: 0.00012719631
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.35
-        value: -0.00029349327
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.48333332
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        value: 0.00012719631
-=======
-        time: 0.51666665
-        value: 0
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.55
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
         value: -0.00029349327
         inSlope: 0
         outSlope: 0
@@ -1747,22 +802,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.68333334
-        value: -0.00029349327
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
         time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -0.00029349327
         inSlope: 0
         outSlope: 0
@@ -1781,18 +821,8 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
         value: -0.00036799908
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-        value: -0.00036799908
-=======
-        time: 0
-        value: -0.00050377846
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1800,13 +830,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
         value: 0
-=======
-        time: 0.1
-        value: 0.00018393993
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1814,68 +839,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-=======
-        time: 0.23333333
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        value: -0.00050377846
-=======
-        time: 0.28333333
-        value: -0.00036799908
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.51666665
-        value: 0
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1
-=======
-        time: 0.35
-        value: -0.00050377846
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.48333332
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-        value: 0.00018393993
-=======
-        time: 0.51666665
-        value: 0
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-        time: 0.55
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -0.00050377846
         inSlope: 0
         outSlope: 0
@@ -1893,25 +857,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 1.2166667
-=======
-<<<<<<< HEAD
-        time: 0.68333334
-        value: -0.00050377846
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: -0.00050377846
         inSlope: 0
         outSlope: 0
@@ -1930,16 +876,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.28333333
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.28333333
-=======
-        time: 0
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1948,18 +885,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.51666665
-=======
-<<<<<<< HEAD
-        time: 0.51666665
-=======
-        time: 0.1
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.28333333
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1968,18 +894,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
         time: 0.76666665
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        time: 0.76666665
-=======
-        time: 0.23333333
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 0.51666665
->>>>>>> parent of 76fb609... 2020-10-30
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1988,14 +903,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
-<<<<<<< HEAD
         time: 1
-=======
-        time: 0.35
-=======
-        time: 0.76666665
->>>>>>> parent of 76fb609... 2020-10-30
         value: 0
         inSlope: 0
         outSlope: 0
@@ -2004,65 +912,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-<<<<<<< HEAD
-        time: 0.48333332
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.55
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 1
-=======
-<<<<<<< HEAD
         time: 1.2166667
-=======
-        time: 0.6166667
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.68333334
-=======
-        time: 1
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-<<<<<<< HEAD
-        time: 1.2166667
-=======
-<<<<<<< HEAD
-        time: 0.7
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-        time: 1.2166667
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
         value: 0
         inSlope: 0
         outSlope: 0
@@ -2393,19 +1243,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 7607631170050001614}
-<<<<<<< HEAD
     m_Duration: 1.5166666666666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Duration: 1.5166666666666666
-=======
-    m_Duration: 1.85
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-    m_Duration: 1.5166666666666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
     m_TimeScale: 1
     m_ParentTrack: {fileID: 4792067882654497282}
     m_EaseInDuration: 0
@@ -2495,19 +1333,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-<<<<<<< HEAD
     m_Start: 1.5166666666666666
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Start: 1.5166666666666666
-=======
-    m_Start: 1.6333333333333333
->>>>>>> 428926f1656c0116c2f9149bb39a0837bbba8373
-=======
-    m_Start: 1.5166666666666666
->>>>>>> parent of 76fb609... 2020-10-30
->>>>>>> 7bc63acf23b5db68130d70f7d66d3d364afcff70
     m_ClipIn: 0
     m_Asset: {fileID: 4729214558754523512}
     m_Duration: 1
