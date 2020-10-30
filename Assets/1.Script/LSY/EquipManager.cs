@@ -53,6 +53,7 @@ public class EquipManager : MonoBehaviour
     }
     public void RotateEquip()//해당 장비의 특정 자식을 회전한다
     {
+
         hammer.GetComponentInChildren<GameObject>();
     }
     public void LoadEquipDB()//
