@@ -189,8 +189,8 @@ public class DBManager : MonoBehaviour
                 dbcmd.CommandText = sqlQuery;
                 reader = dbcmd.ExecuteReader();
                 reader.Close();
-                myMoney = spentMoney;
-                MoneyManager.instance.CheckMoney();
+                //MoneyManager.instance.MyMoney = spentMoney;
+                MoneyManager.instance.CheckMoney(spentMoney);
                 con.Close();
                 BuyItemDB(name, 1);
             }
