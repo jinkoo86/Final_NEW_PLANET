@@ -11,77 +11,71 @@ public class EquipManager : MonoBehaviour
     public static EquipManager instance;
     private void Awake()
     {
-        //SetDBPath();
-        //LoadEquipDB();
         instance = this;
     }
-    string filepath;
-    IDataReader reader;
-    string temp_path;
-    SqliteConnection con;
-    IDbCommand dbcmd;
-    string sqlQuery;
-
-    string hammerName;
+    /*string hammerName;
     string grillName;
     string knifeName;
-    int equiplevel;
+    int equiplevel;*/
 
-    Dictionary<string, int> dict;
-    GameObject[] hammers;
-    GameObject[] grills;
-    GameObject[] knifes;
+    public GameObject[] hammers;
+    public GameObject[] grills;
+    public GameObject[] knives;
+    GameObject hammerPos;
+    GameObject grillPos;
+    GameObject knifePos;
+    GameObject hammer;
     GameObject grill;
+    GameObject knife;
+
+
     public struct Equip
     {
         public string name;
         public int level;
     }
     public List<Equip> equipList = new List<Equip>();
+
     // Start is called before the first frame update
     void Start()
     {
-        dict = new Dictionary<string, int>();
+        hammerPos = GameObject.Find("HammerPos");
+        grillPos = GameObject.Find("GrillPos");
+        knifePos = GameObject.Find("KnifePos");
+        PrintList();
         SetEquip();
-    /*        dict.Add("temp", 1);
-            int test;
-            if(dict.TryGetValue("temp", out test))
-            {
-                print(test);
-            }*/
-        //hammers = GameObject.Find("Hammers").GetComponentsInChildren<GameObject>();
-
-        //knifes = GameObject.Find("Knifes").GetComponentsInChildren<GameObject>();
-
-        PrintDict();
 
     }
     public void SetEquip()
     {
-        /*grills[0] = GameObject.Find("Grills");
-        print(grills[0].name);*/
+
+        hammer = Instantiate(hammers[(equipList[0].level) - 1]);
+        hammer.transform.SetParent(hammerPos.transform);
+        //hammers[(equipList[0].level)-1].transform.position = hammerPos.transform.position;
+
+        grill = Instantiate(grills[(equipList[1].level) - 1]);
+        grill.transform.SetParent(grillPos.transform);
+        //grills[(equipList[1].level) - 1].transform.position = grillPos.transform.position;
+
+        knife = Instantiate(knives[(equipList[2].level) - 1]);
+        knife.transform.SetParent(knifePos.transform);
+        //knives[(equipList[2].level) - 1].transform.position = knifePos.transform.position;
     }
-    public void PrintDict()
+    
+    public void PrintList()
     {
-        foreach (string Key in dict.Keys)
+        for(int i = 0; i<equipList.Count; i++)
         {
-            Debug.Log(Key);
+            print(equipList[i].name + equipList[i].level);
         }
-        foreach (int value in dict.Values)
-        {
-            Debug.Log(value);
-        }
+
     }
     // Update is called once per frame
     void Update()
     {
         
     }
-    public void RotateEquip()//해당 장비의 특정 자식을 회전한다
-    {
 
-        //grills.GetComponentInChildren<GameObject>();
-    }
 
     public void AddEquipData(string name, int level)//리스트에 데이터(장비이름, 장비레벨)을 넣어주기 위한 메소드
     {

@@ -237,7 +237,7 @@ public class DBManager : MonoBehaviour
             while (reader.Read())//완료한 스테이지 번호를 가져온다
             {
                 print("while문 작동 한다 ");
-                EquipManager.instance.AddEquipData(reader.GetString(0), reader.GetInt32(1));
+                EquipManager.instance.AddEquipData(reader.GetString(0), reader.GetInt32(1));//이름과 레벨을 순차적으로 넣어준다
             }
             reader.Close();
             con.Close();

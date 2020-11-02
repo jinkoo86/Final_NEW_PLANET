@@ -76,13 +76,13 @@ public class StageManager : MonoBehaviour
         {
             planets[j].SetActive(true);
         }
-        for(int j = myStage; j<planets.Length; j++)//현재 스테이지를 제외하고 행성을 비활성화 해준다
+        for(int j = myStage; j<planets.Length; j++)//현재 스테이지를 제외하고 앞뒤로 검색해 행성을 비활성화 해준다
         {
             planets[j].SetActive(false);
         }
         //if(myStage > 1)
         //{
-        for (int j = myStage - 2; j >= 0; j--)
+        for (int j = myStage - 2; j >= 0; j--)//현재 스테이지를 제외하고 앞뒤로 검색해 행성을 비활성화 해준다
         {
             planets[j].SetActive(false);
         }
