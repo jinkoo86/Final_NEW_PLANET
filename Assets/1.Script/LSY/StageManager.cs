@@ -21,19 +21,29 @@ public class StageManager : MonoBehaviour
     public static StageManager instance;
     private void Awake()
     {
-        SetDBPath();//디비 path설정
-        LoadStageDB();//최초 스테이지 넘버, 별점을 가져온다
-        SetStageInfo();
+        /*SetDBPath();//디비 path설정
+        LoadStageDB();//최초 스테이지 넘버, 별점을 가져온다*/
+        
         instance = this;
     }
     private int stageStar;
     private bool stageLock;
     private int myStage;
-    public int GetMyStage()
+    /*public int GetMyStage()
     {
         return myStage;
+    }*/
+    public int StageStar
+    {
+        get { return stageStar; }
+        set { stageStar = value; }
     }
-    GameObject textStage;
+    public int MyStage
+    {
+        get{ return myStage; }
+        set{ myStage = value; }
+    }
+        GameObject textStage;
     GameObject[] stars;
     GameObject tempStars;
     GameObject[] planets;
@@ -46,7 +56,7 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SetStageInfo();
     }
     void Update()
     {
@@ -86,86 +96,7 @@ public class StageManager : MonoBehaviour
         SetStars();
         SetPlanets();
     }
-    public void NextStage(int stage)
-    {
-        if (myStage < 5)
-        {
-            myStage++;
-            try
-            {
-                con.Open();
-                print("업데이트 쪽 오픈성공");
-
-                dbcmd = con.CreateCommand();
-                sqlQuery = string.Empty;
-
-                sqlQuery = "SELECT StageLevel, StageStar FROM Stage WHERE StageLevel =" + myStage;//myStage+1인(다음스테이지) 스테이지 레벨을 가져온다 
-                dbcmd.CommandText = sqlQuery;
-                reader = dbcmd.ExecuteReader();
-
-                while (reader.Read())//완료한 스테이지 번호를 가져온다
-                {
-                    myStage = reader.GetInt32(0);
-                    stageStar = reader.GetInt32(1);
-
-                    Debug.Log("myStage: " + myStage);
-                }
-                reader.Close();
-                //
-                con.Close();
-                SetStageInfo();
-            }
-            catch (Exception e)
-            {
-                print(e);
-            }
-        }
-        else
-        {
-            print("입력 종료");
-        }
-        
-    }
-    public void PreStage(int stage)
-    {
-        if (myStage > 1)
-        {
-            myStage--;
-            try
-            {
-                con.Open();
-                print("업데이트 쪽 오픈성공");
-
-                dbcmd = con.CreateCommand();
-                sqlQuery = string.Empty;
-
-                sqlQuery = "SELECT StageLevel, StageStar FROM Stage WHERE StageLevel =" + myStage;//myStage-1인(이전스테이지) 스테이지 레벨을 가져온다 
-                dbcmd.CommandText = sqlQuery;
-                reader = dbcmd.ExecuteReader();
-
-                while (reader.Read())//완료한 스테이지 번호를 가져온다
-                {
-                    myStage = reader.GetInt32(0);
-                    stageStar = reader.GetInt32(1);
-
-                    Debug.Log("myStage: " + myStage);
-                }
-                reader.Close();
-                //
-                con.Close();
-                SetStageInfo();
-            }
-            catch (Exception e)
-            {
-                print(e);
-            }
-        }
-        else
-        {
-            print("입력 종료");
-        }
-
-    }
+    
     public void SetStars()
     {
         stars = new GameObject[3];

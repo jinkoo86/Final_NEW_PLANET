@@ -6,11 +6,11 @@ public class OnClickUpgradeButton : MonoBehaviour
 {
     public void ClickUpgradeHammerBtn()//망치 업그레이드
     {
-        if (ItemManager.instance.TimerStock == 0)
+        /*if (ItemManager.instance.TimerStock == 0)
         {
-            MoneyManager.instance.UseMoney("timer", ItemManager.instance.TimerPrice);
+            DBManager.instance.UseMoney("timer", ItemManager.instance.TimerPrice);
             print("타이머구매버튼 눌렸음");
-        }
+        }*/
     }
     // Start is called before the first frame update
     void Start()

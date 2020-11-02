@@ -16,7 +16,7 @@ public class GameStart : MonoBehaviour
     {
         g_stageNum = GameObject.Find("StageNum");
         sNum = g_stageNum.GetComponent<StageNum>();
-        sNum.StageNumber = StageManager.instance.GetMyStage();
+        sNum.StageNumber = StageManager.instance.MyStage;
     }
     public void ClickStart()
     {

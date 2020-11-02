@@ -8,6 +8,13 @@ using UnityEngine;
 
 public class EquipManager : MonoBehaviour
 {
+    public static EquipManager instance;
+    private void Awake()
+    {
+        //SetDBPath();
+        //LoadEquipDB();
+        instance = this;
+    }
     string filepath;
     IDataReader reader;
     string temp_path;
@@ -15,25 +22,44 @@ public class EquipManager : MonoBehaviour
     IDbCommand dbcmd;
     string sqlQuery;
 
-    string equipName;
+    string hammerName;
+    string grillName;
+    string knifeName;
     int equiplevel;
-    Dictionary<string, int> dict;
-    GameObject hammer;
-    GameObject grill;
-    GameObject knife;
 
+    Dictionary<string, int> dict;
+    GameObject[] hammers;
+    GameObject[] grills;
+    GameObject[] knifes;
+    GameObject grill;
+    public struct Equip
+    {
+        public string name;
+        public int level;
+    }
+    public List<Equip> equipList = new List<Equip>();
     // Start is called before the first frame update
     void Start()
     {
         dict = new Dictionary<string, int>();
-        hammer = GameObject.Find("Hammer");
-        grill = GameObject.Find("Grill");
-        knife = GameObject.Find("Knife");
-        print(dict);
-        SetDBPath();
-        LoadEquipDB();
+        SetEquip();
+    /*        dict.Add("temp", 1);
+            int test;
+            if(dict.TryGetValue("temp", out test))
+            {
+                print(test);
+            }*/
+        //hammers = GameObject.Find("Hammers").GetComponentsInChildren<GameObject>();
+
+        //knifes = GameObject.Find("Knifes").GetComponentsInChildren<GameObject>();
+
         PrintDict();
 
+    }
+    public void SetEquip()
+    {
+        /*grills[0] = GameObject.Find("Grills");
+        print(grills[0].name);*/
     }
     public void PrintDict()
     {
@@ -54,71 +80,14 @@ public class EquipManager : MonoBehaviour
     public void RotateEquip()//해당 장비의 특정 자식을 회전한다
     {
 
-        hammer.GetComponentInChildren<GameObject>();
+        //grills.GetComponentInChildren<GameObject>();
     }
-    public void LoadEquipDB()//
+
+    public void AddEquipData(string name, int level)//리스트에 데이터(장비이름, 장비레벨)을 넣어주기 위한 메소드
     {
-        try
-        {
-            con.Open();
-            dbcmd = con.CreateCommand();//여기부터 sql입력을 위한 코드 
-            sqlQuery = string.Empty;
-
-            sqlQuery = "SELECT EquipName, EquipLevel FROM MyEquip";
-            dbcmd.CommandText = sqlQuery;
-            reader = dbcmd.ExecuteReader();
-
-            while (reader.Read())//완료한 스테이지 번호를 가져온다
-            {
-                print("while문 작동 한다 ");
-                dict.Add(reader.GetString(0), reader.GetInt32(1));
-
-                Debug.Log("equipName: " + equipName + "equiplevel: " + equiplevel);
-            }
-            reader.Close();
-            con.Close();
-        }
-        catch (Exception e)
-        {
-            print(e);
-        }
-
-    }
-    public void SetDBPath()
-    {
-        filepath = string.Empty;
-        if (Application.platform == RuntimePlatform.Android)//실행플랫폼이 안드로이드일 경우
-        {
-            //안드로이드 일 경우
-            filepath = Application.persistentDataPath + "/DB.db";
-            if (!File.Exists(filepath))
-            {
-                WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/DB.db");
-                loadDB.bytesDownloaded.ToString();
-                while (!loadDB.isDone) { }
-                File.WriteAllBytes(filepath, loadDB.bytes);
-            }
-        }
-        else
-        {
-            //윈도우 일 경우
-            filepath = Application.dataPath + "/StreamingAssets/DB.db";
-            if (!File.Exists(filepath))
-            {
-                File.Copy(Application.streamingAssetsPath + "/DB.db", filepath);
-                //print(filepath);
-            }
-        }
-        try
-        {
-            temp_path = "URI=file:" + filepath;
-            con = new SqliteConnection(temp_path);
-
-
-        }
-        catch (Exception e)
-        {
-            print(e);
-        }
+        Equip data = new Equip();//변수 선언
+        data.name = name;
+        data.level = level;
+        equipList.Add(data);
     }
 }

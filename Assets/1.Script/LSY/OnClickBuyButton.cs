@@ -14,7 +14,7 @@ public class OnClickBuyButton : MonoBehaviour
     {
         if(ItemManager.instance.HeartStock == 0)
         {
-            MoneyManager.instance.UseMoney("heart", ItemManager.instance.HeartPrice);
+            DBManager.instance.UseMoney("heart", ItemManager.instance.HeartPrice);
         }
         print("하트구매버튼 눌렸음");
     }
@@ -22,7 +22,7 @@ public class OnClickBuyButton : MonoBehaviour
     {
         if (ItemManager.instance.TimerStock == 0)
         {
-            MoneyManager.instance.UseMoney("timer", ItemManager.instance.TimerPrice);
+            DBManager.instance.UseMoney("timer", ItemManager.instance.TimerPrice);
             print("타이머구매버튼 눌렸음");
         }
     }

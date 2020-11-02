@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     GameObject noMoney;
     GameObject itemInfo_Heart;
     GameObject itemInfo_Timer;
+    ParticleSystem partHeart;
+    ParticleSystem partTimer;
 
     GameObject buyUI;
 
@@ -38,6 +40,9 @@ public class UIManager : MonoBehaviour
 
         buyBtnHeart = GameObject.Find("Buy_Heart_Btn").GetComponent<Button>();
         buyBtntimer = GameObject.Find("Buy_Timer_Btn").GetComponent<Button>();
+
+        partHeart = GameObject.Find("Buy_Heart_Btn").GetComponentInChildren<ParticleSystem>();
+        partTimer = GameObject.Find("Buy_Timer_Btn").GetComponentInChildren<ParticleSystem>();
 
     }
     public void InfoMsgOn(string name)
@@ -96,23 +101,27 @@ public class UIManager : MonoBehaviour
     {
         PosTimer.SetActive(false);
     }
-    public void BtnStage()
+    public void BtnItem()
     {
         if (ItemManager.instance.HeartStock == 1)
         {
             buyBtnHeart.interactable = false;
+            partHeart.Stop();
         }
         if(ItemManager.instance.TimerStock == 1)
         {
             buyBtntimer.interactable = false;
+            partTimer.Stop();
         }
         if (ItemManager.instance.HeartStock == 0)
         {
             buyBtnHeart.interactable = true;
+            partHeart.Play();
         }
         if (ItemManager.instance.TimerStock == 0)
         {
             buyBtntimer.interactable = true;
+            partTimer.Play();
         }
     }
     public void BtnCheck(string name)
@@ -164,6 +173,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BtnStage();
+        BtnItem();
     }
 }

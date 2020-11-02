@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
         itemOff.SetActive(false);
 
     }
-    private void OnTriggerStay(Collider other)//여기 수정해야함 위치 수정
+    /*private void OnTriggerStay(Collider other)//여기 수정해야함 위치 수정
     {
         switch (other.gameObject.name)
         {
@@ -30,7 +30,7 @@ public class Item : MonoBehaviour
             default:
                 break;
         }
-    }
+    }*/
     private void OnTriggerEnter(Collider other)
     {
        
