@@ -156,7 +156,7 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
-    public void SetBuyUI(string name)
+    public void SetBuyItemUI(string name)
     {
         switch (name)
         {
