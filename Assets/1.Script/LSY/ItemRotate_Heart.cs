@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ItemRotate_Heart : MonoBehaviour
 {
-    float speed = 70f;
+    float speed = 60f;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
