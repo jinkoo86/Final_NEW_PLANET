@@ -15,8 +15,8 @@ public class StageManager : MonoBehaviour
     public static StageManager instance;
     private void Awake()
     {
-
         instance = this;
+        //DBManager.instance.LoadStageDB();
     }
     private int stageStar;
     private bool stageLock;

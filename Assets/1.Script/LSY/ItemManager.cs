@@ -12,6 +12,7 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //DBManager.instance.LoadItemDB();
     }
 
     int heartStock;

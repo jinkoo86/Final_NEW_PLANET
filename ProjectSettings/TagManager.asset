@@ -9,6 +9,7 @@ TagManager:
   - PlanetPos
   - Button
   - Ray
+  - Equip
   layers:
   - Default
   - TransparentFX

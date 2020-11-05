@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     GameObject itemInfo_Timer;
     ParticleSystem partHeart;
     ParticleSystem partTimer;
+    GameObject equipInfo_Hammer;
+    GameObject equipInfo_Knife;
+    GameObject equipInfo_Grill;
 
     GameObject buyUI;
 
@@ -28,12 +31,18 @@ public class UIManager : MonoBehaviour
         PosTimer = GameObject.Find("Pos_Timer/Buy_Img");
         itemInfo_Heart = GameObject.Find("Pos_Heart/HeartInfo_Img");
         itemInfo_Timer = GameObject.Find("Pos_Timer/TimerInfo_Img");
+        equipInfo_Hammer = GameObject.Find("Hammer_detail_UI");
+        equipInfo_Knife = GameObject.Find("Knife_detail_UI");
+        equipInfo_Grill = GameObject.Find("Grill_detail_UI");
 
         //처음 구매완료 ui는 비 활성화 시킨다
         PosHeart.SetActive(false);
         PosTimer.SetActive(false);
         itemInfo_Heart.SetActive(false);
         itemInfo_Timer.SetActive(false);
+        equipInfo_Hammer.SetActive(false);
+        equipInfo_Knife.SetActive(false);
+        equipInfo_Grill.SetActive(false);
 
         noMoney = GameObject.Find("NoMoney_img");
         noMoney.SetActive(false);
@@ -43,8 +52,8 @@ public class UIManager : MonoBehaviour
 
         partHeart = GameObject.Find("Buy_Heart_Btn").GetComponentInChildren<ParticleSystem>();
         partTimer = GameObject.Find("Buy_Timer_Btn").GetComponentInChildren<ParticleSystem>();
-
     }
+
     public void InfoMsgOn(string name)
     {
         switch (name)
@@ -54,6 +63,9 @@ public class UIManager : MonoBehaviour
                 break;
             case "Timer":
                 itemInfo_Timer.SetActive(true); 
+                break;
+            case "Hammer":
+                equipInfo_Hammer.SetActive(true);
                 break;
             default:
                 break;

@@ -1,10 +1,11 @@
 ﻿using Mono.Data.Sqlite;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class DBManager : MonoBehaviour
 {
@@ -12,21 +13,19 @@ public class DBManager : MonoBehaviour
     private void Awake()
     {
         SetDBPath();
+        
         //아래 4가지는 처음 게임시작하면 데이터를 로드하는 역할
-        LoadEquipDB();
-        LoadItemDB();
-        LoadMoneyDB();
-        LoadStageDB();
+
         instance = this;
     }
-
+    public Text text;
     string filepath;
     IDataReader reader;
     string temp_path;
     SqliteConnection con;
     IDbCommand dbcmd;
     string sqlQuery;
-    
+
     /*//장비
     Dictionary<string, int> dict;
     //돈
@@ -73,11 +72,15 @@ public class DBManager : MonoBehaviour
         get { return timerPrice; }
         set { timerPrice = value; }
     }*/
-    
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //AllLoadDB();
+        LoadStageDB();
+        LoadItemDB();
+        LoadEquipDB();
+        LoadMoneyDB();
     }
 
     // Update is called once per frame
@@ -288,10 +291,10 @@ public class DBManager : MonoBehaviour
 
             sqlQuery = "SELECT EquipID, EquipLevel FROM Equip WHERE EquipName = @Name";//현재 장비의 레벨 가져오기 위한 곳
             dbcmd.CommandText = sqlQuery;
-/*
-            param = new SqliteParameter();
-            param.ParameterName = "@Name";
-            param.Value = name;*/
+            /*
+                        param = new SqliteParameter();
+                        param.ParameterName = "@Name";
+                        param.Value = name;*/
             dbcmd.Parameters.Add(param);
 
             reader = dbcmd.ExecuteReader();
@@ -305,9 +308,9 @@ public class DBManager : MonoBehaviour
             tempLevel++;
             reader.Close();
 
-            sqlQuery = "UPDATE Equip SET EquipLock = 1 WHERE EquipLevel = "+ tempLevel + " AND EquipID = '" + tempID + "'";//가져온 레벨+1의 것을 사용
+            sqlQuery = "UPDATE Equip SET EquipLock = 1 WHERE EquipLevel = " + tempLevel + " AND EquipID = '" + tempID + "'";//가져온 레벨+1의 것을 사용
             dbcmd.CommandText = sqlQuery;
-            
+
             /*param = new SqliteParameter();
             param.ParameterName = "@TempLevel";
             param.Value = tempLevel;
@@ -319,7 +322,7 @@ public class DBManager : MonoBehaviour
             ReloadEquipDB();
             //UIManager.instance.SetBuyItemUI(name);//장비 구매 ui를 위한 메소드 추가
 
-            
+
         }
         catch (Exception e)
         {
@@ -379,14 +382,14 @@ public class DBManager : MonoBehaviour
     public void BuyItem(string name, int stock)//아이템 이름과 재고를 받아와서 재고를 변경해준다
     {//여기 수정할것 아이템 구매 부분 이 메소드에 넣응면 되지 않을까?
         try
-        {            
+        {
             con.Open();
             dbcmd = con.CreateCommand();//여기부터 sql입력을 위한 코드 
             sqlQuery = string.Empty;
 
             sqlQuery = "UPDATE Item SET ItemStock = " + stock + " WHERE ItemName = '" + name + "'";
             dbcmd.CommandText = sqlQuery;
-            
+
             reader = dbcmd.ExecuteReader();
             ItemManager.instance.AddItemName(name);//윗줄에서 받은 name을 기준으로 어느 아이템을 =1해줄건지 결정한다
             UIManager.instance.SetBuyItemUI(name);
@@ -532,16 +535,11 @@ public class DBManager : MonoBehaviour
 
             reader = dbcmd.ExecuteReader();
 
-            //while (reader.Read())//셀렉트
-            //{
-            //    //print("2LoadDB while진입 성공");
-            //    //MyMoney = reader.GetInt32(0);
-                
-            //}
-            reader.Read();
-            MoneyManager.instance.MyMoney = reader.GetInt32(0);
-            Debug.Log("myMoney: " + MoneyManager.instance.MyMoney);
-
+            while (reader.Read())//셀렉트
+            {
+                MoneyManager.instance.MyMoney = reader.GetInt32(0);
+                Debug.Log("myMoney: " + MoneyManager.instance.MyMoney);
+            }
             reader.Close();
             con.Close();
         }
@@ -651,31 +649,59 @@ public class DBManager : MonoBehaviour
         }
 
     }
+    
+    public string dbData;
+
     public void SetDBPath()
     {
-        filepath = string.Empty;
-        if (Application.platform == RuntimePlatform.Android)//실행플랫폼이 안드로이드일 경우
+#if UNITY_EDITOR
+        //{
+        //윈도우 일 경우
+        filepath = Application.dataPath + "/StreamingAssets/DB.db";
+
+        // 지정한 경로에 파일이 없다면 다른 경로에 있는 DB.db 파일을 지정한 경로에 복사하는 기능
+        /*if (!File.Exists(filepath))
         {
-            //안드로이드 일 경우
-            filepath = Application.persistentDataPath + "/DB.db";
-            if (!File.Exists(filepath))
-            {
-                WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/DB.db");
-                loadDB.bytesDownloaded.ToString();
-                while (!loadDB.isDone) { }
-                File.WriteAllBytes(filepath, loadDB.bytes);
-            }
-        }
-        else
+            File.Copy(Application.streamingAssetsPath + "/DB.db", filepath);
+            //print(filepath);
+        }*/
+
+        /* 파일의 내용을 읽어서 string 변수에 저장하는 기능
+        FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+        StreamReader sr = new StreamReader(fs);
+        dbData = sr.ReadToEnd();
+        sr.Close();
+        fs.Close();
+
+        print(dbData);*/
+        //}
+
+        //if (Application.platform == RuntimePlatform.Android)//실행플랫폼이 안드로이드일 경우
+        //{
+        //안드로이드 일 경우
+#elif UNITY_ANDROID
+        filepath = "jar:file://" + Application.dataPath + "!/assets/DB.db";
+        text.text = filepath;
+        /*FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+        StreamReader sr = new StreamReader(fs);
+        dbData = sr.ReadToEnd();
+        sr.Close();
+        fs.Close();
+        print(dbData);*/
+
+        /*if (!File.Exists(filepath))
         {
-            //윈도우 일 경우
-            filepath = Application.dataPath + "/StreamingAssets/DB.db";
-            if (!File.Exists(filepath))
-            {
-                File.Copy(Application.streamingAssetsPath + "/DB.db", filepath);
-                //print(filepath);
-            }
-        }
+            WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/DB.db");
+            loadDB.bytesDownloaded.ToString();
+            while (!loadDB.isDone) { }
+            File.WriteAllBytes(filepath, loadDB.bytes);
+        }*/
+
+
+
+        //}
+        //else
+#endif
         try
         {
             temp_path = "URI=file:" + filepath;
@@ -687,4 +713,6 @@ public class DBManager : MonoBehaviour
             print(e);
         }
     }
+
+    
 }

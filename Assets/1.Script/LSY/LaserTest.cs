@@ -63,6 +63,20 @@ public class LaserTest : MonoBehaviour
                     currentObject = Collided_object.collider.gameObject;
                 }
             }
+
+            if (Collided_object.collider.gameObject.CompareTag("Equip"))//닿은 물체의 태그가 Equip일 경우
+            {
+                switch (Collided_object.collider.gameObject.name)
+                {
+                    case "HammerPos":
+                        UIManager.instance.InfoMsgOn("Hammer");
+                        break;
+                        
+                }
+
+                // 아이템이 뜨는 기능을 실행한다
+                //Collided_object.collider.gameObject.GetComponent<Button>().onClick.Invoke();
+            }
         }
 
         else
@@ -94,6 +108,13 @@ public class LaserTest : MonoBehaviour
         else if (OVRInput.GetUp(OVRInput.Button.One))
         {
             layser.material.color = new Color(0, 195, 255, 0.5f);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Equip"))//닿은 물체의 태그가 Equip이면
+        {
+
         }
     }
 }

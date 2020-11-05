@@ -12,6 +12,7 @@ public class EquipManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        //DBManager.instance.LoadEquipDB();
     }
 
     public GameObject[] hammers;
@@ -50,12 +51,9 @@ public class EquipManager : MonoBehaviour
             h[i] = GameObject.Find("HammerPos").transform.GetChild(i);
             k[i] = GameObject.Find("KnifePos").transform.GetChild(i);
             g[i] = GameObject.Find("GrillPos").transform.GetChild(i);
-            //print(h[i]);
         }
-        
         PrintList();
         SetEquip();
-
     }
     public void SetEquip()
     {//순서 해머-나이프-그릴
@@ -113,19 +111,6 @@ public class EquipManager : MonoBehaviour
                 g[2].gameObject.SetActive(true);
                 break;
         }
-
-        /*print(hammers.Length);
-        hammer = Instantiate(hammers[(equipList[0].level) - 1]);
-        hammer.transform.SetParent(hammerPos.transform);
-        //hammers[(equipList[0].level)-1].transform.position = hammerPos.transform.position;
-
-        grill = Instantiate(grills[(equipList[1].level) - 1]);
-        grill.transform.SetParent(grillPos.transform);
-        //grills[(equipList[1].level) - 1].transform.position = grillPos.transform.position;
-
-        knife = Instantiate(knives[(equipList[2].level) - 1]);
-        knife.transform.SetParent(knifePos.transform);
-        //knives[(equipList[2].level) - 1].transform.position = knifePos.transform.position;*/
     }
     
     public void PrintList()
@@ -133,9 +118,7 @@ public class EquipManager : MonoBehaviour
         for(int i = 0; i<equipList.Count; i++)
         {
             print(equipList[i].name + " : " + equipList[i].level + " : " + equipList[i].price);
-
         }
-
     }
     // Update is called once per frame
     void Update()
@@ -153,9 +136,6 @@ public class EquipManager : MonoBehaviour
         data.level = level;
         data.price = price;
         equipList.Add(data);
-        /*print("다시 넣은 리스트의 목록");
-        PrintList();*/
-
     }
     public void AddEquipData(string name, int level, int price)//리스트에 데이터(장비이름, 장비레벨)을 넣어주기 위한 메소드
     {
