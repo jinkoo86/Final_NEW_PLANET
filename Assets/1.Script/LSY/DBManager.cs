@@ -77,10 +77,10 @@ public class DBManager : MonoBehaviour
     void Start()
     {
         //AllLoadDB();
-        LoadStageDB();
+        /*LoadStageDB();
         LoadItemDB();
         LoadEquipDB();
-        LoadMoneyDB();
+        LoadMoneyDB();*/
     }
 
     // Update is called once per frame
