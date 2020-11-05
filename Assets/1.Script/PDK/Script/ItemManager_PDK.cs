@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour {
+public class ItemManager_PDK : MonoBehaviour {
 
     List<int> itemStock = new List<int>(); //[0]타이머, [1]하트
     int itemTimmer = 0;
