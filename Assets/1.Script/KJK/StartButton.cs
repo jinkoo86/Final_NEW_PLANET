@@ -21,7 +21,11 @@ public class StartButton : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.activeSelf)
+        {
         anim.Play("Door");
+
+        }
 
     }
 }
