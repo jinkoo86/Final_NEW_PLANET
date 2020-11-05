@@ -12,7 +12,6 @@ public class ObjectManager : MonoBehaviour {
     public GameObject dishSpawnPoint, cupSpawnPoint;
     GameObject dish, cup;
 
-
     // Start is called before the first frame update
     void Start() {
         dish = Instantiate(dishs);

@@ -33,7 +33,6 @@ public class ItemManager : MonoBehaviour {
 
     }
     void TimerPlus() {
-
         FoodManager.Instance.FoodTimePlus();
         GameManager.Instance.SetItemDB(GameManager.Instance.conn, "UPDATE Item SET ItemStock = ItemStock - 1 WHERE ItemName is 'timmer'");
     }

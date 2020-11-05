@@ -27,7 +27,7 @@ public class ToolGrill : MonoBehaviour {
         if (collisionDetect) {
 
             food.HP -= powerLevel;
-            Debug.Log("food HP: " + food.HP);
+            //Debug.Log("food HP: " + food.HP);
         }
 
     }
@@ -48,18 +48,5 @@ public class ToolGrill : MonoBehaviour {
             food = null;
         }
     }
-    //private void OnTriggerEnter(Collider other) {
-    //    if (other.transform.tag == "FOOD") {
-    //        collisionDetect = true;
-    //        food = other.transform.gameObject.GetComponent<FoodScript>();
-    //    }
-    //}
 
-    //private void OnTriggerExit(Collider other) {
-    //    if (other.transform.tag == "FOOD") {
-    //        //transform.GetComponent<Rigidbody>().useGravity = true;
-    //        collisionDetect = false;
-    //        food = null;
-    //    }
-    //}
 }

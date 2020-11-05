@@ -16,8 +16,6 @@ public class NPCRobber : MonoBehaviour {
 
     GameObject targetObject;
 
-    // - UI
-    //public Slider sliderHP;
     // - 현재체력
     int curHP;
     // - 최대체력
@@ -88,7 +86,6 @@ public class NPCRobber : MonoBehaviour {
             if (other.rigidbody.velocity.magnitude > 3) {
                 HP -= 1;
             }
-            //Debug.Log(HP);
             //맞는 애니메이션 필요
             Destroy(other.gameObject, 0);
         }
@@ -98,7 +95,6 @@ public class NPCRobber : MonoBehaviour {
         targetObject = GameObject.Find("RobberSpot");
         //타겟이 null이 아니면
         if (targetObject != null) {
-            //print(targetObject.name);
             //이동상태로 전이
             state = State.Move;
         }

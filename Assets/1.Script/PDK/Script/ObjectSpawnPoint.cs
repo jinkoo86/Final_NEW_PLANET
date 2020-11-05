@@ -12,7 +12,6 @@ public class ObjectSpawnPoint : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         myname = transform.name;
-
     }
 
     // Update is called once per frame
@@ -42,16 +41,12 @@ public class ObjectSpawnPoint : MonoBehaviour {
         }
     }
     private void OnCollisionEnter(Collision other) {
-        //Debug.Log("myname: " + myname + "들어온놈: " + other.transform.name);
-
         if (other.transform.tag == "DISH" || other.transform.tag == "CUP") {
             //Debug.Log("myname: " + myname + "들어온놈: " + other.transform.name);
             objectInCheck = true;
         }
     }
     private void OnCollisionExit(Collision other) {
-        //Debug.Log("myname: " + myname + "나간놈: " + other.transform.name);
-
         if (other.transform.tag == "DISH" || other.transform.tag == "CUP") {
             //Debug.Log("myname: " + myname + "나간놈: " + other.transform.name);
             objectInCheck = false;

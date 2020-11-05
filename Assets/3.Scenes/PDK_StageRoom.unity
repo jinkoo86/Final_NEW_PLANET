@@ -3151,6 +3151,16 @@ PrefabInstance:
       propertyPath: ObjectSpawnManager
       value: 
       objectReference: {fileID: 161943873}
+    - target: {fileID: 8717312547144874123, guid: dcbf848ea9842184eae1c842faa609a0,
+        type: 3}
+      propertyPath: FoodManual
+      value: 
+      objectReference: {fileID: 1116287458}
+    - target: {fileID: 8717312547144874123, guid: dcbf848ea9842184eae1c842faa609a0,
+        type: 3}
+      propertyPath: OrderTable
+      value: 
+      objectReference: {fileID: 2569744728785535810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcbf848ea9842184eae1c842faa609a0, type: 3}
 --- !u!1 &875140093
@@ -3975,7 +3985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1116287459
 Transform:
   m_ObjectHideFlags: 0
@@ -13460,7 +13470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2569744728785535811
 Transform:
   m_ObjectHideFlags: 0

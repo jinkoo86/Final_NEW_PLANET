@@ -55,13 +55,9 @@ public class NPCCustomer : MonoBehaviour {
         }
     }
 
-
-
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "CHECK") {
             myCanvas.gameObject.SetActive(true);
-            //도착하면 그자리에 정지 후
-            //랜덤돌려서 주문
             myNum.text = myCustomerNum.ToString();
             //checkFoodChild에서 order상태로 변경
             state = State.Wait;
@@ -115,7 +111,6 @@ public class NPCCustomer : MonoBehaviour {
     }
 
     private void UpdateWait() {
-
     }
     private void UpdateGood() {
         //돈 올리고 손님카운트 1개 제거
@@ -136,6 +131,9 @@ public class NPCCustomer : MonoBehaviour {
     private void UpdateBad() {
         //컴플레인 올리고
         GameManager.Instance.Complain -= 1;
+        if(GameManager.Instance.Complain <= 0) {
+            GameManager.Instance.GameOver();
+        }
         //나쁜 애니메이션
         //우선 머리위에 띄워서 확인
         myNum.text = "B";

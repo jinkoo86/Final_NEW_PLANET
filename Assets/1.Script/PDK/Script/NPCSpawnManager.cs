@@ -24,7 +24,7 @@ public class NPCSpawnManager : MonoBehaviour {
     //orderNum은 스테이지에서 처리해야될 고객의 숫자
     public int orderNum;
     //customerNum은 1부터 게임끝날때까지 쭉 늘어나는 숫자
-    public int customerNum=1;
+    public int customerNum = 1;
 
 
 
@@ -69,13 +69,8 @@ public class NPCSpawnManager : MonoBehaviour {
             currentTime += Time.deltaTime;
             if (currentTime >= createtTime) {
                 if (Random.Range(0, 100) > rndRobberValue) {
-                    //NPC를 생산하는데
-                    //랜덤하게 해서 어느정도면 고객이고
                     SpawnCustomer();
                 }
-
-                //아니면 강도인데
-                //강도 호출 함수로 만들어야됨
                 else {
                     SpawnRobber();
                 }

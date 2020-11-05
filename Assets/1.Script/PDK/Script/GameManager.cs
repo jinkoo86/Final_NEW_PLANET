@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour {
     public GameObject ItemManager;
     public GameObject IngredientsSpawnManager;
     public GameObject ObjectSpawnManager;
+    public GameObject OrderTable;
+    public GameObject FoodManual;
 
     //해당 스테이지레벨은 추후 start에서 송이꺼에서 값을 가져와야함
     public int stageLevel = 3;
@@ -58,9 +60,7 @@ public class GameManager : MonoBehaviour {
             killRobberCount = value;
         }
     }
-
-
-    public float RemainOrderTime {
+        public float RemainOrderTime {
         get { return remainOrderTime; }
         set {
             remainOrderTime = value;
@@ -95,11 +95,7 @@ public class GameManager : MonoBehaviour {
         //스테이지 레벨 가져와야함
         //해당 Manager들은 버튼 클릭후 활성화로 변경필요
 
-        ToolManager.SetActive(true);
-        NPCSpawnManager.SetActive(true);
-        ItemManager.SetActive(true);
-        IngredientsSpawnManager.SetActive(true);
-        ObjectSpawnManager.SetActive(true);
+        GameStartOrOver(true);
         //시작시간 기록
         startTime = Time.realtimeSinceStartup;
     }
@@ -108,15 +104,23 @@ public class GameManager : MonoBehaviour {
     void Update() {
 
     }
-    void GameOver() {
+
+    void GameStartOrOver(bool inputValue) {
+        ToolManager.SetActive(inputValue);
+        NPCSpawnManager.SetActive(inputValue);
+        ItemManager.SetActive(inputValue);
+        IngredientsSpawnManager.SetActive(inputValue);
+        ObjectSpawnManager.SetActive(inputValue);
+        OrderTable.SetActive(inputValue);
+        FoodManual.SetActive(inputValue);
+
+    }
+
+    public void GameOver() {
         //테스트용 시간측정
         endTime = Time.realtimeSinceStartup;
         //나머지 기능들 다 FALSE로 변경
-        ToolManager.SetActive(false);
-        NPCSpawnManager.SetActive(false);
-        ItemManager.SetActive(false);
-        IngredientsSpawnManager.SetActive(false);
-        ObjectSpawnManager.SetActive(false);
+        GameStartOrOver(false);
         //셔터 내리고
 
         //값 전달은 필요없음
@@ -124,23 +128,15 @@ public class GameManager : MonoBehaviour {
         playTime = endTime - startTime;
         Debug.Log("playTime: " + playTime);
         Debug.Log("remainOrderTime: " + remainOrderTime);
-
         Debug.Log("complainCount: " + complainCount);
-
         Debug.Log("killRobberCount: " + killRobberCount);
         Debug.Log("robberCount: " + robberCount);
         Debug.Log("dailyProfit: " + dailyProfit);
-
-
     }
     void GameClear() {
         endTime = Time.realtimeSinceStartup;
         //나머지 기능들 다 FALSE로 변경
-        ToolManager.SetActive(false);
-        NPCSpawnManager.SetActive(false);
-        ItemManager.SetActive(false);
-        IngredientsSpawnManager.SetActive(false);
-        ObjectSpawnManager.SetActive(false);
+        GameStartOrOver(false);
         //셔터 내리고 
 
         //컴플레인갯수, 강도수, 퇴치한 강도수, 전체 플레이타임, 주문시간 전달
