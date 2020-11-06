@@ -8,6 +8,17 @@ TagManager:
   - Planet
   - PlanetPos
   - Button
+  - FOOD
+  - ROBBER
+  - TOOL
+  - CUSTOMER
+  - DISH
+  - CUP
+  - SEAT
+  - CHECKFOOD
+  - CHECK
+  - EXIT
+  - ROBBERSPOT
   - Ray
   - Equip
   layers:
