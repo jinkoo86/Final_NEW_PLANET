@@ -1,4 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD:Assets/1.Script/PDK/Prefab/EXIT.prefab.meta
+guid: a9b819ffad0418144bdb20e8ee331132
+=======
+>>>>>>> Stashed changes
 guid: 776321b18bb0c51499482352631ca73c
 PrefabImporter:
   externalObjects: {}
