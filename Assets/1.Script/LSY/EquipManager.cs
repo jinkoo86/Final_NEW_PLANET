@@ -8,42 +8,116 @@ using UnityEngine;
 
 public class EquipManager : MonoBehaviour
 {
-    string filepath;
-    IDataReader reader;
-    string temp_path;
-    SqliteConnection con;
-    IDbCommand dbcmd;
-    string sqlQuery;
+    public static EquipManager instance;
+    private void Awake()
+    {
+        instance = this;
+        //DBManager.instance.LoadEquipDB();
+    }
 
-    string equipName;
-    int equiplevel;
-    Dictionary<string, int> dict;
+    public GameObject[] hammers;
+    public GameObject[] knives;
+    public GameObject[] grills;
+    GameObject hammerPos;
+    GameObject knifePos;
+    GameObject grillPos;
     GameObject hammer;
-    GameObject grill;
     GameObject knife;
+    GameObject grill;
+
+    Transform[] h;
+    Transform[] k;
+    Transform[] g;
+
+    public struct Equip
+    {
+        public string name;
+        public int level;
+        public int price;
+    }
+    public List<Equip> equipList = new List<Equip>();
 
     // Start is called before the first frame update
     void Start()
     {
-        dict = new Dictionary<string, int>();
-        hammer = GameObject.Find("Hammer");
-        grill = GameObject.Find("Grill");
-        knife = GameObject.Find("Knife");
-        print(dict);
-        SetDBPath();
-        LoadEquipDB();
-        PrintDict();
-
-    }
-    public void PrintDict()
-    {
-        foreach (string Key in dict.Keys)
+        hammerPos = GameObject.Find("HammerPos");
+        knifePos = GameObject.Find("KnifePos");
+        grillPos = GameObject.Find("GrillPos");
+        h = new Transform[3];
+        k = new Transform[3];
+        g = new Transform[3];
+        for (int i = 0; i < h.Length; i++)
         {
-            Debug.Log(Key);
+            h[i] = GameObject.Find("HammerPos").transform.GetChild(i);
+            k[i] = GameObject.Find("KnifePos").transform.GetChild(i);
+            g[i] = GameObject.Find("GrillPos").transform.GetChild(i);
         }
-        foreach (int value in dict.Values)
+        PrintList();
+        SetEquip();
+    }
+    public void SetEquip()
+    {//순서 해머-나이프-그릴
+        switch (equipList[0].level)
         {
-            Debug.Log(value);
+            case 1:
+                h[0].gameObject.SetActive(true);
+                h[1].gameObject.SetActive(false);
+                h[2].gameObject.SetActive(false);
+                break;
+            case 2:
+                h[0].gameObject.SetActive(false);
+                h[1].gameObject.SetActive(true);
+                h[2].gameObject.SetActive(false);
+                break;
+            case 3:
+                h[0].gameObject.SetActive(false);
+                h[1].gameObject.SetActive(false);
+                h[2].gameObject.SetActive(true);
+                break;
+        }
+        switch (equipList[1].level)
+        {
+            case 1:
+                k[0].gameObject.SetActive(true);
+                k[1].gameObject.SetActive(false);
+                k[2].gameObject.SetActive(false);
+                break;
+            case 2:
+                k[0].gameObject.SetActive(false);
+                k[1].gameObject.SetActive(true);
+                k[2].gameObject.SetActive(false);
+                break;
+            case 3:
+                k[0].gameObject.SetActive(false);
+                k[1].gameObject.SetActive(false);
+                k[2].gameObject.SetActive(true);
+                break;
+        }
+        switch (equipList[2].level)
+        {
+            case 1:
+                g[0].gameObject.SetActive(true);
+                g[1].gameObject.SetActive(false);
+                g[2].gameObject.SetActive(false);
+                break;
+            case 2:
+                g[0].gameObject.SetActive(false);
+                g[1].gameObject.SetActive(true);
+                g[2].gameObject.SetActive(false);
+                break;
+            case 3:
+                g[0].gameObject.SetActive(false);
+                g[1].gameObject.SetActive(false);
+                g[2].gameObject.SetActive(true);
+                break;
+        }
+    }
+    
+    public void PrintList()
+    {
+        for(int i = 0; i<equipList.Count; i++)
+        {
+            print(equipList[i].name + " : " + equipList[i].level + " : " + equipList[i].price);
         }
     }
     // Update is called once per frame
@@ -51,74 +125,24 @@ public class EquipManager : MonoBehaviour
     {
         
     }
-    public void RotateEquip()//해당 장비의 특정 자식을 회전한다
+    public void ClearList()
     {
-
-        hammer.GetComponentInChildren<GameObject>();
+        equipList.Clear(); 
     }
-    public void LoadEquipDB()//
+    public void ModifyList(string name, int level, int price)
     {
-        try
-        {
-            con.Open();
-            dbcmd = con.CreateCommand();//여기부터 sql입력을 위한 코드 
-            sqlQuery = string.Empty;
-
-            sqlQuery = "SELECT EquipName, EquipLevel FROM MyEquip";
-            dbcmd.CommandText = sqlQuery;
-            reader = dbcmd.ExecuteReader();
-
-            while (reader.Read())//완료한 스테이지 번호를 가져온다
-            {
-                print("while문 작동 한다 ");
-                dict.Add(reader.GetString(0), reader.GetInt32(1));
-
-                Debug.Log("equipName: " + equipName + "equiplevel: " + equiplevel);
-            }
-            reader.Close();
-            con.Close();
-        }
-        catch (Exception e)
-        {
-            print(e);
-        }
-
+        Equip data = new Equip();//변수 선언
+        data.name = name;
+        data.level = level;
+        data.price = price;
+        equipList.Add(data);
     }
-    public void SetDBPath()
+    public void AddEquipData(string name, int level, int price)//리스트에 데이터(장비이름, 장비레벨)을 넣어주기 위한 메소드
     {
-        filepath = string.Empty;
-        if (Application.platform == RuntimePlatform.Android)//실행플랫폼이 안드로이드일 경우
-        {
-            //안드로이드 일 경우
-            filepath = Application.persistentDataPath + "/DB.db";
-            if (!File.Exists(filepath))
-            {
-                WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/DB.db");
-                loadDB.bytesDownloaded.ToString();
-                while (!loadDB.isDone) { }
-                File.WriteAllBytes(filepath, loadDB.bytes);
-            }
-        }
-        else
-        {
-            //윈도우 일 경우
-            filepath = Application.dataPath + "/StreamingAssets/DB.db";
-            if (!File.Exists(filepath))
-            {
-                File.Copy(Application.streamingAssetsPath + "/DB.db", filepath);
-                //print(filepath);
-            }
-        }
-        try
-        {
-            temp_path = "URI=file:" + filepath;
-            con = new SqliteConnection(temp_path);
-
-
-        }
-        catch (Exception e)
-        {
-            print(e);
-        }
+        Equip data = new Equip();//변수 선언
+        data.name = name;
+        data.level = level; 
+        data.price = price;
+        equipList.Add(data);
     }
 }

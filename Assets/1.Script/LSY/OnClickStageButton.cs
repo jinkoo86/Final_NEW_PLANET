@@ -10,19 +10,19 @@ public class OnClickStageButton : MonoBehaviour
     public void ClickLeftBtn()
     {
         print("왼쪽 버튼이 클릭 되었음");
-        StageManager.instance.PreStage(1);
+        DBManager.instance.PreStage(1);
     }
     public void ClickRightBtn()
     {
         print("오른쪽 버튼이 클릭 되었음");
-        StageManager.instance.NextStage(1);
+        DBManager.instance.NextStage(1);
     }
 
     public void SetStageNum()//현재의 스테이지 넘버를 DontDestroyOnLoad 하기 위해 저장한다
     {
         g_stageNum = GameObject.Find("StageNum");
         sNum = g_stageNum.GetComponent<StageNum>();
-        sNum.StageNumber = StageManager.instance.GetMyStage();
+        sNum.StageNumber = StageManager.instance.MyStage;
     }
     public void ClickStartBtn()//스테이지를 시작한다
     {

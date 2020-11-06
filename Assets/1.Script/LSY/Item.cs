@@ -15,11 +15,10 @@ public class Item : MonoBehaviour
         //오브젝들을 처음에 비활성화 시킨다
         itemOn.SetActive(false);
         itemOff.SetActive(false);
-
     }
-    private void OnTriggerStay(Collider other)//여기 수정해야함 위치 수정
+    /*private void OnTriggerStay(Collider other)//여기 수정해야함
     {
-        switch (other.gameObject.name)
+        *//*switch (other.gameObject.name)
         {
             case "Heart":
                 UIManager.instance.InfoMsgOn("Heart");
@@ -29,12 +28,13 @@ public class Item : MonoBehaviour
                 break;
             default:
                 break;
+        }*//*
+        if (other.gameObject.name.Equals("Ray"))
+        {
+            print("레이 닿았음");
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-       
-    }
+    }*/
+
     public void SetItem()//씬 start하면 디비에 있는 아이템정보를 가져와서 해당 조건에 맞게 세팅해준다
     {
         switch (gameObject.name)
