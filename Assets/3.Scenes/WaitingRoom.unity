@@ -57878,6 +57878,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnifePos
       objectReference: {fileID: 0}
+    - target: {fileID: 4402025130095283318, guid: b67c8f888d5205341ab92e88d505fd4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b67c8f888d5205341ab92e88d505fd4e, type: 3}
 --- !u!33 &789696724780761261
@@ -59673,6 +59678,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HammerPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756378482685786187, guid: dfd20641d371eca4ab5da71c1854e7fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756378482685786190, guid: dfd20641d371eca4ab5da71c1854e7fb,
         type: 3}
@@ -119471,6 +119481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GrillPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 9210254929053840212, guid: 69ace4caa3fd2344295b43d2f89a6545,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ace4caa3fd2344295b43d2f89a6545, type: 3}
