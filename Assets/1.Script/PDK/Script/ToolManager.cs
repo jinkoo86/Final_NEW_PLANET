@@ -55,14 +55,17 @@ public class ToolManager : MonoBehaviour {
         switch (hammerLevel) {
             case 3:
                 hammer = Instantiate(myHammer3);
+                hammer.name = myHammer3.name;
                 hammer.transform.position = hammerSpot.transform.position;
                 break;
             case 2:
                 hammer = Instantiate(myHammer2);
+                hammer.name = myHammer2.name;
                 hammer.transform.position = hammerSpot.transform.position;
                 break;
             default:
                 hammer = Instantiate(myHammer1);
+                hammer.name = myHammer1.name;
                 hammer.transform.position = hammerSpot.transform.position;
                 break;
         }
@@ -71,14 +74,17 @@ public class ToolManager : MonoBehaviour {
         switch (knifeLevel) {
             case 3:
                 knife = Instantiate(myKnife3);
+                knife.name = myKnife3.name;
                 knife.transform.position = knifeSpot.transform.position;
                 break;
             case 2:
                 knife = Instantiate(myKnife2);
+                knife.name = myKnife2.name;
                 knife.transform.position = knifeSpot.transform.position;
                 break;
             default:
                 knife = Instantiate(myKnife1);
+                knife.name = myKnife1.name;
                 knife.transform.position = knifeSpot.transform.position;
                 break;
         }
@@ -87,14 +93,17 @@ public class ToolManager : MonoBehaviour {
         switch (grillLevel) {
             case 3:
                 grill = Instantiate(myGrill3);
+                grill.name = myGrill3.name;
                 grill.transform.position = grillSpot.transform.position;
                 break;
             case 2:
                 grill = Instantiate(myGrill2);
+                grill.name = myGrill2.name;
                 grill.transform.position = grillSpot.transform.position;
                 break;
             default:
                 grill = Instantiate(myGrill1);
+                grill.name = myGrill1.name;
                 grill.transform.position = grillSpot.transform.position;
                 break;
         }

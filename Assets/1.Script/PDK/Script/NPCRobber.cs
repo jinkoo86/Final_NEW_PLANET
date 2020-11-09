@@ -128,6 +128,8 @@ public class NPCRobber : MonoBehaviour {
     }
     private void UpdateRun() {
         targetObject = GameObject.Find("EXIT");
+        //돈 뺐기고
+        //컴플레인 늘어나고
         if (targetObject != null) {
             state = State.Move;
         }

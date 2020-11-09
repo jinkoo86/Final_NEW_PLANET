@@ -32,15 +32,15 @@ public class IngredientsSpawnPoint : MonoBehaviour {
 
         switch (myname) {
             case "BreadSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "SquareStoneBread", 0);
+                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "0Square_Rock", 0);
                 //foodInCheck = true;
                 break;
             case "MeatSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "FreshMeat", 1);
+                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "0BIGMeat", 1);
                 //foodInCheck = true;
                 break;
             case "LettuceSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "Lettuce", 2);
+                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "0Cabbage", 2);
                 //foodInCheck = true;
                 break;
             case "CheeseSpawnPoint":

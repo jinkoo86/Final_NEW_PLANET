@@ -12,23 +12,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OculusSampleFramework
-{
-    public class PauseOnInputLoss : MonoBehaviour
-    {
-        void Start()
-        {
+namespace OculusSampleFramework {
+    public class PauseOnInputLoss : MonoBehaviour {
+        void Start() {
             OVRManager.InputFocusAcquired += OnInputFocusAcquired;
             OVRManager.InputFocusLost += OnInputFocusLost;
         }
 
-        private void OnInputFocusLost()
-        {
+        private void OnInputFocusLost() {
             Time.timeScale = 0.0f;
         }
 
-        private void OnInputFocusAcquired()
-        {
+        private void OnInputFocusAcquired() {
             Time.timeScale = 1.0f;
         }
     }
