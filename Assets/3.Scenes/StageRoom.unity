@@ -1547,7 +1547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205292623}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071067}
-  m_LocalPosition: {x: 0.036199927, y: 0.017899994, z: 0.11}
+  m_LocalPosition: {x: 0.011, y: 0.018, z: 0.269}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2129476738}
@@ -8064,7 +8064,7 @@ PrefabInstance:
     - target: {fileID: 2804322783549417330, guid: 933fcb40e821b0044a2d88a0b59ee77d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.4712992
+      value: 1.391
       objectReference: {fileID: 0}
     - target: {fileID: 2804322783549417330, guid: 933fcb40e821b0044a2d88a0b59ee77d,
         type: 3}
@@ -14544,7 +14544,6 @@ GameObject:
   - component: {fileID: 6066694061642817364}
   - component: {fileID: 6066694061642817367}
   - component: {fileID: 6066694061642817366}
-  - component: {fileID: 6066694061642817365}
   m_Layer: 5
   m_Name: Menu2Canvas
   m_TagString: Untagged
@@ -14593,25 +14592,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &6066694061642817365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6066694061642817320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aaf960227867044282d921171d2d7ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  pointer: {fileID: 0}
-  sortOrder: 0
 --- !u!114 &6066694061642817366
 MonoBehaviour:
   m_ObjectHideFlags: 0
