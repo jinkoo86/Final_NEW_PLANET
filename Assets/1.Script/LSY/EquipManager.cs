@@ -51,6 +51,7 @@ public class EquipManager : MonoBehaviour
         }
         PrintList();
         //SetEquip();
+        DBManager.instance.LoadEquipDB();
     }
     public void SetEquip()
     {//순서 해머-나이프-그릴

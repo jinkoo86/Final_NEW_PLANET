@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class DBManager : MonoBehaviour
 {
-    public Text d;
+    public Text b;
     public static DBManager instance;
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class DBManager : MonoBehaviour
     void Start()
     {
         LoadItemDB();
-        LoadEquipDB();
+        //LoadEquipDB();
         LoadMoneyDB();
         LoadStageDB();
     }
@@ -305,7 +305,7 @@ public class DBManager : MonoBehaviour
             }
             else
             {
-                d.text = "메소드 들어왔엄";
+                b.text = "메소드 들어왔엄";
                 int spentMoney = myMoney - money;//내돈-값을 받은 돈 을 소비  한 돈에 넣어준다
                 sqlQuery = "UPDATE Money SET MyMoney = @SpentMoney";
                 dbcommand.CommandText = sqlQuery;
@@ -432,11 +432,11 @@ public class DBManager : MonoBehaviour
             dbconn = new SqliteConnection(temp_path);
             dbconn.Open();
             dbcommand = dbconn.CreateCommand();
-            sqlQuery = string.Empty;
+            /*sqlQuery = string.Empty;
             sqlQuery = "UPDATE Money SET MyMoney = 3000";
             dbcommand.CommandText = sqlQuery;
             reader = dbcommand.ExecuteReader();
-            reader.Close();
+            reader.Close();*/
 
             sqlQuery = string.Empty;
             sqlQuery = "SELECT MyMoney FROM Money";

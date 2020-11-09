@@ -42,7 +42,6 @@ public class LaserTest : MonoBehaviour
         // 충돌 감지 시
         int layer = 1 << LayerMask.NameToLayer("Ignore Raycast");
         if (Physics.Raycast(ray, out hitInfo, 100, ~layer))
-      //if (Physics.Raycast(transform.position, transform.forward, out hitInfo, raycastDistance))
         {
             layser.enabled = true;//충돌 잇으면 켜지게
             layser.SetPosition(1, hitInfo.point);
@@ -81,12 +80,22 @@ public class LaserTest : MonoBehaviour
 
 
             }
+            switch (hitInfo.collider.gameObject.name)
+            {
+                case "Heart":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "Timer":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+            }
             
         }
 
         else
         {
             layser.enabled = false;
+            UIManager.instance.InfoMsgOff();
             return;
             // 레이저에 감지된 것이 없기 때문에 레이저 초기 설정 길이만큼 길게 만든다.
             layser.SetPosition(1, transform.position + (transform.forward * raycastDistance));
