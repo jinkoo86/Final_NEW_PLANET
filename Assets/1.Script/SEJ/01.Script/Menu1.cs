@@ -19,7 +19,7 @@ public class Menu1 : MonoBehaviour
     void Update()
     {
         transform.position = pos.transform.position;
-        if (SceneManager.GetActiveScene().name == "WaitingRoom")
+        if (SceneManager.GetActiveScene().name == "WaitingRoom_SEJ")
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {
