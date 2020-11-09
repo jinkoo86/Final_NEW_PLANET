@@ -26,6 +26,8 @@ public class ToolKnife : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         speed = rb.velocity.magnitude;
+        //Debug.Log("Speed: " + speed);
+
         //TESTSCRIPT.Instance.knifeSpeed = speed;
         //Debug.Log("KnifePower: " + powerLevel);
         //Debug.Log("Knife:"+speed);
@@ -36,23 +38,25 @@ public class ToolKnife : MonoBehaviour {
         //TESTSCRIPT.Instance.knifeTag = other.transform.tag;
         if (other.transform.tag == "FOOD" && speed >= 2.0f) {
 
-            transform.GetComponent<Rigidbody>().isKinematic = true;
-            transform.GetComponent<Rigidbody>().useGravity = false;
-            transform.GetComponent<BoxCollider>().isTrigger = true;
+            //transform.GetComponent<Rigidbody>().isKinematic = true;
+            //transform.GetComponent<Rigidbody>().useGravity = false;
+            //transform.GetComponent<BoxCollider>().isTrigger = true;
 
             food = other.transform.gameObject.GetComponent<FoodScript>();
             food.HP -= powerLevel;
 
+            speed = 0;
+
         }
     }
-    //private void OnCollisionExit(Collision other) {
-    //    if (other.transform.tag == "FOOD") {
-    //        transform.GetComponent<Rigidbody>().isKinematic = false;
-    //        transform.GetComponent<Rigidbody>().useGravity = true;
-    //        transform.GetComponent<BoxCollider>().isTrigger = false;
-    //        food = null;
-    //    }
-    //}
+    private void OnCollisionExit(Collision other) {
+        if (other.transform.tag == "FOOD") {
+            //transform.GetComponent<Rigidbody>().isKinematic = false;
+            //transform.GetComponent<Rigidbody>().useGravity = true;
+            //transform.GetComponent<BoxCollider>().isTrigger = false;
+            food = null;
+        }
+    }
 
     //private void OnTriggerEnter(Collider other) {
 
@@ -62,12 +66,12 @@ public class ToolKnife : MonoBehaviour {
     //    }
     //}
 
-    private void OnTriggerExit(Collider other) {
-        if (other.transform.tag == "FOOD") {
-            transform.GetComponent<Rigidbody>().isKinematic = false;
-            transform.GetComponent<Rigidbody>().useGravity = true;
-            transform.GetComponent<BoxCollider>().isTrigger = false;
-            food = null;
-        }
-    }
+    //private void OnTriggerExit(Collider other) {
+    //    if (other.transform.tag == "FOOD") {
+    //        transform.GetComponent<Rigidbody>().isKinematic = false;
+    //        transform.GetComponent<Rigidbody>().useGravity = true;
+    //        transform.GetComponent<BoxCollider>().isTrigger = false;
+    //        food = null;
+    //    }
+    //}
 }

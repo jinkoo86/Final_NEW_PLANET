@@ -43,31 +43,27 @@ highlight. How these states are best presented is highly app-specific.
 
 using UnityEngine;
 
-namespace OculusSampleFramework
-{
-    public class GrabManager : MonoBehaviour
-    {
+namespace OculusSampleFramework {
+    public class GrabManager : MonoBehaviour {
         Collider m_grabVolume;
 
         public Color OutlineColorInRange;
         public Color OutlineColorHighlighted;
         public Color OutlineColorOutOfRange;
 
-        void OnTriggerEnter(Collider otherCollider)
-        {
-            DistanceGrabbable dg = otherCollider.GetComponentInParent<DistanceGrabbable>();
-            if(dg)
-            {
+        void OnTriggerEnter(Collider otherCollider) {
+            DistanceGrabbable dg = otherCollider.GetComponentInChildren<DistanceGrabbable>();
+            //DistanceGrabbable dg = otherCollider.GetComponentInParent<DistanceGrabbable>();
+            if (dg) {
                 dg.InRange = true;
             }
 
         }
-        
-        void OnTriggerExit(Collider otherCollider)
-        {
-            DistanceGrabbable dg = otherCollider.GetComponentInParent<DistanceGrabbable>();
-            if(dg)
-            {
+
+        void OnTriggerExit(Collider otherCollider) {
+            DistanceGrabbable dg = otherCollider.GetComponentInChildren<DistanceGrabbable>();
+            //DistanceGrabbable dg = otherCollider.GetComponentInParent<DistanceGrabbable>();
+            if (dg) {
                 dg.InRange = false;
             }
         }

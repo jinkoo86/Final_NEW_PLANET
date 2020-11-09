@@ -33,35 +33,36 @@ public class IngredientsSpawnManager : MonoBehaviour {
     GameObject foodBread, foodMeat, foodLettuce, foodCheese, foodBurned;
     // Start is called before the first frame update
     void Start() {
-        breadDict.Add("SquareStoneBread", breads[0]);
-        breadDict.Add("RoundStone", breads[1]);
-        breadDict.Add("HamburgerBreadUp", breads[2]);
-        breadDict.Add("HamburgerBreadDown", breads[3]);
-        breadDict.Add("SquareBread", breads[4]);
-        breadDict.Add("ToastBread", breads[5]);
+        breadDict.Add("0Square_Rock", breads[0]);
+        breadDict.Add("1Round_Rock", breads[1]);
+        breadDict.Add("2BurgerBun_Top", breads[2]);
+        breadDict.Add("3BurgerBun_Bottom", breads[3]);
+        breadDict.Add("4SquareBread_Left", breads[4]);
+        breadDict.Add("4SquareBread_Right", breads[5]);
+        breadDict.Add("5Toast", breads[6]);
 
-        meatDict.Add("FreshMeat", meats[0]);
-        meatDict.Add("MincedMeat", meats[1]);
-        meatDict.Add("HamburgerPatty", meats[2]);
-        meatDict.Add("SteakMeat", meats[3]);
-        meatDict.Add("RareSteak", meats[4]);
-        meatDict.Add("MediumSteak", meats[5]);
-        meatDict.Add("WelldoneSteak", meats[6]);
+        meatDict.Add("0BIGMeat", meats[0]);
+        meatDict.Add("1MeatBone", meats[1]);
+        meatDict.Add("2Patty", meats[2]);
+        meatDict.Add("3SteakMeat", meats[3]);
+        meatDict.Add("4Steak_Rare", meats[4]);
+        meatDict.Add("5Steak_medium", meats[5]);
+        meatDict.Add("6Steak_Welldone", meats[6]);
 
-        lettuceDict.Add("Lettuce", lettuces[0]);
-        lettuceDict.Add("HamburgerLet", lettuces[1]);
-        lettuceDict.Add("SaladLet", lettuces[2]);
+        lettuceDict.Add("0Cabbage", lettuces[0]);
+        lettuceDict.Add("1Hamburger_lettuce", lettuces[1]);
+        lettuceDict.Add("2mass_lettuce", lettuces[2]);
 
-        foodBread = Instantiate(breadDict["SquareStoneBread"]);
-        foodBread.name = "SquareStoneBread";
+        foodBread = Instantiate(breadDict["0Square_Rock"]);
+        foodBread.name = "0Square_Rock";
         foodBread.transform.position = breadSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
 
-        foodMeat = Instantiate(meatDict["FreshMeat"]);
-        foodMeat.name = "FreshMeat";
+        foodMeat = Instantiate(meatDict["0BIGMeat"]);
+        foodMeat.name = "0BIGMeat";
         foodMeat.transform.position = meatSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
 
-        foodLettuce = Instantiate(lettuceDict["Lettuce"]);
-        foodLettuce.name = "Lettuce";
+        foodLettuce = Instantiate(lettuceDict["0Cabbage"]);
+        foodLettuce.name = "0Cabbage";
         foodLettuce.transform.position = lettuceSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
 
         foodCheese = Instantiate(cheese);

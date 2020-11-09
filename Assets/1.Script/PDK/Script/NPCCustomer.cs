@@ -77,9 +77,9 @@ public class NPCCustomer : MonoBehaviour {
     //빈 테이블을 찾기위해 돌리는 랜덤함수
     private int GetRandomNumber() {
         var exclude = new HashSet<int>(emptyTableCheck);
-        var range = Enumerable.Range(0, 5).Where(i => !exclude.Contains(i));
+        var range = Enumerable.Range(0, 4).Where(i => !exclude.Contains(i));
         var rand = new System.Random();
-        int index = rand.Next(0, 5 - exclude.Count);
+        int index = rand.Next(0, 4 - exclude.Count);
         return range.ElementAt(index);
     }
 

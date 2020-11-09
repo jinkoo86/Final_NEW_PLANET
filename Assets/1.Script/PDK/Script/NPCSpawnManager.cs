@@ -16,7 +16,7 @@ public class NPCSpawnManager : MonoBehaviour {
     public float startRandomEndTime = 1f; //(public이라 인스펙터에서 적절한값으로 수정)
 
     public List<GameObject> TableList = new List<GameObject>();
-    public List<bool> emptyTableList = new List<bool>() { true, true, true, true, true };
+    public List<bool> emptyTableList = new List<bool>() { true, true, true, true };
     public GameObject npcCustomer;
     public GameObject npcRobber;
     //10퍼센트의 확률로 강도 출현

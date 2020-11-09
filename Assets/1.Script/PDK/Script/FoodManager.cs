@@ -43,7 +43,7 @@ public class FoodManager : MonoBehaviour {
         {"CheeseBurger", 11.1f}
     };
 
-    public Text manual1, manual2, manual3, manual4, manual5;
+    public Text manual1, manual2, manual3, manual4;
     List<string> dishFood = new List<string> { };
 
     public List<string> FinishedDish {
@@ -88,10 +88,6 @@ public class FoodManager : MonoBehaviour {
                 manual4.text = customerNum.ToString();
                 manual4.text += "\n"+customerFood;
                 break;
-            case 4:
-                manual5.text = customerNum.ToString();
-                manual5.text += "\n"+customerFood;
-                break;
 
         }
     }
@@ -109,9 +105,6 @@ public class FoodManager : MonoBehaviour {
                 break;
             case 3:
                 manual4.text = "";
-                break;
-            case 4:
-                manual5.text = "";
                 break;
 
         }

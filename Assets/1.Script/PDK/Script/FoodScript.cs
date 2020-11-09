@@ -12,7 +12,6 @@ public class FoodScript : MonoBehaviour {
     bool GrillEnter = false;
     Rigidbody myRigidbody;
     BoxCollider myCollider;
-    bool inDish;
 
 
     //빵은 FoodType0, 고기는 FoodType1, 상추는 FoodType2
@@ -32,24 +31,24 @@ public class FoodScript : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (GrillEnter) {
-            Debug.Log("나의 이름: " + myname + ", 현재 HP: " + curHP);
-        }
+        //if (GrillEnter) {
+
+        //}
 
         switch (myname) {
-            case "SquareStoneBread":
+            case "0Square_Rock":
                 //case myname.Contains("SquareStoneBread"):
                 if (HammerEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "RoundStone", 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "1Round_Rock", 0);
                     }
                 }
                 else if (knifeEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "SquareBread", 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "SquareBread", 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(-0.1f, 0, 0), "4SquareBread_Left", 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0.1f, 0, 0), "4SquareBread_Right", 0);
                     }
                 }
                 else if (GrillEnter) {
@@ -59,12 +58,12 @@ public class FoodScript : MonoBehaviour {
                     }
                 }
                 break;
-            case "RoundStone":
+            case "1Round_Rock":
                 if (HammerEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "HamburgerBreadUp", 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "HamburgerBreadDown", 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(-0.1f, 0, 0), "2BurgerBun_Top", 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0.1f, 0, 0), "3BurgerBun_Bottom", 0);
                     }
                     else if (GrillEnter) {
                         if (curHP <= 0) {
@@ -74,15 +73,41 @@ public class FoodScript : MonoBehaviour {
                     }
                 }
                 break;
-            case "SquareBread":
+
+            case "2BurgerBun_Top":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "ToastBread", 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "Burned", 4);
                     }
                 }
                 break;
-            case "ToastBread":
+
+            case "3BurgerBun_Bottom":
+                if (GrillEnter) {
+                    if (curHP <= 0) {
+                        Destroy(gameObject, 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "Burned", 4);
+                    }
+                }
+                break;
+            case "4SquareBread_Left":
+                if (GrillEnter) {
+                    if (curHP <= 0) {
+                        Destroy(gameObject, 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "5Toast", 0);
+                    }
+                }
+                break;
+            case "4SquareBread_Right":
+                if (GrillEnter) {
+                    if (curHP <= 0) {
+                        Destroy(gameObject, 0);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "5Toast", 0);
+                    }
+                }
+                break;
+            case "5Toast":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
@@ -93,17 +118,17 @@ public class FoodScript : MonoBehaviour {
 
             /////////////////////////////////////////////////////////////////////////////////////////////////
 
-            case "FreshMeat":
+            case "0BIGMeat":
                 if (HammerEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "MincedMeat", 1);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "1MeatBone", 1);
                     }
                 }
                 else if (knifeEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "SteakMeat", 1);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "3SteakMeat", 1);
                     }
                 }
                 else if (GrillEnter) {
@@ -113,15 +138,15 @@ public class FoodScript : MonoBehaviour {
                     }
                 }
                 break;
-            case "MincedMeat":
+            case "1MeatBone":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "HamburgerPatty", 1);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "2Patty", 1);
                     }
                 }
                 break;
-            case "HamburgerPatty":
+            case "2Patty":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
@@ -129,31 +154,31 @@ public class FoodScript : MonoBehaviour {
                     }
                 }
                 break;
-            case "SteakMeat":
+            case "3SteakMeat":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "RareSteak", 1);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "4Steak_Rare", 1);
                     }
                 }
                 break;
-            case "RareSteak":
+            case "4Steak_Rare":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "MediumSteak", 1);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "5Steak_medium", 1);
                     }
                 }
                 break;
-            case "MediumSteak":
+            case "5Steak_medium":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "WelldoneSteak", 1);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "6Steak_Welldone", 1);
                     }
                 }
                 break;
-            case "WelldoneSteak":
+            case "6Steak_Welldone":
                 if (GrillEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
@@ -162,21 +187,21 @@ public class FoodScript : MonoBehaviour {
                 }
                 break;
             /////////////////////////////////////////////////////////////////////////////////////////////////////
-            case "Lettuce":
+            case "0Cabbage":
                 if (HammerEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "HamburgerLet", 2);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "1Hamburger_lettuce", 2);
                     }
                 }
                 else if (knifeEnter) {
                     if (curHP <= 0) {
                         Destroy(gameObject, 0);
-                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "SaladLet", 2);
+                        IngredientsSpawnManager.Instance.FoodPrepping(transform.position, "2mass_lettuce", 2);
                     }
                 }
                 else if (GrillEnter) {
-                    if(curHP <= 0) {
+                    if (curHP <= 0) {
                         Destroy(gameObject, 0);
                         IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "Burned", 4);
                     }
@@ -214,9 +239,9 @@ public class FoodScript : MonoBehaviour {
     private void OnCollisionEnter(Collision other) {
 
         if (other.transform.tag == "TOOL" && !other.transform.name.Contains("Grill")) {
-            myRigidbody.isKinematic = true;
-            myRigidbody.useGravity = false;
-            myCollider.isTrigger = true;
+            //myRigidbody.isKinematic = true;
+            //myRigidbody.useGravity = false;
+            //myCollider.isTrigger = true;
             //Debug.Log(gameObject.name+"이 "+other.gameObject.name+"과 충돌, 생명력:" + curHP);
             if (other.transform.name.Contains("Hammer")) {
                 HammerEnter = true;
@@ -228,11 +253,6 @@ public class FoodScript : MonoBehaviour {
                 knifeEnter = true;
                 GrillEnter = false;
             }
-            //if (other.transform.name.Contains("Grill")) {
-            //    HammerEnter = false;
-            //    knifeEnter = false;
-            //    GrillEnter = true;
-            //}
         }
         else if (other.transform.name.Contains("Grill")) {
             //Debug.Log(gameObject.name + "이 " + other.gameObject.name + "과 충돌, 생명력:" + curHP);
@@ -241,7 +261,7 @@ public class FoodScript : MonoBehaviour {
             GrillEnter = true;
         }
         if (other.transform.tag == "DISH") {
-            transform.SetParent(other.transform);
+            //transform.SetParent(other.transform);
             //접시에 올라간뒤로는 플레이어가 오브젝트를 따로 잡을수 없도록,
             //DistanceGrabbable 끄는걸로 했는데도 잡혀서 layer를 0로 변경하는방식으로 진행
             //transform.GetComponent<DistanceGrabbable>().enabled = false;
@@ -251,33 +271,26 @@ public class FoodScript : MonoBehaviour {
             myRigidbody.useGravity = false;
             myRigidbody.isKinematic = true;
 
-            Debug.Log("내 형제번호:" + transform.GetSiblingIndex());
-            inDish = true;
-
-
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-            transform.localPosition = new Vector3(0, transform.GetSiblingIndex() + 1, 0);
-            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
-    private void OnCollisionExit(Collision other) {
-        HammerEnter = false;
-        knifeEnter = false;
-        GrillEnter = false;
-    }
+    //private void OnCollisionExit(Collision other) {
+    //    HammerEnter = false;
+    //    knifeEnter = false;
+    //    GrillEnter = false;
+    //}
 
-    private void OnTriggerExit(Collider other) {
-        if (other.transform.tag == "TOOL") {
-            myRigidbody.isKinematic = false;
-            myRigidbody.useGravity = true;
-            myCollider.isTrigger = false;
+    //private void OnTriggerExit(Collider other) {
+    //    if (other.transform.tag == "TOOL") {
+    //        myRigidbody.isKinematic = false;
+    //        myRigidbody.useGravity = true;
+    //        myCollider.isTrigger = false;
 
-            HammerEnter = false;
-            knifeEnter = false;
-            GrillEnter = false;
-        }
-    }
+    //        HammerEnter = false;
+    //        knifeEnter = false;
+    //        GrillEnter = false;
+    //    }
+    //}
 
     //private void OnTriggerEnter(Collision other) {
     //    //이름으로 호출하는거는 느려서? 태그로 호출하는게 빠르다함 나중에 바꿔야징

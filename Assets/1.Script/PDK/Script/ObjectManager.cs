@@ -15,9 +15,11 @@ public class ObjectManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         dish = Instantiate(dishs);
+        dish.name = "Dish";
         dish.transform.position = dishSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
 
         cup = Instantiate(cups);
+        cup.name = "Cup";
         cup.transform.position = cupSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
     }
 

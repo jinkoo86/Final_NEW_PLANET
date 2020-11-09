@@ -102,12 +102,13 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        //Time.timeScale = 0.1f;
 
     }
 
     void GameStartOrOver(bool inputValue) {
         ToolManager.SetActive(inputValue);
-        NPCSpawnManager.SetActive(inputValue);
+        //NPCSpawnManager.SetActive(inputValue);
         ItemManager.SetActive(inputValue);
         IngredientsSpawnManager.SetActive(inputValue);
         ObjectSpawnManager.SetActive(inputValue);

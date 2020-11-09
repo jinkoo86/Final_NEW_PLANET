@@ -45,10 +45,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipLevel: 
   itemStock: 
+  conn: 
   ToolManager: {fileID: 0}
-  playTime: 0
-  complainCount: 0
-  customerCount: 0
-  dailyProfit: 0
-  customerNumber: 0
+  NPCSpawnManager: {fileID: 0}
+  ItemManager: {fileID: 0}
+  IngredientsSpawnManager: {fileID: 0}
+  ObjectSpawnManager: {fileID: 0}
+  OrderTable: {fileID: 0}
+  FoodManual: {fileID: 0}
+  stageLevel: 3
+  orderNumber: 0
   customerTime: 0
+  complainText: {fileID: 0}
+  profitText: {fileID: 0}
