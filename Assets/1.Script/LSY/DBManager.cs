@@ -16,8 +16,6 @@ public class DBManager : MonoBehaviour
         instance = this;
         SetDBPath();
         //Check();
-        LoadStageDB();
-        LoadItemDB();
         
         //Check();
         //CheckDB();
@@ -36,8 +34,10 @@ public class DBManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadItemDB();
         LoadEquipDB();
         LoadMoneyDB();
+        LoadStageDB();
     }
     // Update is called once per frame
     void Update()

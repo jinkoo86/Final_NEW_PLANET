@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/3.Scenes/WaitingRoom.unity
     guid: 90e86e8055dca6d43b1e66b6839d63f2
   - enabled: 0
     path: Assets/3.Scenes/StageRoom.unity
     guid: 3e6792d0fa85ba244867ee788e105662
-  - enabled: 1
-    path: Assets/3.Scenes/PDK_StageRoom.unity
-    guid: c17896ed137145a46bfc30f0225cc847
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 61600a4d35dfa1c4db456ee09f7fe6e6,
       type: 2}
