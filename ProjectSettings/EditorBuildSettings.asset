@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/3.Scenes/WaitingRoom.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: 90e86e8055dca6d43b1e66b6839d63f2
   - enabled: 0
     path: Assets/3.Scenes/StageRoom.unity
     guid: 3e6792d0fa85ba244867ee788e105662
