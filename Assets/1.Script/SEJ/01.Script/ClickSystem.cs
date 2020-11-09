@@ -28,8 +28,8 @@ public class ClickSystem : MonoBehaviour
     void Start()
     {
         SetDBPath();
-        uiHelpers.GetComponent<LaserPointer>().enabled = false;
-        uiHelpers.GetComponent<LineRenderer>().enabled = false;
+        /*uiHelpers.GetComponent<LaserPointer>().enabled = false;
+        uiHelpers.GetComponent<LineRenderer>().enabled = false;*/
     }
 
     void Update()
@@ -89,8 +89,8 @@ public class ClickSystem : MonoBehaviour
     {
         menu.SetActive(false);
         //UIHelpers의 컴포넌트들을 disable하고싶다. 
-        uiHelpers.GetComponent<LaserPointer>().enabled = false;
-        uiHelpers.GetComponent<LineRenderer>().enabled = false;
+        /*uiHelpers.GetComponent<LaserPointer>().enabled = false;
+        uiHelpers.GetComponent<LineRenderer>().enabled = false;*/
     }
     //Waiting Room으로 버튼
     public void OnClickWaitingRoom()
