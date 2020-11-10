@@ -15,7 +15,7 @@ public class LaserTest : MonoBehaviour
     void Start()
     {
         layser = GetComponent<LineRenderer>();
-        return;
+        /*return;
         // 스크립트가 포함된 객체에 라인 렌더러라는 컴포넌트를 넣고있다.
         layser = this.gameObject.AddComponent<LineRenderer>();
 
@@ -27,7 +27,7 @@ public class LaserTest : MonoBehaviour
         layser.positionCount = 2;
         // 레이저 굵기 표현
         layser.startWidth = 0.01f;
-        layser.endWidth = 0.01f;
+        layser.endWidth = 0.01f;*/
     }
 
     // Update is called once per frame
@@ -45,7 +45,6 @@ public class LaserTest : MonoBehaviour
         {
             layser.enabled = true;//충돌 잇으면 켜지게
             layser.SetPosition(1, hitInfo.point);
-
 
             //return;
             // 오큘러스 퀘스트 트리거 누를 경우
@@ -77,8 +76,6 @@ public class LaserTest : MonoBehaviour
                     currentObject = hitInfo.collider.gameObject;
                 }*/
 
-
-
             }
             switch (hitInfo.collider.gameObject.name)
             {
@@ -88,6 +85,8 @@ public class LaserTest : MonoBehaviour
                 case "Timer":
                     UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
                     break;
+                default:
+                    break;
             }
             
         }
@@ -95,8 +94,8 @@ public class LaserTest : MonoBehaviour
         else
         {
             layser.enabled = false;
-            UIManager.instance.InfoMsgOff();
-            return;
+            //UIManager.instance.InfoMsgOff();
+            //return;
             // 레이저에 감지된 것이 없기 때문에 레이저 초기 설정 길이만큼 길게 만든다.
             layser.SetPosition(1, transform.position + (transform.forward * raycastDistance));
 

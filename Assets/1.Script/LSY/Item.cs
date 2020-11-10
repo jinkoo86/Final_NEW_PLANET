@@ -40,7 +40,6 @@ public class Item : MonoBehaviour
         switch (gameObject.name)
         {
             case "Heart"://Heart오브젝트라면
-                print(ItemManager.instance.HeartStock);
                 switch (ItemManager.instance.HeartStock)
                 {
                     case 0://아이템의 재고가 없으면

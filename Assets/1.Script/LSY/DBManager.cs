@@ -38,6 +38,7 @@ public class DBManager : MonoBehaviour
         //LoadEquipDB();
         LoadMoneyDB();
         LoadStageDB();
+        LoadStageLock();
     }
     // Update is called once per frame
     void Update()
@@ -46,7 +47,40 @@ public class DBManager : MonoBehaviour
         //path.text = filepath;
         //temppath.text = temp_path;
     }
-    public void SetEquipPrice()
+    public void LoadStageLock()
+    {
+        try
+        {
+            dbconn = new SqliteConnection(temp_path);
+            dbconn.Open();
+            dbcommand = dbconn.CreateCommand();
+            sqlQuery = string.Empty;
+            sqlQuery = "SELECT StageLock FROM Stage";//장비의 가격들을 가져온다
+            dbcommand.CommandText = sqlQuery;
+            reader = dbcommand.ExecuteReader();
+            int i = 0;
+            while (reader.Read())//완료한 스테이지 번호를 가져온다
+            {
+                StageManager.instance.stageLock.Add(reader.GetInt32(0));
+                //StageManager.instance.StageLock = reader.GetInt32(0);//잠금여부를 stageLock에 보내줌
+                //Debug.Log("myStage: " + myStage);
+                i++;
+            }
+            reader.Close();
+            //
+            dbconn.Close();
+        }
+        catch (Exception e)
+        {
+            print(e);
+        }
+        finally
+        {
+            reader.Close();
+            dbconn.Close();
+        }
+    }
+    /*public void SetEquipPrice()
     {
         try
         {
@@ -77,7 +111,7 @@ public class DBManager : MonoBehaviour
             reader.Close();
             dbconn.Close();
         }
-    }
+    }*/
     public void NextStage(int stage)
     {
         if (StageManager.instance.MyStage < 5)
@@ -108,7 +142,7 @@ public class DBManager : MonoBehaviour
                 reader.Close();
                 //
                 dbconn.Close();
-                StageManager.instance.SetStageInfo();
+                UIManager.instance.BtnStart(StageManager.instance.MyStage);
             }
             catch (Exception e)
             {
@@ -157,7 +191,7 @@ public class DBManager : MonoBehaviour
                 reader.Close();
                 //
                 dbconn.Close();
-                StageManager.instance.SetStageInfo();
+                UIManager.instance.BtnStart(StageManager.instance.MyStage);
             }
             catch (Exception e)
             {
@@ -464,7 +498,7 @@ public class DBManager : MonoBehaviour
         }
     }
     public void LoadStageDB()
-        {
+    {
         try
         {
             dbconn = new SqliteConnection(temp_path);
@@ -485,6 +519,16 @@ public class DBManager : MonoBehaviour
             reader.Close();
 
             sqlQuery = string.Empty;
+            sqlQuery = "SELECT StageStar FROM Stage";
+            dbcommand.CommandText = sqlQuery;
+            reader = dbcommand.ExecuteReader();
+
+            while (reader.Read())//위의 스테이지의 별점을 가져온다
+            {
+                //stageStar = reader.GetInt32(0);
+                StageManager.instance.stageStars.Add(reader.GetInt32(0));
+            }
+            /*sqlQuery = string.Empty;
             sqlQuery = "SELECT StageStar FROM Stage WHERE StageLevel =" + StageManager.instance.MyStage;
             dbcommand.CommandText = sqlQuery;
             reader = dbcommand.ExecuteReader();
@@ -495,7 +539,7 @@ public class DBManager : MonoBehaviour
                 StageManager.instance.StageStar = reader.GetInt32(0);
 
                 //Debug.Log("stageStar: " + stageStar);
-            }
+            }*/
             reader.Close();
             dbconn.Close();
         }
@@ -579,7 +623,7 @@ public class DBManager : MonoBehaviour
         }
         else
         {
-            filepath = Application.dataPath + "/DB.db";
+            filepath = Application.dataPath + "/StreamingAssets/DB.db";
             if (!File.Exists(filepath))
             {
                 File.Copy(Application.streamingAssetsPath + "/DB.db", filepath);

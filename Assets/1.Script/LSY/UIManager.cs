@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     GameObject itemBuy_Heart;
     GameObject itemBuy_Timer;
     GameObject noMoney;
+    GameObject maxLevel;
     GameObject itemInfo_Heart;
     GameObject itemInfo_Timer;
     ParticleSystem partHeart;
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
 
     Button buyBtnHeart;
     Button buyBtntimer;
+    Button StartBtn;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,14 +60,36 @@ public class UIManager : MonoBehaviour
 
         noMoney = GameObject.Find("NoMoney_img");
         noMoney.SetActive(false);
+        maxLevel = GameObject.Find("MaxLevel_img");
+        maxLevel.SetActive(false);
 
         buyBtnHeart = GameObject.Find("Buy_Heart_Btn").GetComponent<Button>();
         buyBtntimer = GameObject.Find("Buy_Timer_Btn").GetComponent<Button>();
+        StartBtn = GameObject.Find("Start_Btn").GetComponent<Button>();
 
         partHeart = GameObject.Find("Buy_Heart_Btn").GetComponentInChildren<ParticleSystem>();
         partTimer = GameObject.Find("Buy_Timer_Btn").GetComponentInChildren<ParticleSystem>();
     }
-
+    public void MaxLevelInfo(string name)
+    {
+        switch (name)
+        {
+            case "Hammer":
+                maxLevel.transform.position = posHammer.transform.position;
+                maxLevel.SetActive(true);
+                break;
+            case "Knife":
+                maxLevel.transform.position = posKnife.transform.position;
+                maxLevel.SetActive(true);
+                break;
+            case "Grill":
+                maxLevel.transform.position = posGrill.transform.position;
+                maxLevel.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
     public void InfoMsgOn(string name)
     {//애니메이션 구현 다시 할 것
         switch (name)
@@ -125,6 +149,7 @@ public class UIManager : MonoBehaviour
             case "Hammer3":
                 //해당 위치에 돈 없다는 것 표시
                 noMoney.transform.position = posHammer.transform.position;
+                noMoney.transform.rotation = Quaternion.Euler(0, 270, 0);
                 Invoke("NoMoneyMsgOff", 2.0f);
                 noMoney.SetActive(true);
                 break;
@@ -132,7 +157,8 @@ public class UIManager : MonoBehaviour
             case "Knife2":
             case "Knife3":
                 //해당 위치에 돈 없다는 것 표시
-                noMoney.transform.position = posKnife.transform.position; 
+                noMoney.transform.position = posKnife.transform.position;
+                noMoney.transform.rotation = Quaternion.Euler(0, 270, 0);
                 Invoke("NoMoneyMsgOff", 2.0f);
                 noMoney.SetActive(true);
                 break;
@@ -141,6 +167,7 @@ public class UIManager : MonoBehaviour
             case "Grill3":
                 //해당 위치에 돈 없다는 것 표시
                 noMoney.transform.position = posGrill.transform.position;
+                noMoney.transform.rotation = Quaternion.Euler(0, 270, 0);
                 Invoke("NoMoneyMsgOff", 2.0f);
                 noMoney.SetActive(true);
                 break;
@@ -211,6 +238,20 @@ public class UIManager : MonoBehaviour
                     noMoney.SetActive(true);
                 }
                 break;
+        }
+    }
+    public void BtnStart(int stage)
+    {
+        //처음에 로드한 스테이지의 lock정보를 가지고 있는 리스트의 값을 현재 눌린 스테이지의 값과 비교
+        //열렸을 경우 스타트 버튼 활성화, 잠겼을 경우 스타트 버튼 비활성화
+        //1 = 열림, 0 = 잠김
+        if(StageManager.instance.stageLock[stage-1] == 1)
+        {
+            StartBtn.interactable = true;
+        }
+        else
+        {
+            StartBtn.interactable = false;
         }
     }
     public void SetBuyItemUI(string name)
