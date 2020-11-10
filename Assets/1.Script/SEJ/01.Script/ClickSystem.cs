@@ -28,8 +28,8 @@ public class ClickSystem : MonoBehaviour
     void Start()
     {
         SetDBPath();
-        uiHelpers.GetComponent<LaserPointer>().enabled = false;
-        uiHelpers.GetComponent<LineRenderer>().enabled = false;
+        //uiHelpers.GetComponent<LaserPointer>().enabled = false;
+        //uiHelpers.GetComponent<LineRenderer>().enabled = false;
     }
 
     void Update()
