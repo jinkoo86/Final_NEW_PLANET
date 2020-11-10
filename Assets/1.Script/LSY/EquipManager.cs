@@ -15,9 +15,6 @@ public class EquipManager : MonoBehaviour
         //DBManager.instance.LoadEquipDB();
     }
 
-    public GameObject[] hammers;
-    public GameObject[] knives;
-    public GameObject[] grills;
     GameObject hammerPos;
     GameObject knifePos;
     GameObject grillPos;
@@ -53,7 +50,7 @@ public class EquipManager : MonoBehaviour
             g[i] = GameObject.Find("GrillPos").transform.GetChild(i);
         }
         PrintList();
-        SetEquip();
+        //SetEquip();
     }
     public void SetEquip()
     {//순서 해머-나이프-그릴

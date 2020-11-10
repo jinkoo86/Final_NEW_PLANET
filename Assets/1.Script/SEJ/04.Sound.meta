@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: e56ef8ee57abee949bf76ce00ddb0e54
+<<<<<<< HEAD:Assets/1.Script/SEJ/04.Sound.meta
+guid: 9b4f9d9c0857a03418647631c7c3491e
+=======
+guid: 519db9ef3a7601747b8cd607f210eba3
+>>>>>>> LSY:Assets/7.Prefabs/TempEquip.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

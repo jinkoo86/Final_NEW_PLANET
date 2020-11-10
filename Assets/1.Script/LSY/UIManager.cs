@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     }
     GameObject PosHeart;
     GameObject PosTimer;
+    GameObject itemBuy_Heart;
+    GameObject itemBuy_Timer;
     GameObject noMoney;
     GameObject itemInfo_Heart;
     GameObject itemInfo_Timer;
@@ -27,17 +29,21 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PosHeart = GameObject.Find("Pos_Heart/Buy_Img");
-        PosTimer = GameObject.Find("Pos_Timer/Buy_Img");
-        itemInfo_Heart = GameObject.Find("Pos_Heart/HeartInfo_Img");
-        itemInfo_Timer = GameObject.Find("Pos_Timer/TimerInfo_Img");
-        equipInfo_Hammer = GameObject.Find("Hammer_detail_UI");
-        equipInfo_Knife = GameObject.Find("Knife_detail_UI");
-        equipInfo_Grill = GameObject.Find("Grill_detail_UI");
+        //아이템관련
+        PosHeart = GameObject.Find("Pos_Heart");//위치 정보
+        PosTimer = GameObject.Find("Pos_Timer");//위치 정보
+        itemBuy_Heart = GameObject.Find("Pos_Heart/Heart_Buy_UI");//구매 UI
+        itemBuy_Timer = GameObject.Find("Pos_Timer/Timer_Buy_UI");//구매 UI
+        itemInfo_Heart = GameObject.Find("Pos_Heart/Heart_Detail_UI");//상세정보 UI
+        itemInfo_Timer = GameObject.Find("Pos_Timer/Timer_Detail_UI");//상세정보 UI
+        //장비관련
+        equipInfo_Hammer = GameObject.Find("Hammer_detail_UI");//상세정보 UI
+        equipInfo_Knife = GameObject.Find("Knife_detail_UI");//상세정보 UI
+        equipInfo_Grill = GameObject.Find("Grill_detail_UI");//상세정보 UI
 
         //처음 구매완료 ui는 비 활성화 시킨다
-        PosHeart.SetActive(false);
-        PosTimer.SetActive(false);
+        itemBuy_Heart.SetActive(false);
+        itemBuy_Timer.SetActive(false);
         itemInfo_Heart.SetActive(false);
         itemInfo_Timer.SetActive(false);
         equipInfo_Hammer.SetActive(false);
@@ -107,11 +113,11 @@ public class UIManager : MonoBehaviour
     }
     public void BuyMsgOff_Heart()
     {
-        PosHeart.SetActive(false);
+        itemBuy_Heart.SetActive(false);
     }
     public void BuyMsgOff_Timer()
     {
-        PosTimer.SetActive(false);
+        itemBuy_Timer.SetActive(false);
     }
     public void BtnItem()
     {
@@ -173,11 +179,11 @@ public class UIManager : MonoBehaviour
         switch (name)
         {
             case "heart":
-                PosHeart.SetActive(true);
+                itemBuy_Heart.SetActive(true);
                 Invoke("BuyMsgOff_Heart", 2.0f);
                 break;
             case "timer":
-                PosTimer.SetActive(true);
+                itemBuy_Timer.SetActive(true);
                 Invoke("BuyMsgOff_Timer", 2.0f);
                 break;
         }

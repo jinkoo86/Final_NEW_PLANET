@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/1.Script/PDK/Prefab/Food/0Bread/HamburgerBreadDown.prefab.meta
-guid: 438f2d4829e84c845ab796421558b9f8
-=======
-guid: 36ee61d0f6f20674cb007a7af48c9041
->>>>>>> LSY:Assets/1.Script/LSY/LSYPrefabs/StageManager.prefab.meta
+guid: 151e2bf03b002b84caf6f3f8cc13eb18
 PrefabImporter:
   externalObjects: {}
   userData: 
