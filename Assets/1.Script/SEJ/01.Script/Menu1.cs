@@ -5,16 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu1 : MonoBehaviour
 {
-    public static Menu1 instance;
-    private void Awake()
-    {
-        instance = this;
-    }
-
-    public bool menuYN;
+    bool menuYN;
     public GameObject menu;
     public GameObject pos;
     
+
     void Start()
     {
         menu.SetActive(false);
@@ -24,7 +19,7 @@ public class Menu1 : MonoBehaviour
     void Update()
     {
         transform.position = pos.transform.position;
-        if (SceneManager.GetActiveScene().name == "WaitingRoom")
+        if (SceneManager.GetActiveScene().name == "WaitingRoom_SEJ")
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {

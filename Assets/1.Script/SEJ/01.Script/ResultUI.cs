@@ -24,7 +24,7 @@ public class ResultUI : MonoBehaviour
     float complainScore;
     float playtimeScore;
     public Slider slider;
-    public float score;
+
     void Start()
     {
         //resultUI.SetActive(false);
@@ -33,25 +33,25 @@ public class ResultUI : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     //Home으로 돌아가는 버튼
     public void OnClickHome()
     {
-        SceneManager.LoadScene("WaitingRoom_SEJ");
+        SceneManager.LoadScene(1);
     }
 
     //재시작하는 버튼  
     public void OnClickRestart()
     {
-        SceneManager.LoadScene("StageRoom_SEJ");
+        SceneManager.LoadScene(2);
     }
 
     public void ResultData()
     {
         //총 수익
-        Profit.text = GameManager.Instance.Profit.ToString("F1");
+        Profit.text = GameManager.Instance.Profit.ToString();
 
         //컴플레인 수 : 컴플레인개수(50%)컴플레인1개->50% 컴플레인2개->40%, 컴플레인3개부터->30%
         switch (GameManager.Instance.Complain)
@@ -67,7 +67,7 @@ public class ResultUI : MonoBehaviour
                 complainScore = 30;
                 break;
         }
-        complain.text = GameManager.Instance.Complain.ToString("F1");
+        complain.text = GameManager.Instance.Complain.ToString();
 
         //강도 출현 수 : 강도처치여부(30%): 잡은강도수/전체강도수*30%
         r = (GameManager.Instance.KillRobberCount / GameManager.Instance.RobberCount) * (1 / 30);
@@ -88,10 +88,9 @@ public class ResultUI : MonoBehaviour
             playtimeScore = 10f;
         }
         playTime.text = p.ToString("F");
-
+        
         //슬라이더 점수 매기는 부분 
-        score = complainScore + playtimeScore + r;
-        switch (score)
+        switch (complainScore + playtimeScore + r)
         {
             case 40:
                 slider.value = 30;

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/SimpleFX/Materials.meta
 guid: a12ab508a992fd24f98224e168419197
 folderAsset: yes
+=======
+guid: e8a01b67015ac4a48a5b16d23d0637ae
+>>>>>>> ee2c57f60dc02dcbf0dcac68587b1962bd41e641:Assets/3.Scenes/WaitingRoom.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

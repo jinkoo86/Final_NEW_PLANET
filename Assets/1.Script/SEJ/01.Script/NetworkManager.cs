@@ -15,8 +15,4 @@ public class NetworkManager : MonoBehaviour
     {
         
     }
-    public void OnClickRedy()
-    {
-        SocketClient.instance.sendMessage("Ready");
-    }
 }

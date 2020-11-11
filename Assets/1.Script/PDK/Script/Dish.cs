@@ -20,6 +20,8 @@ public class Dish : MonoBehaviour {
     //List<string> CheeseBurger = new List<string> { "HamburgerBreadDown", "HamburgerLet", "HamburgerPatty", "Cheese", "Sauce1", "Sauce2", "HamburgerBreadUp" };
     List<string> CheeseBurger = new List<string> { "3BurgerBun_Bottom", "1Hamburger_lettuce", "2Patty", "Cheese", "2BurgerBun_Top" };
 
+    List<string> Salad = new List<string> { "2mass_lettuce" };
+
     List<string> myfood = new List<string> { };
     public enum enumFood {
         none,       //0
@@ -30,7 +32,8 @@ public class Dish : MonoBehaviour {
         WelldoneSteak,
         MiniBurger,
         HamBurger,
-        CheeseBurger //8
+        CheeseBurger,
+        Salad          //9
     }
     enumFood ef;
     BoxCollider myCollider;
@@ -136,6 +139,18 @@ public class Dish : MonoBehaviour {
         return true;
     }
 
+    bool CheckSalad() {
+        if (myfood.Count != Salad.Count) {
+            return false;
+        }
+        for (int i = 0; i < myfood.Count; i++) {
+            if (myfood[i] != Salad[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private void OnCollisionEnter(Collision other) {
         if (other.transform.tag == "FOOD") {
             other.transform.SetParent(transform);
@@ -180,6 +195,9 @@ public class Dish : MonoBehaviour {
             }
             else if (CheckCheeseBurger()) {
                 ef = enumFood.CheeseBurger;
+            }
+            else if (CheckSalad()) {
+                ef = enumFood.Salad;
             }
             CheckFood checkFood = other.transform.gameObject.GetComponent<CheckFood>();
             checkFood.dishFoodName = ef.ToString();

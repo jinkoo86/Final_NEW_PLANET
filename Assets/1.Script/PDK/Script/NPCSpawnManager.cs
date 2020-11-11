@@ -20,7 +20,7 @@ public class NPCSpawnManager : MonoBehaviour {
     public GameObject npcCustomer;
     public GameObject npcRobber;
     //10퍼센트의 확률로 강도 출현
-    public int rndRobberValue = 10;
+    public int rndRobberValue = 99;
     //orderNum은 스테이지에서 처리해야될 고객의 숫자
     public int orderNum;
     //customerNum은 1부터 게임끝날때까지 쭉 늘어나는 숫자

@@ -7,7 +7,7 @@ public class CheckFood : MonoBehaviour {
     int mycustomerNum;
     int myNum;
     public Text myTimer;
-    List<string> foodList = new List<string>() { "GreenToast", "PurpleToast", "Salad", "RareSteak", "MediumSteak", "WelldoneSteak", "MiniBurger", "HamBurger", "CheeseBurger" };
+    List<string> foodList = new List<string>() { "BlackDrink", "GreenDrink", "GreenToast", "PurpleToast", "Salad", "RareSteak", "MediumSteak", "WelldoneSteak", "MiniBurger", "HamBurger", "CheeseBurger" };
     string orderName;
     float orderTime;
     public string dishFoodName;
@@ -46,7 +46,7 @@ public class CheckFood : MonoBehaviour {
             npcCus = other.transform.gameObject.GetComponent<NPCCustomer>();
             mycustomerNum = npcCus.myCustomerNum;
             //해당 랜덤부분 가중치 설정 필요
-            orderName = foodList[Random.Range(0, 8)];
+            orderName = foodList[Random.Range(0, 10)];
             //Debug.Log(orderName);
             orderTime = parent.foodTimeDict[orderName];
             //Debug.Log(orderTime);
@@ -62,8 +62,10 @@ public class CheckFood : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.transform.tag == "DISH") {
+        if (other.transform.tag == "DISH" || other.transform.tag == "WATERCUP") {
+            Debug.Log("dishFoodName: " + dishFoodName + ", orderName: " + orderName);
             if (dishFoodName == orderName) {
+
                 Destroy(other.gameObject, 0);
                 npcCus.FoodPrice = parent.foodPriceDict[orderName];
                 npcCus.state = NPCCustomer.State.Good;
