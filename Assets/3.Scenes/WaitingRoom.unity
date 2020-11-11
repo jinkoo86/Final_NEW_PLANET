@@ -5136,10 +5136,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 23
 =======
       value: 24
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+      value: 22
+>>>>>>> parent of f10ce79f... 20201111
 =======
       value: 22
 >>>>>>> parent of f10ce79f... 20201111
@@ -10313,10 +10317,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 34
 =======
       value: 35
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+      value: 33
+>>>>>>> parent of f10ce79f... 20201111
 =======
       value: 33
 >>>>>>> parent of f10ce79f... 20201111
@@ -11716,10 +11724,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 24
 =======
   m_RootOrder: 23
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+  m_RootOrder: 21
+>>>>>>> parent of f10ce79f... 20201111
 =======
   m_RootOrder: 21
 >>>>>>> parent of f10ce79f... 20201111
@@ -12118,10 +12130,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 28
 =======
   m_RootOrder: 27
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+  m_RootOrder: 25
+>>>>>>> parent of f10ce79f... 20201111
 =======
   m_RootOrder: 25
 >>>>>>> parent of f10ce79f... 20201111
@@ -12177,10 +12193,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 27
 =======
       value: 28
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+      value: 26
+>>>>>>> parent of f10ce79f... 20201111
 =======
       value: 26
 >>>>>>> parent of f10ce79f... 20201111
@@ -27625,10 +27645,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 17
 =======
   m_RootOrder: 16
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+  m_RootOrder: 15
+>>>>>>> parent of f10ce79f... 20201111
 =======
   m_RootOrder: 15
 >>>>>>> parent of f10ce79f... 20201111
@@ -33083,10 +33107,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 31
 =======
       value: 32
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+      value: 30
+>>>>>>> parent of f10ce79f... 20201111
 =======
       value: 30
 >>>>>>> parent of f10ce79f... 20201111
@@ -33706,10 +33734,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 32
 =======
   m_RootOrder: 31
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+  m_RootOrder: 29
+>>>>>>> parent of f10ce79f... 20201111
 =======
   m_RootOrder: 29
 >>>>>>> parent of f10ce79f... 20201111
@@ -57888,10 +57920,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 25
 =======
       value: 26
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+      value: 24
+>>>>>>> parent of f10ce79f... 20201111
 =======
       value: 24
 >>>>>>> parent of f10ce79f... 20201111
@@ -58042,10 +58078,14 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 26
 =======
   m_RootOrder: 25
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+  m_RootOrder: 23
+>>>>>>> parent of f10ce79f... 20201111
 =======
   m_RootOrder: 23
 >>>>>>> parent of f10ce79f... 20201111
@@ -60170,7 +60210,10 @@ MeshRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of f10ce79f... 20201111
 =======
 >>>>>>> parent of f10ce79f... 20201111
 =======
@@ -60251,6 +60294,9 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f47dea61f4915524883e898be2a536a5, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f10ce79f... 20201111
+=======
 >>>>>>> parent of f10ce79f... 20201111
 =======
 >>>>>>> parent of f10ce79f... 20201111
@@ -118752,10 +118798,14 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 2
 =======
       value: 10
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+      value: 0
+>>>>>>> parent of f10ce79f... 20201111
 =======
       value: 0
 >>>>>>> parent of f10ce79f... 20201111
@@ -119801,10 +119851,14 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 35
 =======
   m_RootOrder: 34
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+  m_RootOrder: 32
+>>>>>>> parent of f10ce79f... 20201111
 =======
   m_RootOrder: 32
 >>>>>>> parent of f10ce79f... 20201111
@@ -119898,6 +119952,7 @@ MeshFilter:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!23 &7077561577021583810
 MeshRenderer:
@@ -119940,6 +119995,8 @@ MeshRenderer:
   m_SortingOrder: 0
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
 =======
+=======
+>>>>>>> parent of f10ce79f... 20201111
 =======
 >>>>>>> parent of f10ce79f... 20201111
 =======
@@ -120020,6 +120077,9 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: dbeca241112a54b449ff91649fdc93ac, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f10ce79f... 20201111
+=======
 >>>>>>> parent of f10ce79f... 20201111
 =======
 >>>>>>> parent of f10ce79f... 20201111
@@ -120521,6 +120581,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!4 &8951839616336224324
 Transform:
@@ -120539,6 +120600,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 1.25, y: 0, z: 0}
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
 =======
+=======
+>>>>>>> parent of f10ce79f... 20201111
 =======
 >>>>>>> parent of f10ce79f... 20201111
 =======
@@ -120619,6 +120682,9 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 62e915586fc2d5c419e79735bc951941, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f10ce79f... 20201111
+=======
 >>>>>>> parent of f10ce79f... 20201111
 =======
 >>>>>>> parent of f10ce79f... 20201111
