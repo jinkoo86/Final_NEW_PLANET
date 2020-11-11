@@ -6,12 +6,15 @@ public class Item : MonoBehaviour
 {
     GameObject itemOff;
     GameObject itemOn;
+    GameObject part;
     // Start is called before the first frame update
     void Start()
     {
         //자식 오브젝트 들을 가져와서 on, off에 넣어준다
         itemOff = transform.GetChild(0).gameObject;//꺼진 아이템 저장
         itemOn = transform.GetChild(1).gameObject;//켜진 아이템 저장
+        part = transform.GetChild(2).gameObject;
+
         //오브젝들을 처음에 비활성화 시킨다
         itemOn.SetActive(false);
         itemOff.SetActive(false);
@@ -45,11 +48,12 @@ public class Item : MonoBehaviour
                     case 0://아이템의 재고가 없으면
                         itemOff.SetActive(true);
                         itemOn.SetActive(false);
-
+                        part.SetActive(false);
                         break;
                     case 1://아이템의 재고가 있으면
                         itemOff.SetActive(false);
                         itemOn.SetActive(true);
+                        part.SetActive(true);
                         break;
                     default:
                         break;
@@ -61,11 +65,12 @@ public class Item : MonoBehaviour
                     case 0://아이템의 재고가 없으면
                         itemOff.SetActive(true);
                         itemOn.SetActive(false);
-
+                        part.SetActive(false);
                         break;
                     case 1://아이템의 재고가 있으면
                         itemOff.SetActive(false);
                         itemOn.SetActive(true);
+                        part.SetActive(true);
                         break;
                     default:
                         break;

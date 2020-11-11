@@ -25,7 +25,9 @@ public class UIManager : MonoBehaviour
     GameObject equipInfo_Hammer;
     GameObject equipInfo_Knife;
     GameObject equipInfo_Grill;
-
+    public GameObject[] hammerInfo;
+    public GameObject[] knifeInfo;
+    public GameObject[] grillInfo;
     GameObject buyUI;
 
     Button buyBtnHeart;
@@ -52,7 +54,7 @@ public class UIManager : MonoBehaviour
         //처음 구매완료 ui는 비 활성화 시킨다
         itemBuy_Heart.SetActive(false);
         itemBuy_Timer.SetActive(false);
-        itemInfo_Heart.SetActive(false);
+        //itemInfo_Heart.SetActive(false);
         itemInfo_Timer.SetActive(false);
         equipInfo_Hammer.SetActive(false);
         equipInfo_Knife.SetActive(false);
@@ -90,21 +92,38 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
+
     public void InfoMsgOn(string name)
     {//애니메이션 구현 다시 할 것
         switch (name)
         {
             case "Heart":
-                itemInfo_Heart.SetActive(true);
-                itemInfo_Heart.GetComponent<Animator>().SetTrigger("Open");
+                //Debug.Log("aa 22" + itemInfo_Heart.activeSelf);
+                if (itemInfo_Heart.activeSelf == false) 
+                {
+                    Debug.Log("aa");
+                    itemInfo_Heart.SetActive(false);
+                    itemInfo_Heart.SetActive(true);
+                }
+               // itemInfo_Heart.SetActive(false);
+               // itemInfo_Heart.SetActive(true);
+                //itemInfo_Heart.GetComponent<Animator>().SetTrigger("Open");
                 break;
             case "Timer":
                 itemInfo_Timer.SetActive(true);
-                itemInfo_Timer.GetComponent<Animator>().SetTrigger("Open");
+                //itemInfo_Timer.GetComponent<Animator>().SetTrigger("Open");
+                break;
+            case "HammerPos":
+                equipInfo_Hammer.SetActive(true);
 
                 break;
-            case "Hammer":
-                equipInfo_Hammer.SetActive(true);
+            case "KnifePos":
+                equipInfo_Knife.SetActive(true);
+
+                break;
+            case "GrillPos":
+                equipInfo_Grill.SetActive(true);
+
                 break;
             default:
                 break;
@@ -112,23 +131,13 @@ public class UIManager : MonoBehaviour
     }
     public void InfoMsgOff()
     {
-        itemInfo_Heart.SetActive(false);
-        itemInfo_Heart.GetComponent<Animator>().SetTrigger("Close");
-       itemInfo_Timer.SetActive(false);
-        itemInfo_Timer.GetComponent<Animator>().SetTrigger("Close");
+        itemInfo_Heart.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        itemInfo_Timer.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        equipInfo_Hammer.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        equipInfo_Knife.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        equipInfo_Grill.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        //itemInfo_Heart.SetActive(false);
 
-
-        /*switch (name)
-        {
-            case "Heart":
-                itemInfo_Heart.SetActive(false);
-                break;
-            case "Timer":
-                itemInfo_Timer.SetActive(false);
-                break;
-            default:
-                break;
-        }*/
     }
     public void NoMoney(string name)//돈이 없다는 것을 표시 
     {

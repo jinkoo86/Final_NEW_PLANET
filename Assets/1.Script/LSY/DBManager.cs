@@ -62,8 +62,6 @@ public class DBManager : MonoBehaviour
             while (reader.Read())//완료한 스테이지 번호를 가져온다
             {
                 StageManager.instance.stageLock.Add(reader.GetInt32(0));
-                //StageManager.instance.StageLock = reader.GetInt32(0);//잠금여부를 stageLock에 보내줌
-                //Debug.Log("myStage: " + myStage);
                 i++;
             }
             reader.Close();
@@ -298,11 +296,6 @@ public class DBManager : MonoBehaviour
             sqlQuery = "UPDATE Equip SET EquipLock = 1 WHERE EquipLevel = " + tempLevel + " AND EquipID = '" + tempID + "'";//가져온 레벨+1의 것을 사용
             dbcommand.CommandText = sqlQuery;
 
-            /*param = new SqliteParameter();
-            param.ParameterName = "@TempLevel";
-            param.Value = tempLevel;
-            dbcmd.Parameters.Add(param);*/
-
             reader = dbcommand.ExecuteReader();
             reader.Close();
             dbconn.Close();
@@ -466,11 +459,6 @@ public class DBManager : MonoBehaviour
             dbconn = new SqliteConnection(temp_path);
             dbconn.Open();
             dbcommand = dbconn.CreateCommand();
-            /*sqlQuery = string.Empty;
-            sqlQuery = "UPDATE Money SET MyMoney = 3000";
-            dbcommand.CommandText = sqlQuery;
-            reader = dbcommand.ExecuteReader();
-            reader.Close();*/
 
             sqlQuery = string.Empty;
             sqlQuery = "SELECT MyMoney FROM Money";
@@ -511,10 +499,7 @@ public class DBManager : MonoBehaviour
 
             while (reader.Read())//완료한 스테이지 번호를 가져온다
             {
-                //myStage = reader.GetInt32(0);
                 StageManager.instance.MyStage = reader.GetInt32(0);
-                //path.text = reader.GetInt32(0).ToString();
-                //Debug.Log("myStage: " + myStage);
             }
             reader.Close();
 
@@ -528,18 +513,6 @@ public class DBManager : MonoBehaviour
                 //stageStar = reader.GetInt32(0);
                 StageManager.instance.stageStars.Add(reader.GetInt32(0));
             }
-            /*sqlQuery = string.Empty;
-            sqlQuery = "SELECT StageStar FROM Stage WHERE StageLevel =" + StageManager.instance.MyStage;
-            dbcommand.CommandText = sqlQuery;
-            reader = dbcommand.ExecuteReader();
-
-            while (reader.Read())//위의 스테이지의 별점을 가져온다
-            {
-                //stageStar = reader.GetInt32(0);
-                StageManager.instance.StageStar = reader.GetInt32(0);
-
-                //Debug.Log("stageStar: " + stageStar);
-            }*/
             reader.Close();
             dbconn.Close();
         }
