@@ -5,27 +5,25 @@ using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
-    private Animation anim;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animation>();
-  
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.activeSelf)
-        {
-        anim.Play("Door");
+        Debug.Log("othername:" + collision.transform.name);
 
-        }
+
+        anim.enabled = true;
+        Destroy(gameObject, 30);
 
     }
 }
