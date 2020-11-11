@@ -28,24 +28,33 @@ public class IngredientsSpawnPoint : MonoBehaviour {
         }
     }
 
+    public void grab() {
+    }
+
     void FoodSpawn() {
 
         switch (myname) {
             case "BreadSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "0Square_Rock", 0);
+                IngredientsSpawnManager.Instance.FoodPrepping(this, transform.position + new Vector3(0, 0.15f, 0), "0Square_Rock", 0);
                 //foodInCheck = true;
                 break;
             case "MeatSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "0BIGMeat", 1);
+                IngredientsSpawnManager.Instance.FoodPrepping(this,transform.position + new Vector3(0, 0.15f, 0), "0BIGMeat", 1);
                 //foodInCheck = true;
                 break;
             case "LettuceSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "0Cabbage", 2);
+                IngredientsSpawnManager.Instance.FoodPrepping(this, transform.position + new Vector3(0, 0.15f, 0), "0Cabbage", 2);
                 //foodInCheck = true;
                 break;
             case "CheeseSpawnPoint":
-                IngredientsSpawnManager.Instance.FoodPrepping(transform.position + new Vector3(0, 0.3f, 0), "Cheese", 3);
+                IngredientsSpawnManager.Instance.FoodPrepping(this, transform.position + new Vector3(0, 0.15f, 0), "Cheese", 3);
                 //foodInCheck = true;
+                break;
+            case "BlackEyeSpawnPoint":
+                IngredientsSpawnManager.Instance.FoodPrepping(this, transform.position + new Vector3(0, 0.1f, 0), "BlackEye", 5);
+                break;
+            case "GreenEyeSpawnPoint":
+                IngredientsSpawnManager.Instance.FoodPrepping(this, transform.position + new Vector3(0, 0.1f, 0), "GreenEye", 6);
                 break;
             default:
                 break;

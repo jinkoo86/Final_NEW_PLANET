@@ -18,7 +18,8 @@ public class IngredientsSpawnManager : MonoBehaviour {
     public Dictionary<string, GameObject> lettuceDict = new Dictionary<string, GameObject>();
 
     public GameObject cheese;
-    public GameObject eye;
+    public GameObject blackEye;
+    public GameObject greenEye;
     public GameObject burnedFood;
 
     [Header("Spawn Point")]
@@ -26,11 +27,13 @@ public class IngredientsSpawnManager : MonoBehaviour {
     public GameObject meatSpawnPoint;
     public GameObject lettuceSpawnPoint;
     public GameObject cheeseSpawnPoint;
+    public GameObject blackEyeSpawnPoint;
+    public GameObject greenEyeSpawnPoint;
 
 
     public int stageLevel;
 
-    GameObject foodBread, foodMeat, foodLettuce, foodCheese, foodBurned;
+    GameObject foodBread, foodMeat, foodLettuce, foodCheese, foodBurned, foodBlackEye, foodGreenEye;
     // Start is called before the first frame update
     void Start() {
         breadDict.Add("0Square_Rock", breads[0]);
@@ -55,24 +58,79 @@ public class IngredientsSpawnManager : MonoBehaviour {
 
         foodBread = Instantiate(breadDict["0Square_Rock"]);
         foodBread.name = "0Square_Rock";
-        foodBread.transform.position = breadSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
+        foodBread.transform.position = breadSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
         foodMeat = Instantiate(meatDict["0BIGMeat"]);
         foodMeat.name = "0BIGMeat";
-        foodMeat.transform.position = meatSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
+        foodMeat.transform.position = meatSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
         foodLettuce = Instantiate(lettuceDict["0Cabbage"]);
         foodLettuce.name = "0Cabbage";
-        foodLettuce.transform.position = lettuceSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
+        foodLettuce.transform.position = lettuceSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
         foodCheese = Instantiate(cheese);
         foodCheese.name = "Cheese";
-        foodCheese.transform.position = cheeseSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
+        foodCheese.transform.position = cheeseSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
+
+        foodBlackEye = Instantiate(blackEye);
+        foodBlackEye.name = "BlackEye";
+        foodBlackEye.transform.position = blackEyeSpawnPoint.transform.position + new Vector3(0, 0.1f, 0);
+
+        foodGreenEye = Instantiate(greenEye);
+        foodGreenEye.name = "GreenEye";
+        foodGreenEye.transform.position = greenEyeSpawnPoint.transform.position + new Vector3(0, 0.1f, 0);
 
     }
 
     // Update is called once per frame
     void Update() {
+    }
+
+    public void FoodPrepping(IngredientsSpawnPoint sp, Vector3 FoodPosition, string FoodName, int FoodType) {
+        switch (FoodType) {
+            case 0:
+                foodBread = Instantiate(breadDict[FoodName]);
+                foodBread.name = FoodName;
+                foodBread.transform.position = FoodPosition;
+                //foodBread.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+            case 1:
+                foodMeat = Instantiate(meatDict[FoodName]);
+                foodMeat.name = FoodName;
+                foodMeat.transform.position = FoodPosition;
+                //foodBread.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+            case 2:
+                foodLettuce = Instantiate(lettuceDict[FoodName]);
+                foodLettuce.name = FoodName;
+                foodLettuce.transform.position = FoodPosition;
+                //foodBread.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+            case 3:
+                foodCheese = Instantiate(cheese);
+                foodCheese.name = FoodName;
+                foodCheese.transform.position = FoodPosition;
+                //foodBread.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+            case 4:
+                foodBurned = Instantiate(burnedFood);
+                foodBurned.name = FoodName;
+                foodBurned.transform.position = FoodPosition;
+                //foodBread.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+            case 5:
+                foodBlackEye = Instantiate(blackEye);
+                foodBlackEye.name = FoodName;
+                foodBlackEye.transform.position = FoodPosition;
+                //foodBlackEye.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+            case 6:
+                foodGreenEye = Instantiate(greenEye);
+                foodGreenEye.name = FoodName;
+                foodGreenEye.transform.position = FoodPosition;
+                //foodGreenEye.GetComponent<FoodScript>().linkPoint = sp;
+                break;
+        }
     }
 
     public void FoodPrepping(Vector3 FoodPosition, string FoodName, int FoodType) {
@@ -101,6 +159,16 @@ public class IngredientsSpawnManager : MonoBehaviour {
                 foodBurned = Instantiate(burnedFood);
                 foodBurned.name = FoodName;
                 foodBurned.transform.position = FoodPosition;
+                break;
+            case 5:
+                foodBlackEye = Instantiate(blackEye);
+                foodBlackEye.name = FoodName;
+                foodBlackEye.transform.position = FoodPosition;
+                break;
+            case 6:
+                foodGreenEye = Instantiate(greenEye);
+                foodGreenEye.name = FoodName;
+                foodGreenEye.transform.position = FoodPosition;
                 break;
         }
     }

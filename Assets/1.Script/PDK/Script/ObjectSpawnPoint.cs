@@ -29,10 +29,10 @@ public class ObjectSpawnPoint : MonoBehaviour {
     void ObjectSpawn() {
         switch (myname) {
             case "DishSpawnPoint":
-                ObjectManager.Instance.ObjPrepping(transform.position + new Vector3(0, 0.3f, 0), "Dish", 0);
+                ObjectManager.Instance.ObjPrepping(transform.position + new Vector3(0, 0.1f, 0), "Dish", 0);
                 break;
             case "CupSpawnPoint":
-                ObjectManager.Instance.ObjPrepping(transform.position + new Vector3(0, 0.3f, 0), "Cup", 1);
+                ObjectManager.Instance.ObjPrepping(transform.position + new Vector3(0, 0.1f, 0), "Cup", 1);
                 break;
             default:
                 break;

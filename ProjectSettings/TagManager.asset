@@ -10,6 +10,18 @@ TagManager:
   - Button
   - Ray
   - Hands
+  - EXIT
+  - CHECK
+  - ROBBERSPOT
+  - CUP
+  - FOOD
+  - TOOL
+  - DISH
+  - CUSTOMER
+  - ROBBER
+  - WATERCUP
+  - BLACKEYE
+  - GREENEYE
   layers:
   - Default
   - TransparentFX
