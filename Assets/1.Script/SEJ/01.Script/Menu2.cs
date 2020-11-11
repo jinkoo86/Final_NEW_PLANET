@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Menu2 : MonoBehaviour
 {
-    bool menuYN;
+    public static Menu2 instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    public bool menuYN;
     public GameObject menu2;
     public GameObject uiHelpers;
     public GameObject pos;

@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Menu1 : MonoBehaviour
 {
-    bool menuYN;
+    public static Menu1 instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public bool menuYN;
     public GameObject menu;
     public GameObject pos;
     
-
     void Start()
     {
         menu.SetActive(false);
