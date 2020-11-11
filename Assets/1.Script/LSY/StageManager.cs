@@ -19,11 +19,14 @@ public class StageManager : MonoBehaviour
         //DBManager.instance.LoadStageDB();
     }
     private int stageStar;
-    private bool stageLock;
+    //private int stageLock;
     private int myStage;
-    /*public int GetMyStage()
+    public List<int> stageLock = new List<int>();
+    public List<int> stageStars = new List<int>();
+/*    public int StageLock
     {
-        return myStage;
+        get { return stageLock; }
+        set { stageLock = value; }
     }*/
     public int StageStar
     {
@@ -42,13 +45,12 @@ public class StageManager : MonoBehaviour
     GameObject tempPlanets;
     StageNum stageNum;
     GameObject pos;
-
     public List<GameObject> planetList;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }    
     // Update is called once per frame
     void Update()
@@ -94,18 +96,26 @@ public class StageManager : MonoBehaviour
     {
         stars = new GameObject[3];
         tempStars = GameObject.Find("Stars_Img");
-        for (int i = 0; i < stars.Length; i++)
+        for (int i = 0; i < stars.Length; i++)//별이미지 삽입
         {
             stars[i] = tempStars.transform.GetChild(i).gameObject;
         }
-        for (int i = 0; i < stageStar; i++)//별개수 만큼 별이미지 활성화
+        for (int i = 0; i < stageStars[myStage-1]; i++)//별개수 만큼 별이미지 활성화
+        {
+            stars[i].GetComponent<Image>().enabled = true;
+        }
+        for (int i = stageStars[myStage-1]; i < stars.Length; i++) //별개수 제외하고 별 이미지 비활성화
+        {
+            stars[i].GetComponent<Image>().enabled = false;
+        }
+        /*for (int i = 0; i < stageStar; i++)//별개수 만큼 별이미지 활성화
         {
             stars[i].GetComponent<Image>().enabled = true;
         }
         for (int i = stageStar; i < stars.Length; i++) //별개수 제외하고 별 이미지 비활성화
         {
             stars[i].GetComponent<Image>().enabled = false;
-        }
+        }*/
     }
 
 }

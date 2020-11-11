@@ -20,7 +20,7 @@ public class LaserTest : MonoBehaviour
     void Start()
     {
         layser = GetComponent<LineRenderer>();
-        return;
+        /*return;
         // 스크립트가 포함된 객체에 라인 렌더러라는 컴포넌트를 넣고있다.
         layser = this.gameObject.AddComponent<LineRenderer>();
 
@@ -32,10 +32,11 @@ public class LaserTest : MonoBehaviour
         layser.positionCount = 2;
         // 레이저 굵기 표현
         layser.startWidth = 0.01f;
-        layser.endWidth = 0.01f;
+        layser.endWidth = 0.01f;*/
     }
 
-    // Update is called once per frame
+    // Update is called once per frame\
+
     void Update()
     {
         layser.SetPosition(0, transform.position); // 첫번째 시작점 위치
@@ -47,11 +48,9 @@ public class LaserTest : MonoBehaviour
         // 충돌 감지 시
         int layer = 1 << LayerMask.NameToLayer("Ignore Raycast");
         if (Physics.Raycast(ray, out hitInfo, 100, ~layer))
-      //if (Physics.Raycast(transform.position, transform.forward, out hitInfo, raycastDistance))
         {
             layser.enabled = true;//충돌 잇으면 켜지게
             layser.SetPosition(1, hitInfo.point);
-
 
             //return;
             // 오큘러스 퀘스트 트리거 누를 경우
@@ -65,36 +64,43 @@ public class LaserTest : MonoBehaviour
                     hitInfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
                     a.text = hitInfo.collider.gameObject.name;
                 }
-                /*//충돌 객체의 태그가 장비인 경우
-                if (hitInfo.collider.gameObject.CompareTag("Equip"))//닿은 물체의 태그가 Equip일 경우
-                {
-                    switch (hitInfo.collider.gameObject.name)
-                    {
-                        case "HammerPos":
-                            UIManager.instance.InfoMsgOn("Hammer");
-                            break;
+            }
 
-                    }
+           
 
-                    // 아이템이 뜨는 기능을 실행한다
-                    //Collided_object.collider.gameObject.GetComponent<Button>().onClick.Invoke();
-                }*/
-                /*else
-                {
-                    hitInfo.collider.gameObject.GetComponent<Button>().OnPointerEnter(null);
-                    currentObject = hitInfo.collider.gameObject;
-                }*/
-
-
-
+            switch (hitInfo.collider.gameObject.name)
+            {
+                case "Heart":
+                    Debug.Log("heart on");
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "Timer":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "HammerPos":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "KnifePos":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "GrillPos":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                default:
+                    UIManager.instance.InfoMsgOff();
+                    break;
             }
             
         }
 
         else
         {
-            layser.enabled = false;
-            return;
+            //UIManager.instance.InfoMsgOff();
+
+            layser.enabled = false;//충돌 없으면 꺼지게
+         
+            /*//UIManager.instance.InfoMsgOff();
+            //return;
             // 레이저에 감지된 것이 없기 때문에 레이저 초기 설정 길이만큼 길게 만든다.
             layser.SetPosition(1, transform.position + (transform.forward * raycastDistance));
 
@@ -104,7 +110,7 @@ public class LaserTest : MonoBehaviour
             {
                 currentObject.GetComponent<Button>().OnPointerExit(null);
                 currentObject = null;
-            }
+            }*/
 
         }
 
