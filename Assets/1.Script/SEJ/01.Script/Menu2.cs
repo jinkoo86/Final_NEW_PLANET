@@ -18,7 +18,7 @@ public class Menu2 : MonoBehaviour
     void Update()
     {
         transform.position = pos.transform.position;
-        if (SceneManager.GetActiveScene().name == "StageRoom_SEJ")
+        if (SceneManager.GetActiveScene().name == "StageRoom")
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {
