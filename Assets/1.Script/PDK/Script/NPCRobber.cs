@@ -82,11 +82,12 @@ public class NPCRobber : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other) {
 
-        if (other.transform.tag == "CUP" || other.transform.tag == "DISH") {
-
+        if (other.transform.tag == "TOOL" || other.transform.tag == "FOOD") {
+            if (other.rigidbody.velocity.magnitude > 3) {
+                HP -= 1;
+            }
             //맞는 애니메이션 필요
             Destroy(other.gameObject, 0);
-            HP -= 1;
         }
     }
 
@@ -118,6 +119,7 @@ public class NPCRobber : MonoBehaviour {
         //현재 위치(x)가 좌로 이동가능한 (x)최대값보다 크거나 같다면
         //이동속도+방향에 -1을 곱해 반전을 해주고 현재위치를 좌로 이동가능한 (x)최대값으로 설정
         transform.position = new Vector3(currentPosition, transform.position.y, transform.position.z);
+        //"Stone"의 위치를 계산된 현재위치로 처리
         currentTime += Time.deltaTime;
         if (currentTime > runTime) {
             state = State.Run;
@@ -126,13 +128,8 @@ public class NPCRobber : MonoBehaviour {
     }
     private void UpdateRun() {
         targetObject = GameObject.Find("EXIT");
-        //GameManager.Instance.Profit 감소
-        GameManager.Instance.Profit -= 500;
-        //GameManager.Instance.Complain 감소
-        GameManager.Instance.Complain--;
-        if (GameManager.Instance.Complain <= 0) {
-            GameManager.Instance.GameOver();
-        }
+        //돈 뺐기고
+        //컴플레인 늘어나고
         if (targetObject != null) {
             state = State.Move;
         }
@@ -146,6 +143,5 @@ public class NPCRobber : MonoBehaviour {
         //연출필요
         //돈 빵빵터져야함
         //GameManager.Instance.Profit 증가
-        GameManager.Instance.Profit += 500;
     }
 }

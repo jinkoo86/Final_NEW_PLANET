@@ -27,7 +27,7 @@ public class OnClickStageButton : MonoBehaviour
     public void ClickStartBtn()//스테이지를 시작한다
     {
         SetStageNum();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
         DontDestroyOnLoad(g_stageNum);
     }
     // Start is called before the first frame update

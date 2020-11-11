@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class DBManager : MonoBehaviour
 {
+    public Text d;
     public static DBManager instance;
     private void Awake()
     {
@@ -304,6 +305,7 @@ public class DBManager : MonoBehaviour
             }
             else
             {
+                d.text = "메소드 들어왔엄";
                 int spentMoney = myMoney - money;//내돈-값을 받은 돈 을 소비  한 돈에 넣어준다
                 sqlQuery = "UPDATE Money SET MyMoney = @SpentMoney";
                 dbcommand.CommandText = sqlQuery;

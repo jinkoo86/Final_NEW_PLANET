@@ -16,11 +16,11 @@ public class ObjectManager : MonoBehaviour {
     void Start() {
         dish = Instantiate(dishs);
         dish.name = "Dish";
-        dish.transform.position = dishSpawnPoint.transform.position + new Vector3(0, 0.12f, 0);
+        dish.transform.position = dishSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
 
         cup = Instantiate(cups);
         cup.name = "Cup";
-        cup.transform.position = cupSpawnPoint.transform.position + new Vector3(0, 0.12f, 0);
+        cup.transform.position = cupSpawnPoint.transform.position + new Vector3(0, 0.3f, 0);
     }
 
     // Update is called once per frame

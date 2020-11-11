@@ -23,43 +23,55 @@ public class ResultUI : MonoBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
         //resultUI.SetActive(false);
 <<<<<<< HEAD
         ResultData();
 =======
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+        resultUI.SetActive(false);
+>>>>>>> parent of f10ce79f... 20201111
     }
 
     void Update()
     {
-
+        ResultData();
     }
 
     //Home으로 돌아가는 버튼
     public void OnClickHome()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         SceneManager.LoadScene(1);
 =======
         SceneManager.LoadScene("WaitingRoom");
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+        SceneManager.LoadScene("WaitingRoom_SEJ");
+>>>>>>> parent of f10ce79f... 20201111
     }
 
     //재시작하는 버튼  
     public void OnClickRestart()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         SceneManager.LoadScene(2);
 =======
         SceneManager.LoadScene("StageRoom");
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+        SceneManager.LoadScene("StageRoom_SEJ");
+>>>>>>> parent of f10ce79f... 20201111
     }
 
     public void ResultData()
     {
 <<<<<<< HEAD
         //총 수익
-        Profit.text = GameManager.Instance.Profit.ToString();
+        Profit.text = GameManager.Instance.Profit.ToString("F1");
 
 =======
         
@@ -73,12 +85,16 @@ public class ResultUI : MonoBehaviour
             case 2:
                 complainScore = 40;
                 break;
-            default:
+            case 3:
                 complainScore = 30;
                 break;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         complain.text = GameManager.Instance.Complain.ToString();
+=======
+        complain.text = GameManager.Instance.Complain.ToString("F1");
+>>>>>>> parent of f10ce79f... 20201111
 
 =======
         complain.text = c.ToString("F1");

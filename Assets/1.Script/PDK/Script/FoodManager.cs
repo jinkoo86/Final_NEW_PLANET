@@ -9,22 +9,18 @@ public class FoodManager : MonoBehaviour {
         Instance = this;
     }
     public Dictionary<string, float> foodTimeDict = new Dictionary<string, float>() {
-        { "BlackDrink", 300f },
-        {"GreenDrink", 300f},
-        {"GreenToast", 300f},
-        {"PurpleToast", 300f},
-        {"Salad",300f},
-        {"RareSteak", 400f},
-        {"MediumSteak", 500f},
-        {"WelldoneSteak", 600f},
-        {"MiniBurger", 600f},
-        {"HamBurger", 700f},
-        {"CheeseBurger", 800f}
+        {"GreenToast", 30f},
+        {"PurpleToast", 30f},
+        {"Salad",30f},
+        {"RareSteak", 40f},
+        {"MediumSteak", 50f},
+        {"WelldoneSteak", 60f},
+        {"MiniBurger", 60f},
+        {"HamBurger", 70f},
+        {"CheeseBurger", 80f}
     };
 
     public Dictionary<string, int> foodPriceDict = new Dictionary<string, int>() {
-        {"BlackDrink", 100 },
-        {"GreenDrink", 100},
         {"GreenToast", 200},
         {"PurpleToast", 200},
         {"Salad",200},
@@ -36,17 +32,15 @@ public class FoodManager : MonoBehaviour {
         {"CheeseBurger", 300}
     };
     public Dictionary<string, float> foodRandomWeightDict = new Dictionary<string, float>() {
-        {"BlackDrink", 9.09f },
-        {"GreenDrink", 9.09f},
-        {"GreenToast", 9.09f},
-        {"PurpleToast", 9.09f},
-        {"Salad",9.09f},
-        {"RareSteak", 9.09f},
-        {"MediumSteak", 9.09f},
-        {"WelldoneSteak", 9.09f},
-        {"MiniBurger", 9.09f},
-        {"HamBurger", 9.09f},
-        {"CheeseBurger", 9.09f}
+        {"GreenToast", 11.1f},
+        {"PurpleToast", 11.1f},
+        {"Salad",11.1f},
+        {"RareSteak", 11.1f},
+        {"MediumSteak", 11.1f},
+        {"WelldoneSteak", 11.1f},
+        {"MiniBurger", 11.1f},
+        {"HamBurger", 11.1f},
+        {"CheeseBurger", 11.1f}
     };
 
     public Text manual1, manual2, manual3, manual4;
@@ -80,19 +74,19 @@ public class FoodManager : MonoBehaviour {
         switch (childNum) {
             case 0:
                 manual1.text = customerNum.ToString();
-                manual1.text += "\n" + customerFood;
+                manual1.text += "\n"+customerFood;
                 break;
             case 1:
                 manual2.text = customerNum.ToString();
-                manual2.text += "\n" + customerFood;
+                manual2.text += "\n"+customerFood;
                 break;
             case 2:
                 manual3.text = customerNum.ToString();
-                manual3.text += "\n" + customerFood;
+                manual3.text += "\n"+customerFood;
                 break;
             case 3:
                 manual4.text = customerNum.ToString();
-                manual4.text += "\n" + customerFood;
+                manual4.text += "\n"+customerFood;
                 break;
 
         }
