@@ -1,12 +1,22 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/7.Prefabs/Cup/drinkwater.fbx.meta
-guid: 25cf62dca14d0ad43aa32990821abaea
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/7.Prefabs/Alien/Biohazard@Breathing Idle.fbx.meta
+guid: 18483ec15f7f3174f94f81393ec9d33a
 =======
-guid: 2c4ef02f7722a8f4bb9ded3214267159
->>>>>>> fc85fdb657c6dabcee933959729ef25b5261ad46:Assets/7.Prefabs/Eye/eye_3_12.fbx.meta
+guid: 7a8d23d3b2474a2458de531fe2eb42c1
+>>>>>>> fc85fdb657c6dabcee933959729ef25b5261ad46:Assets/7.Prefabs/Alien/Biohazard@Angry Gesture.fbx.meta
+=======
+guid: 18483ec15f7f3174f94f81393ec9d33a
+>>>>>>> fc85fdb657c6dabcee933959729ef25b5261ad46
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -4352182360597662222
+    second: Armature|Armature|Armature|Armature|Armature|Armature|mixamo.com|Layer0|
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 1
