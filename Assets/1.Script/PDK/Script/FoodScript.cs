@@ -14,6 +14,9 @@ public class FoodScript : MonoBehaviour {
     BoxCollider myCollider;
 
 
+    public IngredientsSpawnPoint linkPoint;
+
+
     //빵은 FoodType0, 고기는 FoodType1, 상추는 FoodType2
     public float HP {          //싱글톤 안쓰는이유 : enemy는 하나가 아니기때문
         get { return curHP; } // enemy.HP = enemy.HP -1 -> enemy.HP(set), enemy.HP(get)

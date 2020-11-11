@@ -9,15 +9,12 @@ using UnityEngine.UI;
 
 public class DBManager : MonoBehaviour
 {
-    public Text d;
     public static DBManager instance;
     private void Awake()
     {
         instance = this;
         SetDBPath();
         //Check();
-        LoadStageDB();
-        LoadItemDB();
         
         //Check();
         //CheckDB();
@@ -36,8 +33,10 @@ public class DBManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadItemDB();
         LoadEquipDB();
         LoadMoneyDB();
+        LoadStageDB();
     }
     // Update is called once per frame
     void Update()
@@ -305,7 +304,6 @@ public class DBManager : MonoBehaviour
             }
             else
             {
-                d.text = "메소드 들어왔엄";
                 int spentMoney = myMoney - money;//내돈-값을 받은 돈 을 소비  한 돈에 넣어준다
                 sqlQuery = "UPDATE Money SET MyMoney = @SpentMoney";
                 dbcommand.CommandText = sqlQuery;

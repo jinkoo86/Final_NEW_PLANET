@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class LaserTest : MonoBehaviour
 {
-    public Text a;
-    public Text b;
-    public Text c;
-    public Text d;
-
     private LineRenderer layser;        // 레이저
     private RaycastHit hitInfo; // 충돌된 객체
     private GameObject currentObject;   // 가장 최근에 충돌한 객체를 저장하기 위한 객체
@@ -57,13 +52,11 @@ public class LaserTest : MonoBehaviour
             // 오큘러스 퀘스트 트리거 누를 경우
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))//오른손 검지 트리거
             {
-                b.text = hitInfo.collider.gameObject.name;
                 // 충돌 객체의 태그가 Button인 경우
                 if (hitInfo.collider.gameObject.CompareTag("Button"))
                 {
                     // 버튼에 등록된 onClick 메소드를 실행한다.
                     hitInfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
-                    a.text = hitInfo.collider.gameObject.name;
                 }
                 /*//충돌 객체의 태그가 장비인 경우
                 if (hitInfo.collider.gameObject.CompareTag("Equip"))//닿은 물체의 태그가 Equip일 경우

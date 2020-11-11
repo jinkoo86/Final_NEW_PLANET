@@ -56,18 +56,6 @@ public class RayCast_Hand : MonoBehaviour
                         hitinfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
                     }
                     break;
-                case "Button":
-                    if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
-                    {
-                        hitinfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
-                    }
-                    break;
-                case "Restart":
-                    if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch))
-                    {
-                        hitinfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
-                    }
-                    break;
             }
         }
     }
