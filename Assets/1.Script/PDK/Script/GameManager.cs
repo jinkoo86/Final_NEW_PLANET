@@ -131,9 +131,13 @@ public class GameManager : MonoBehaviour {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         gameOverUI.SetActive(true);
 =======
 >>>>>>> parent of de9f11c7... Merge branch 'master' of https://github.com/jinkoo86/Final_NEW_PLANET
+=======
+        ResultUI.instance.resultUI.SetActive(true);
+>>>>>>> parent of f10ce79f... 20201111
 =======
         ResultUI.instance.resultUI.SetActive(true);
 >>>>>>> parent of f10ce79f... 20201111
