@@ -9,13 +9,18 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
     }
+    GameObject heartUI;
+    
     GameObject posHeart;
     GameObject posTimer;
+
     GameObject itemBuy_Heart;
+    GameObject itemInfo_Heart;
+
     GameObject itemBuy_Timer;
     GameObject noMoney;
     GameObject maxLevel;
-    GameObject itemInfo_Heart;
+    //GameObject itemInfo_Heart;
     GameObject itemInfo_Timer;
     ParticleSystem partHeart;
     ParticleSystem partTimer;
@@ -36,12 +41,17 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        heartUI = GameObject.Find("Heart_UI");//하트 ui는 비활성화 해줘야함
+        itemBuy_Heart = heartUI.transform.GetChild(0).gameObject;//info
+        itemInfo_Heart = heartUI.transform.GetChild(1).gameObject;//buy
+        //itemBuy_Heart = GameObject.Find("Info_Text");//하트구매 ui
+        //itemInfo_Heart = GameObject.Find("Buy_Text");//하트정보 ui
         //아이템관련
         posHeart = GameObject.Find("Pos_Heart");//위치 정보
         posTimer = GameObject.Find("Pos_Timer");//위치 정보
         itemBuy_Heart = GameObject.Find("Pos_Heart/Heart_Buy_UI");//구매 UI
         itemBuy_Timer = GameObject.Find("Pos_Timer/Timer_Buy_UI");//구매 UI
-        itemInfo_Heart = GameObject.Find("Pos_Heart/Heart_Detail_UI");//상세정보 UI
+        //itemInfo_Heart = GameObject.Find("Pos_Heart/Heart_Detail_UI");//상세정보 UI
         itemInfo_Timer = GameObject.Find("Pos_Timer/Timer_Detail_UI");//상세정보 UI
         //장비관련
         posHammer = GameObject.Find("Pos_Hammer"); //위치 정보
@@ -51,6 +61,8 @@ public class UIManager : MonoBehaviour
         equipInfo_Knife = GameObject.Find("Pos_Knife/Knife_detail_UI");//상세정보 UI
         equipInfo_Grill = GameObject.Find("Pos_Grill/Grill_detail_UI");//상세정보 UI
 
+
+        heartUI.SetActive(false);
         //처음 구매완료 ui는 비 활성화 시킨다
         itemBuy_Heart.SetActive(false);
         itemBuy_Timer.SetActive(false);
@@ -98,13 +110,15 @@ public class UIManager : MonoBehaviour
         switch (name)
         {
             case "Heart":
-                //Debug.Log("aa 22" + itemInfo_Heart.activeSelf);
+                heartUI.SetActive(true);
+                itemBuy_Heart.SetActive(false);
+                /*//Debug.Log("aa 22" + itemInfo_Heart.activeSelf);
                 if (itemInfo_Heart.activeSelf == false) 
                 {
                     Debug.Log("aa");
                     itemInfo_Heart.SetActive(false);
                     itemInfo_Heart.SetActive(true);
-                }
+                }*/
                // itemInfo_Heart.SetActive(false);
                // itemInfo_Heart.SetActive(true);
                 //itemInfo_Heart.GetComponent<Animator>().SetTrigger("Open");
@@ -131,13 +145,11 @@ public class UIManager : MonoBehaviour
     }
     public void InfoMsgOff()
     {
-        itemInfo_Heart.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        heartUI.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
         itemInfo_Timer.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
         equipInfo_Hammer.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
         equipInfo_Knife.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
         equipInfo_Grill.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
-        //itemInfo_Heart.SetActive(false);
-
     }
     public void NoMoney(string name)//돈이 없다는 것을 표시 
     {
@@ -188,7 +200,7 @@ public class UIManager : MonoBehaviour
     }
     public void BuyMsgOff_Heart()
     {
-        itemBuy_Heart.SetActive(false);
+        heartUI.SetActive(false);
     }
     public void BuyMsgOff_Timer()
     {
@@ -268,7 +280,8 @@ public class UIManager : MonoBehaviour
         switch (name)
         {
             case "heart":
-                itemBuy_Heart.SetActive(true);
+                heartUI.SetActive(true);
+                itemInfo_Heart.SetActive(false);
                 Invoke("BuyMsgOff_Heart", 2.0f);
                 break;
             case "timer":
