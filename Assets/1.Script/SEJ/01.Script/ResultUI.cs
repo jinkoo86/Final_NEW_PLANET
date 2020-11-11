@@ -27,8 +27,14 @@ public class ResultUI : MonoBehaviour
 
     void Start()
     {
+<<<<<<< Updated upstream
         //resultUI.SetActive(false);
         ResultData();
+=======
+
+        ResultData();
+
+>>>>>>> Stashed changes
     }
 
     void Update()

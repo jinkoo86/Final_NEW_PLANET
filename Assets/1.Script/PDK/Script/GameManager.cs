@@ -130,7 +130,13 @@ public class GameManager : MonoBehaviour {
 
         //값 전달은 필요없음
         //은진이 게임오버 UI 호출
+<<<<<<< Updated upstream
         gameOverUI.SetActive(true);
+=======
+
+        //gameOverUI.SetActive(true);
+
+>>>>>>> Stashed changes
         playTime = endTime - startTime;
         Debug.Log("playTime: " + playTime);
         Debug.Log("remainOrderTime: " + remainOrderTime);
