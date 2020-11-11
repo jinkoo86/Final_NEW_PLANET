@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour {
         //complainCount
         //remainOrderTime
         //은진이 게임클리어 UI 호출
+        
     }
 
 

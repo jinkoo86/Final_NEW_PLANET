@@ -5745,6 +5745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8309dd717eda28c419c059b446c061f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuYN: 0
   menu: {fileID: 1334648358}
   pos: {fileID: 404860387}
 --- !u!1001 &136875534
@@ -29381,7 +29382,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 876591718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1706521766}
+        m_MethodName: OnClickRedy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &876591718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43085,6 +43097,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566184227}
+  - component: {fileID: 1566184229}
+  - component: {fileID: 1566184228}
   m_Layer: 0
   m_Name: I'mNetwork
   m_TagString: Untagged
@@ -43106,6 +43120,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566184228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566184226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70730ebf5a8d5da40992c17f1235786a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConnectIP: 172.30.58.79
+  PortID: 11000
+  playerNo: 0
+--- !u!114 &1566184229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566184226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382b18f8204024e4db2323c521b992bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575094574
 GameObject:
   m_ObjectHideFlags: 0
@@ -44101,6 +44142,7 @@ GameObject:
   - component: {fileID: 1706521764}
   - component: {fileID: 1706521763}
   - component: {fileID: 1706521762}
+  - component: {fileID: 1706521766}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -44215,6 +44257,18 @@ RectTransform:
   m_AnchoredPosition: {x: 522, y: 206}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1706521766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706521761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382b18f8204024e4db2323c521b992bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1711740358
 GameObject:
   m_ObjectHideFlags: 0

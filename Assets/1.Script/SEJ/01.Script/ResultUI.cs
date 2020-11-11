@@ -24,15 +24,16 @@ public class ResultUI : MonoBehaviour
     float complainScore;
     float playtimeScore;
     public Slider slider;
-
+    public float score;
     void Start()
     {
-        resultUI.SetActive(false);
+        //resultUI.SetActive(false);
+        ResultData();
     }
 
     void Update()
     {
-        ResultData();
+        
     }
 
     //Home으로 돌아가는 버튼
@@ -62,7 +63,7 @@ public class ResultUI : MonoBehaviour
             case 2:
                 complainScore = 40;
                 break;
-            case 3:
+            default:
                 complainScore = 30;
                 break;
         }
@@ -87,9 +88,10 @@ public class ResultUI : MonoBehaviour
             playtimeScore = 10f;
         }
         playTime.text = p.ToString("F");
-        
+
         //슬라이더 점수 매기는 부분 
-        switch (complainScore + playtimeScore + r)
+        score = complainScore + playtimeScore + r;
+        switch (score)
         {
             case 40:
                 slider.value = 30;
