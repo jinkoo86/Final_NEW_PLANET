@@ -30,19 +30,15 @@ public class GameManager : MonoBehaviour {
     public GameObject OrderTable;
     public GameObject FoodManual;
 
-    public GameObject gameClearUI;
-    public GameObject gameOverUI;
-
-
     //해당 스테이지레벨은 추후 start에서 송이꺼에서 값을 가져와야함
-    int stageLevel = 1;
+    public int stageLevel = 3;
     int complainCount = 5;
     int dailyProfit = 0;
     public int orderNumber;
     public float customerTime;
     float startTime;
     float endTime;
-    float playTime;
+    public float playTime;
     float remainOrderTime = 0;
 
 
@@ -112,7 +108,7 @@ public class GameManager : MonoBehaviour {
 
     void GameStartOrOver(bool inputValue) {
         ToolManager.SetActive(inputValue);
-        NPCSpawnManager.SetActive(inputValue);
+        //NPCSpawnManager.SetActive(inputValue);
         ItemManager.SetActive(inputValue);
         IngredientsSpawnManager.SetActive(inputValue);
         ObjectSpawnManager.SetActive(inputValue);
@@ -130,13 +126,6 @@ public class GameManager : MonoBehaviour {
 
         //값 전달은 필요없음
         //은진이 게임오버 UI 호출
-<<<<<<< Updated upstream
-        gameOverUI.SetActive(true);
-=======
-
-        //gameOverUI.SetActive(true);
-
->>>>>>> Stashed changes
         playTime = endTime - startTime;
         Debug.Log("playTime: " + playTime);
         Debug.Log("remainOrderTime: " + remainOrderTime);
@@ -153,11 +142,10 @@ public class GameManager : MonoBehaviour {
 
         //컴플레인갯수, 강도수, 퇴치한 강도수, 전체 플레이타임, 주문시간 전달
         playTime = endTime - startTime;
-        gameClearUI.SetActive(true);
         //complainCount
         //remainOrderTime
         //은진이 게임클리어 UI 호출
-        
+        ResultUI.instance.resultUI.SetActive(true);
     }
 
 

@@ -48,12 +48,12 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetStageInfo();
     }    
     // Update is called once per frame
     void Update()
     {
-        SetStageInfo();
+        
     }
     public void SetPlanets()
     {

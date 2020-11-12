@@ -5,12 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu2 : MonoBehaviour
 {
-    public static Menu2 instance;
-    private void Awake()
-    {
-        instance = this;
-    }
-    public bool menuYN;
+    bool menuYN;
     public GameObject menu2;
     public GameObject uiHelpers;
     public GameObject pos;
@@ -22,8 +17,10 @@ public class Menu2 : MonoBehaviour
 
     void Update()
     {
-        transform.position = pos.transform.position;
-        if (SceneManager.GetActiveScene().name == "StageRoom")
+        pos.transform.position = transform.position;
+        print("pos" + transform.position);
+        print("MenuPos" + pos.transform.position);
+        if (SceneManager.GetActiveScene().name == "StageRoom_SEJ")
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {

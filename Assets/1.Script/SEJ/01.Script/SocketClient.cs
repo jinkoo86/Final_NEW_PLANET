@@ -16,7 +16,7 @@ public class SocketClient : MonoBehaviour
     TcpClient clientSocket = new TcpClient();
     NetworkStream stream = default(NetworkStream);
     string message = string.Empty;
-    bool judgeFlag = false ;
+    bool judgeFlag = false;
     public Text text;
 
     [SerializeField]
@@ -76,7 +76,7 @@ public class SocketClient : MonoBehaviour
     int yourscore;
     private void getMessage()
     {
-        
+
         while (true)
         {
             stream = clientSocket.GetStream();
@@ -88,8 +88,7 @@ public class SocketClient : MonoBehaviour
             Debug.Log(message);
 
             // P-1 / P-2 점수 비교
-            // 점수 높은 플레이어한테 승리를 보내야함
-            // 
+            // 점수 높은 플레이어한테 승리를 보내야함 
 
             if (message.IndexOf("Ready") >= 0)
             {
@@ -122,21 +121,21 @@ public class SocketClient : MonoBehaviour
 
 
                 //Game Finish 
-                if (ResultUI.instance.score > yourscore )
+                if (ResultUI.instance.score > yourscore)
                 {
                     //내가 이긴거
                     sendMessage("result_Lose");
                     //팝업 띄우기
                     text.text = "Lose";
                 }
-                else if (ResultUI.instance.score < yourscore )
+                else if (ResultUI.instance.score < yourscore)
                 {
                     //내가 진거
                     sendMessage("result_Win");
                     //팝업 띄우기
                     text.text = "Win";
                 }
-                else if (ResultUI.instance.score == yourscore )
+                else if (ResultUI.instance.score == yourscore)
                 {
                     //동점
                     sendMessage("result_Draw");
@@ -145,7 +144,7 @@ public class SocketClient : MonoBehaviour
                 }
 
             }
-            else if (message.IndexOf("result_") >= 0) 
+            else if (message.IndexOf("result_") >= 0)
             {
                 //팝업 띄우기
                 string[] _spllit = message.Split('_');

@@ -24,6 +24,8 @@ public class DB : MonoBehaviour
     string sqlQuery;
     int volume;
     int vibration;
+    int myMoney;
+    int dailyMoney;
     public int Vibration
     {
         get { return vibration; }
@@ -34,6 +36,16 @@ public class DB : MonoBehaviour
     {
         get { return volume; }
         set { volume = value; }
+    }
+    public int MyMoney
+    {
+        get { return myMoney; }
+        set { myMoney = value; }
+    }
+    public int DailyMoney
+    {
+        get { return dailyMoney; }
+        set { dailyMoney = value; }
     }
     void Start()
     {
@@ -61,6 +73,20 @@ public class DB : MonoBehaviour
                 Debug.Log("vibration: " + vibration);
             }
             reader.Close();
+
+            sqlQuery = "SELECT MyMoney, DailyMoney FROM Money";//aa를 조회한다 ㅇㅇ에서 //내가 건들 곳
+            dbcmd.CommandText = sqlQuery;
+            reader = dbcmd.ExecuteReader();
+
+            while (reader.Read())//완료한 스테이지 번호를 가져온다
+            {
+                myMoney = reader.GetInt32(0);//내가 건들 곳
+                dailyMoney = reader.GetInt32(1);//내가 건들 곳
+                Debug.Log("myMoney: " + myMoney);
+                Debug.Log("dailyMoney: " + dailyMoney);
+            }
+            reader.Close();
+
 
             sqlQuery = "SELECT StageStar FROM Stage WHERE StageLevel =" + volume;
             dbcmd.CommandText = sqlQuery;

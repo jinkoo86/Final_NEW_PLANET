@@ -7,10 +7,10 @@ public class ButtonClick : MonoBehaviour
 {
     public void Restart()
     {
-        SceneManager.LoadScene("StageRoom");
+        SceneManager.LoadScene("StageRoom_SEJ");
     }
     public void Home()
     {
-        SceneManager.LoadScene("WaitingRoom");
+        SceneManager.LoadScene("WaitingRoom_SEJ");
     }
 }

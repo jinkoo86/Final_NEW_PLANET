@@ -7,7 +7,7 @@ public class NMManager_StageRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SocketClient.instance.callGameFinish(ResultUI.instance.score.ToString("F0"));
+        SocketClient.instance.callGameFinish(ResultUI.instance.score.ToString());
         
     }
 
