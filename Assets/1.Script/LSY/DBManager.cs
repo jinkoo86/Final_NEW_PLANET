@@ -78,134 +78,7 @@ public class DBManager : MonoBehaviour
             dbconn.Close();
         }
     }
-    /*public void SetEquipPrice()
-    {
-        try
-        {
-            dbconn = new SqliteConnection(temp_path);
-            dbconn.Open();
-            dbcommand = dbconn.CreateCommand();
-            sqlQuery = string.Empty;
-            sqlQuery = "SELECT EquipPrice FROM Equip";//장비의 가격들을 가져온다
-            dbcommand.CommandText = sqlQuery;
-            reader = dbcommand.ExecuteReader();
-
-            while (reader.Read())//완료한 스테이지 번호를 가져온다
-            {
-
-                //Debug.Log("myStage: " + myStage);
-            }
-            reader.Close();
-            //
-            dbconn.Close();
-            StageManager.instance.SetStageInfo();
-        }
-        catch (Exception e)
-        {
-            print(e);
-        }
-        finally
-        {
-            reader.Close();
-            dbconn.Close();
-        }
-    }*/
-    public void NextStage(int stage)
-    {
-        if (StageManager.instance.MyStage < 5)
-        {
-            StageManager.instance.MyStage++;
-            try
-            {
-                dbconn = new SqliteConnection(temp_path);
-                dbconn.Open();
-                dbcommand = dbconn.CreateCommand();
-                sqlQuery = string.Empty;
-                sqlQuery = "SELECT StageLevel, StageStar FROM Stage WHERE StageLevel = @StageLevel ";
-                dbcommand.CommandText = sqlQuery;
-
-                SqliteParameter param = new SqliteParameter();
-                param.ParameterName = "@StageLevel";
-                param.Value = StageManager.instance.MyStage;
-                dbcommand.Parameters.Add(param);
-
-                reader = dbcommand.ExecuteReader();
-
-                while (reader.Read())//완료한 스테이지 번호를 가져온다
-                {
-                    StageManager.instance.MyStage = reader.GetInt32(0);
-                    StageManager.instance.StageStar = reader.GetInt32(1);
-                    //Debug.Log("myStage: " + myStage);
-                }
-                reader.Close();
-                //
-                dbconn.Close();
-                UIManager.instance.BtnStart(StageManager.instance.MyStage);
-            }
-            catch (Exception e)
-            {
-                print(e);
-            }
-            finally
-            {
-                reader.Close();
-                dbconn.Close();
-            }
-        }
-        else
-        {
-            print("입력 종료");
-        }
-
-    }
-    public void PreStage(int stage)
-    {
-        if (StageManager.instance.MyStage > 1)
-        {
-            StageManager.instance.MyStage--;
-            try
-            {
-                dbconn = new SqliteConnection(temp_path);
-                dbconn.Open();
-                dbcommand = dbconn.CreateCommand();
-                sqlQuery = string.Empty;
-                sqlQuery = "SELECT StageLevel, StageStar FROM Stage WHERE StageLevel = @StageLevel";
-                dbcommand.CommandText = sqlQuery;
-
-                SqliteParameter param = new SqliteParameter();
-                param.ParameterName = "@StageLevel";
-                param.Value = StageManager.instance.MyStage;
-                dbcommand.Parameters.Add(param);
-
-                reader = dbcommand.ExecuteReader();
-
-                while (reader.Read())//완료한 스테이지 번호를 가져온다
-                {
-                    StageManager.instance.MyStage = reader.GetInt32(0);
-                    StageManager.instance.StageStar = reader.GetInt32(1);
-
-                    Debug.Log("myStage: " + StageManager.instance.MyStage);
-                }
-                reader.Close();
-                //
-                dbconn.Close();
-                UIManager.instance.BtnStart(StageManager.instance.MyStage);
-            }
-            catch (Exception e)
-            {
-                print(e);
-            }
-            finally
-            {
-                reader.Close();
-                dbconn.Close();
-            }
-        }
-        else
-        {
-            print("입력 종료");
-        }
-    }
+    
     public void UseMoney_Equip(string name, int price)
     {
         //업그레이드 한다
@@ -300,6 +173,8 @@ public class DBManager : MonoBehaviour
             reader.Close();
             dbconn.Close();
             ReloadEquipDB();
+            //강화성공 메세지 띄울곳
+            UIManager.instance.UpgradeEquipUI(name);
             //UIManager.instance.SetBuyItemUI(name);//장비 구매 ui를 위한 메소드 추가
         }
         catch (Exception e)
@@ -373,7 +248,7 @@ public class DBManager : MonoBehaviour
             reader = dbcommand.ExecuteReader();
 
             ItemManager.instance.AddItemName(name);//윗줄에서 받은 name을 기준으로 어느 아이템을 =1해줄건지 결정한다
-            UIManager.instance.SetBuyItemUI(name);
+            UIManager.instance.BuyItemUI(name);
 
             reader.Close();
             dbconn.Close();
@@ -449,7 +324,6 @@ public class DBManager : MonoBehaviour
             reader.Close();
             dbconn.Close();
         }
-
     }
 
     public void LoadMoneyDB()
@@ -481,8 +355,6 @@ public class DBManager : MonoBehaviour
         {
             reader.Close();
             dbconn.Close();
-
-
         }
     }
     public void LoadStageDB()
@@ -611,88 +483,9 @@ public class DBManager : MonoBehaviour
         {
             print(e);
         }
-        
-        //filepath = Application.dataPath + "/DB.db";
-
-        /*#endif
-                try
-                {
-                    temp_path = "URI=file:" + filepath;
-                    con = new SqliteConnection(temp_path);
-                print("경로설정 성공");
-                }
-                catch (Exception e)
-                {
-                    print(e);
-                }*/
     }
-    /*public void temp_path//SqliteConnection()에 넣어 사용한다
-    {
-        string str = string.Empty;
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            //str = "URI=file:" + Application.persistentDataPath + "/DB.db";
-            str = "URI=file:" + filepath;
-        }
-        else
-        {
-            //str = "URI=file:" + Application.dataPath + "/DB.db";
-            str = "URI=file:" + filepath;
-        }
-        return str;
-    }*/
-    public void Check()
-    {
-        try
-        {
-            dbconn.Open();
-            if (dbconn.State == ConnectionState.Open)
-            {
-                print("디비연결 성공");
-
-                dbcommand = dbconn.CreateCommand();
-
-
-                sqlQuery = string.Empty;
-                sqlQuery = "SELECT MyStage FROM MyStage";
-
-                dbcommand.CommandText = sqlQuery;
-
-                reader = dbcommand.ExecuteReader();
-
-
-                while (reader.Read())
-                {
-                    Debug.Log(reader.GetInt32(0));
-                }
-            }
-            else
-            {
-                print("디비연결 실패");
-            }
-        }
-        catch(Exception e)
-        {
-            print(e);
-        }
-        finally
-        {
-            reader.Close();
-            dbconn.Close();
-        }
-    }
-    /*public void CheckDB()
-    {
-        IDbConnection dbconn = new SqliteConnection(temp_path);
-        dbconn.Open();
-        IDbCommand dbcommand = dbconn.CreateCommand();
-        dbcommand.CommandText = "SELECT MyStage FROM MyStage";
-        IDataReader reader = dbcommand.ExecuteReader();
-        while (reader.Read())
-        {
-            Debug.Log(reader.GetInt32(0));
-        }
-    }*/
+   
+    
     /*public void SetDBPath()
     {
 #if UNITY_EDITOR
@@ -756,6 +549,4 @@ public class DBManager : MonoBehaviour
         print(e);
     }
 }*/
-
-
 }

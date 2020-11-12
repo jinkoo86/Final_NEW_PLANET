@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class LaserTest : MonoBehaviour
 {
-    public Text a;
+    /*public Text a;
     public Text b;
     public Text c;
-    public Text d;
+    public Text d;*/
 
     private LineRenderer layser;        // 레이저
     private RaycastHit hitInfo; // 충돌된 객체
@@ -56,17 +56,15 @@ public class LaserTest : MonoBehaviour
             // 오큘러스 퀘스트 트리거 누를 경우
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))//오른손 검지 트리거
             {
-                b.text = hitInfo.collider.gameObject.name;
+                //b.text = hitInfo.collider.gameObject.name;
                 // 충돌 객체의 태그가 Button인 경우
                 if (hitInfo.collider.gameObject.CompareTag("Button"))
                 {
                     // 버튼에 등록된 onClick 메소드를 실행한다.
                     hitInfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
-                    a.text = hitInfo.collider.gameObject.name;
+                    //a.text = hitInfo.collider.gameObject.name;
                 }
             }
-
-           
 
             switch (hitInfo.collider.gameObject.name)
             {
@@ -90,16 +88,13 @@ public class LaserTest : MonoBehaviour
                     UIManager.instance.InfoMsgOff();
                     break;
             }
-            
         }
 
         else
         {
-            //UIManager.instance.InfoMsgOff();
-
             layser.enabled = false;//충돌 없으면 꺼지게
          
-            /*//UIManager.instance.InfoMsgOff();
+            /*
             //return;
             // 레이저에 감지된 것이 없기 때문에 레이저 초기 설정 길이만큼 길게 만든다.
             layser.SetPosition(1, transform.position + (transform.forward * raycastDistance));
@@ -118,7 +113,7 @@ public class LaserTest : MonoBehaviour
 
     private void LateUpdate()
     {
-        /*// 버튼을 누를 경우        
+        // 버튼을 누를 경우        
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             layser.material.color = new Color(255, 255, 255, 0.5f);
@@ -128,7 +123,7 @@ public class LaserTest : MonoBehaviour
         else if (OVRInput.GetUp(OVRInput.Button.One))
         {
             layser.material.color = new Color(0, 195, 255, 0.5f);
-        }*/
+        }
     }
    
 }

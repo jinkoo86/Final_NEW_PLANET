@@ -48,7 +48,7 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             // Check if player hasn't already crashed. In this case pause will not work.
-            if(!GameOver.instance.crashed)
+            /*if(!GameOver.instance.crashed)
             {
                 // Check if game is paused.
                 if(paused)
@@ -59,7 +59,7 @@ public class Pause : MonoBehaviour
                 {
                     PauseGame();
                 }
-            }
+            }*/
         }    
         #endif        
     }

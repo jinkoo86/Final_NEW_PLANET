@@ -9351,6 +9351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Spawn Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3479979798186297758, guid: d30fdb48f52173b4aa5f2e82e2fcc3d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d30fdb48f52173b4aa5f2e82e2fcc3d9, type: 3}
 --- !u!1 &6509211252933193392 stripped

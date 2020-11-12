@@ -5,7 +5,87 @@ using UnityEngine.UI;
 
 public class Raycast : MonoBehaviour
 {
-    RaycastHit hitInfo;
+    /*public Text a;
+    public Text b;
+    public Text c;
+    public Text d;*/
+
+    private LineRenderer layser;        // 레이저
+    private RaycastHit hitInfo; // 충돌된 객체
+    private GameObject currentObject;   // 가장 최근에 충돌한 객체를 저장하기 위한 객체
+    Ray ray;
+    public float raycastDistance = 10.0f; // 레이저 포인터 감지 거리
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        layser = GetComponent<LineRenderer>();
+    }
+
+    // Update is called once per frame\
+
+    void Update()
+    {
+        layser.SetPosition(0, transform.position); // 첫번째 시작점 위치
+                                                   // 업데이트에 넣어 줌으로써, 플레이어가 이동하면 이동을 따라가게 된다.
+                                                   //  선 만들기(충돌 감지를 위한)                                                   
+
+        //Debug.DrawRay(transform.position, transform.forward * raycastDistance, Color.green, 0.5f);
+        ray = new Ray(transform.position, transform.forward);
+        // 충돌 감지 시
+        int layer = 1 << LayerMask.NameToLayer("Ignore Raycast");
+        if (Physics.Raycast(ray, out hitInfo, 100, ~layer))
+        {
+            layser.enabled = true;//충돌 잇으면 켜지게
+            layser.SetPosition(1, hitInfo.point);
+
+            //return;
+            // 오큘러스 퀘스트 트리거 누를 경우
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))//오른손 검지 트리거
+            {
+                //b.text = hitInfo.collider.gameObject.name;
+                // 충돌 객체의 태그가 Button인 경우
+                if (hitInfo.collider.gameObject.CompareTag("Button"))
+                {
+                    // 버튼에 등록된 onClick 메소드를 실행한다.
+                    hitInfo.collider.gameObject.GetComponent<Button>().onClick.Invoke();
+                    //a.text = hitInfo.collider.gameObject.name;
+                }
+            }
+
+            switch (hitInfo.collider.gameObject.name)
+            {
+                case "Heart":
+                    Debug.Log("heart on");
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "Timer":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "HammerPos":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "KnifePos":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                case "GrillPos":
+                    UIManager.instance.InfoMsgOn(hitInfo.collider.gameObject.name);
+                    break;
+                default:
+                    UIManager.instance.InfoMsgOff();
+                    break;
+            }
+        }
+        else
+        {
+            layser.enabled = false;//충돌 없으면 꺼지게
+        }
+
+    }
+
+
+    ///////
+    /*RaycastHit hitInfo;
     Ray ray;
     // Start is called before the first frame update
     void Start()
@@ -28,10 +108,5 @@ public class Raycast : MonoBehaviour
                     break;
             }
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        Ray();
-    }
+    }*/
 }

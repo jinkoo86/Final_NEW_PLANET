@@ -4,6 +4,7 @@ using System.Data;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MoneyManager : MonoBehaviour
 {
@@ -30,12 +31,25 @@ public class MoneyManager : MonoBehaviour
     public void CheckMoney(int money)
     {
         myMoney = money;
-        textMoney.GetComponent<Text>().text = myMoney.ToString();
+        textMoney.GetComponent<TextMeshProUGUI>().text = string.Format("{0:#,0}", myMoney);
     }
-  
+    public void SetMoneyText()
+    {
+        
+        char[] moneyText = new char[6];
+        if (myMoney > 999)
+        {
+            for(int i = 0; i<myMoney.ToString().Length; i++)
+            {
+                moneyText[i] = myMoney.ToString()[i];
+            }
+            
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        textMoney.GetComponent<Text>().text = myMoney.ToString();
+        textMoney.GetComponent<TextMeshProUGUI>().text = string.Format("{0:#,0}", myMoney);
+        SetMoneyText();
     }
 }

@@ -16,7 +16,7 @@ public class ClickSystem : MonoBehaviour
     public GameObject menu;
     public Text volText;
     public Text vibText;
-    public GameObject uiHelpers;
+    //public GameObject uiHelpers;
 
     
     string filepath;
@@ -28,8 +28,8 @@ public class ClickSystem : MonoBehaviour
     void Start()
     {
         SetDBPath();
-        uiHelpers.GetComponent<LaserPointer>().enabled = false;
-        uiHelpers.GetComponent<LineRenderer>().enabled = false;
+        /*uiHelpers.GetComponent<LaserPointer>().enabled = false;
+        uiHelpers.GetComponent<LineRenderer>().enabled = false;*/
     }
 
     void Update()

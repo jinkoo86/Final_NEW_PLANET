@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
@@ -9,73 +10,70 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
     }
-    GameObject heartUI;
-    
-    GameObject posHeart;
-    GameObject posTimer;
-
-    GameObject itemBuy_Heart;
-    GameObject itemInfo_Heart;
-
-    GameObject itemBuy_Timer;
-    GameObject noMoney;
-    GameObject maxLevel;
-    //GameObject itemInfo_Heart;
-    GameObject itemInfo_Timer;
-    ParticleSystem partHeart;
-    ParticleSystem partTimer;
-    GameObject posHammer;
-    GameObject posKnife;
-    GameObject posGrill;
-    GameObject equipInfo_Hammer;
-    GameObject equipInfo_Knife;
-    GameObject equipInfo_Grill;
     public GameObject[] hammerInfo;
     public GameObject[] knifeInfo;
     public GameObject[] grillInfo;
+
+    public GameObject pos_Heart;
+    public GameObject pos_Timer;
+    public GameObject pos_Hammer;
+    public GameObject pos_Knife;
+    public GameObject pos_Grill;
+
+    GameObject[] heartUI = new GameObject[3];
+    GameObject[] timerUI = new GameObject[3];
+    GameObject[] hammerUI = new GameObject[4];
+    GameObject[] knifeUI = new GameObject[4];
+    GameObject[] grillUI = new GameObject[4];
+    TextMeshProUGUI[] hammerInfoUI = new TextMeshProUGUI[3];
+    TextMeshProUGUI[] knifeInfoUI = new TextMeshProUGUI[3];
+    TextMeshProUGUI[] grillInfoUI = new TextMeshProUGUI[3];
+
+    GameObject maxLevel;
+
+    ParticleSystem partHeart;
+    ParticleSystem partTimer;
+
     GameObject buyUI;
 
+    //버튼
     Button buyBtnHeart;
     Button buyBtntimer;
     Button StartBtn;
+
+    GameObject preBtn;
+    GameObject nextBtn;
     // Start is called before the first frame update
+    public void SetUI()
+    {
+        for(int i = 0; i < heartUI.Length; i++)//개수만큼 넣어주고 비활성화 시킨다
+        {
+            heartUI[i] = pos_Heart.transform.GetChild(i).gameObject;//info - buy - nomoney
+            timerUI[i] = pos_Timer.transform.GetChild(i).gameObject;//info - buy - nomoney
+            heartUI[i].SetActive(false);
+            timerUI[i].SetActive(false);
+        }
+        for (int i = 0; i < hammerUI.Length; i++)//개수만큼 넣어주고 비활성화 시킨다
+        {
+            hammerUI[i] = pos_Hammer.transform.GetChild(i).gameObject;//info - upgrade - nomoney - maxlevel
+            knifeUI[i] = pos_Knife.transform.GetChild(i).gameObject;//info - upgrade - nomoney - maxlevel
+            grillUI[i] = pos_Grill.transform.GetChild(i).gameObject;//info - upgrade - nomoney - maxlevel
+            if(i == 0)
+            {
+                hammerInfoUI = hammerUI[0].GetComponentsInChildren<TextMeshProUGUI>();//1-2-3
+                knifeInfoUI = knifeUI[0].GetComponentsInChildren<TextMeshProUGUI>();//1-2-3
+                grillInfoUI = grillUI[0].GetComponentsInChildren<TextMeshProUGUI>();//1-2-3
+            }
+            hammerUI[i].SetActive(false);
+            knifeUI[i].SetActive(false);
+            grillUI[i].SetActive(false);
+        }
+    }
     void Start()
     {
-        heartUI = GameObject.Find("Heart_UI");//하트 ui는 비활성화 해줘야함
-        itemBuy_Heart = heartUI.transform.GetChild(0).gameObject;//info
-        itemInfo_Heart = heartUI.transform.GetChild(1).gameObject;//buy
-        //itemBuy_Heart = GameObject.Find("Info_Text");//하트구매 ui
-        //itemInfo_Heart = GameObject.Find("Buy_Text");//하트정보 ui
-        //아이템관련
-        posHeart = GameObject.Find("Pos_Heart");//위치 정보
-        posTimer = GameObject.Find("Pos_Timer");//위치 정보
-        itemBuy_Heart = GameObject.Find("Pos_Heart/Heart_Buy_UI");//구매 UI
-        itemBuy_Timer = GameObject.Find("Pos_Timer/Timer_Buy_UI");//구매 UI
-        //itemInfo_Heart = GameObject.Find("Pos_Heart/Heart_Detail_UI");//상세정보 UI
-        itemInfo_Timer = GameObject.Find("Pos_Timer/Timer_Detail_UI");//상세정보 UI
-        //장비관련
-        posHammer = GameObject.Find("Pos_Hammer"); //위치 정보
-        posKnife = GameObject.Find("Pos_Knife"); //위치 정보
-        posGrill = GameObject.Find("Pos_Grill"); //위치 정보
-        equipInfo_Hammer = GameObject.Find("Pos_Hammer/Hammer_detail_UI");//상세정보 UI
-        equipInfo_Knife = GameObject.Find("Pos_Knife/Knife_detail_UI");//상세정보 UI
-        equipInfo_Grill = GameObject.Find("Pos_Grill/Grill_detail_UI");//상세정보 UI
-
-
-        heartUI.SetActive(false);
-        //처음 구매완료 ui는 비 활성화 시킨다
-        itemBuy_Heart.SetActive(false);
-        itemBuy_Timer.SetActive(false);
-        //itemInfo_Heart.SetActive(false);
-        itemInfo_Timer.SetActive(false);
-        equipInfo_Hammer.SetActive(false);
-        equipInfo_Knife.SetActive(false);
-        equipInfo_Grill.SetActive(false);
-
-        noMoney = GameObject.Find("NoMoney_img");
-        noMoney.SetActive(false);
-        maxLevel = GameObject.Find("MaxLevel_img");
-        maxLevel.SetActive(false);
+        SetUI();
+        preBtn = GameObject.Find("Left_Btn");
+        nextBtn = GameObject.Find("Right_Btn");
 
         buyBtnHeart = GameObject.Find("Buy_Heart_Btn").GetComponent<Button>();
         buyBtntimer = GameObject.Find("Buy_Timer_Btn").GetComponent<Button>();
@@ -83,130 +81,196 @@ public class UIManager : MonoBehaviour
 
         partHeart = GameObject.Find("Buy_Heart_Btn").GetComponentInChildren<ParticleSystem>();
         partTimer = GameObject.Find("Buy_Timer_Btn").GetComponentInChildren<ParticleSystem>();
+
     }
-    public void MaxLevelInfo(string name)
+    public void SetStageBtn(int stage)
+    {
+        switch (stage)
+        {
+            case 1:
+                preBtn.SetActive(false);
+                break;
+            case 5:
+                nextBtn.SetActive(false);
+                break;
+            default:
+                preBtn.SetActive(true);
+                nextBtn.SetActive(true);
+                break;
+        }
+    }
+    public void MaxLevelInfo(string name)//장비관련
     {
         switch (name)
         {
             case "Hammer":
-                maxLevel.transform.position = posHammer.transform.position;
-                maxLevel.SetActive(true);
+                hammerUI[3].SetActive(true);
+                Invoke("MaxLevelMsgOff", 2.0f);
                 break;
             case "Knife":
-                maxLevel.transform.position = posKnife.transform.position;
-                maxLevel.SetActive(true);
+                knifeUI[3].SetActive(true);
+                Invoke("MaxLevelMsgOff", 2.0f);
                 break;
             case "Grill":
-                maxLevel.transform.position = posGrill.transform.position;
-                maxLevel.SetActive(true);
+                grillUI[3].SetActive(true);
+                Invoke("MaxLevelMsgOff", 2.0f);
                 break;
             default:
                 break;
         }
     }
-
-    public void InfoMsgOn(string name)
-    {//애니메이션 구현 다시 할 것
+   
+    public void InfoMsgOn(string name)//상세정보 알림켜짐
+    {
         switch (name)
         {
             case "Heart":
-                heartUI.SetActive(true);
-                itemBuy_Heart.SetActive(false);
-                /*//Debug.Log("aa 22" + itemInfo_Heart.activeSelf);
-                if (itemInfo_Heart.activeSelf == false) 
-                {
-                    Debug.Log("aa");
-                    itemInfo_Heart.SetActive(false);
-                    itemInfo_Heart.SetActive(true);
-                }*/
-               // itemInfo_Heart.SetActive(false);
-               // itemInfo_Heart.SetActive(true);
-                //itemInfo_Heart.GetComponent<Animator>().SetTrigger("Open");
+                heartUI[0].SetActive(true);
                 break;
             case "Timer":
-                itemInfo_Timer.SetActive(true);
-                //itemInfo_Timer.GetComponent<Animator>().SetTrigger("Open");
+                timerUI[0].SetActive(true);
                 break;
             case "HammerPos":
-                equipInfo_Hammer.SetActive(true);
-
+                hammerUI[0].SetActive(true);
+                switch (EquipManager.instance.equipList[0].level)
+                {
+                    case 1:
+                        hammerInfoUI[0].enabled = true;
+                        hammerInfoUI[1].enabled = false;
+                        hammerInfoUI[2].enabled = false;
+                        break;
+                    case 2:
+                        hammerInfoUI[0].enabled = false;
+                        hammerInfoUI[1].enabled = true;
+                        hammerInfoUI[2].enabled = false;
+                        break;
+                    case 3:
+                        hammerInfoUI[0].enabled = false;
+                        hammerInfoUI[1].enabled = false;
+                        hammerInfoUI[2].enabled = true;
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case "KnifePos":
-                equipInfo_Knife.SetActive(true);
-
+                knifeUI[0].SetActive(true);
+                switch (EquipManager.instance.equipList[1].level)
+                {
+                    case 1:
+                        knifeInfoUI[0].enabled = true;
+                        knifeInfoUI[1].enabled = false;
+                        knifeInfoUI[2].enabled = false;
+                        break;
+                    case 2:
+                        knifeInfoUI[0].enabled = false;
+                        knifeInfoUI[1].enabled = true;
+                        knifeInfoUI[2].enabled = false;
+                        break;
+                    case 3:
+                        knifeInfoUI[0].enabled = false;
+                        knifeInfoUI[1].enabled = false;
+                        knifeInfoUI[2].enabled = true;
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case "GrillPos":
-                equipInfo_Grill.SetActive(true);
-
+                grillUI[0].SetActive(true);
+                switch (EquipManager.instance.equipList[2].level)
+                {
+                    case 1:
+                        grillInfoUI[0].enabled = true;
+                        grillInfoUI[1].enabled = false;
+                        grillInfoUI[2].enabled = false;
+                        break;
+                    case 2:
+                        grillInfoUI[0].enabled = false;
+                        grillInfoUI[1].enabled = true;
+                        grillInfoUI[2].enabled = false;
+                        break;
+                    case 3:
+                        grillInfoUI[0].enabled = false;
+                        grillInfoUI[1].enabled = false;
+                        grillInfoUI[2].enabled = true;
+                        break;
+                    default:
+                        break;
+                }
                 break;
             default:
                 break;
         }
     }
+
     public void InfoMsgOff()
     {
-        heartUI.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
-        itemInfo_Timer.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
-        equipInfo_Hammer.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
-        equipInfo_Knife.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
-        equipInfo_Grill.GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        heartUI[0].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        timerUI[0].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        hammerUI[0].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        knifeUI[0].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        grillUI[0].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+    }
+    public void BuyMsgOff()
+    {
+        heartUI[1].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        timerUI[1].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        hammerUI[1].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        knifeUI[1].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        grillUI[1].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+    }
+    public void NoMoneyMsgOff()
+    {
+        heartUI[2].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        timerUI[2].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        hammerUI[2].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        knifeUI[2].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        grillUI[2].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        //noMoney.SetActive(false);
+    }
+    public void MaxLevelMsgOff()
+    {
+        hammerUI[3].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        knifeUI[3].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
+        grillUI[3].GetComponent<Animator>().SetTrigger("Close");//애니메이션 close(eventplay메소드 실행, SetActive(false)실행)
     }
     public void NoMoney(string name)//돈이 없다는 것을 표시 
     {
         switch (name)
         {
             case "heart" ://하트면
-                noMoney.transform.position = posHeart.transform.position;
+                heartUI[2].SetActive(true);
                 Invoke("NoMoneyMsgOff", 2.0f);
-                noMoney.SetActive(true);
                 break;
             case "timer"://타이머면 
-                noMoney.transform.position = posTimer.transform.position;
+                timerUI[2].SetActive(true);
                 Invoke("NoMoneyMsgOff", 2.0f);
-                noMoney.SetActive(true);
                 break;
             case "Hammer1":
             case "Hammer2":
             case "Hammer3":
-                //해당 위치에 돈 없다는 것 표시
-                noMoney.transform.position = posHammer.transform.position;
-                noMoney.transform.rotation = Quaternion.Euler(0, 270, 0);
+                hammerUI[0].SetActive(false);
+                hammerUI[2].SetActive(true);
                 Invoke("NoMoneyMsgOff", 2.0f);
-                noMoney.SetActive(true);
                 break;
             case "Knife1":
             case "Knife2":
             case "Knife3":
-                //해당 위치에 돈 없다는 것 표시
-                noMoney.transform.position = posKnife.transform.position;
-                noMoney.transform.rotation = Quaternion.Euler(0, 270, 0);
+                knifeUI[2].SetActive(true);
                 Invoke("NoMoneyMsgOff", 2.0f);
-                noMoney.SetActive(true);
                 break;
             case "Grill1":
             case "Grill2":
             case "Grill3":
-                //해당 위치에 돈 없다는 것 표시
-                noMoney.transform.position = posGrill.transform.position;
-                noMoney.transform.rotation = Quaternion.Euler(0, 270, 0);
+                grillUI[2].SetActive(true);
                 Invoke("NoMoneyMsgOff", 2.0f);
-                noMoney.SetActive(true);
                 break;
         }
     }
-    public void NoMoneyMsgOff()
-    {
-        noMoney.SetActive(false);
-    }
-    public void BuyMsgOff_Heart()
-    {
-        heartUI.SetActive(false);
-    }
-    public void BuyMsgOff_Timer()
-    {
-        itemBuy_Timer.SetActive(false);
-    }
-    public void BtnItem()
+
+
+    public void BtnItemCheck()//아이템 재고에 따른 버튼, 이펙트 조절
     {
         if (ItemManager.instance.HeartStock == 1)
         {
@@ -227,46 +291,18 @@ public class UIManager : MonoBehaviour
         {
             buyBtntimer.interactable = true;
             partTimer.Play();
-        }
-    }
-    public void BtnCheck(string name)
-    {
-        switch (name)
+        }if(EquipManager.instance.equipList[0].level == 3)
         {
-            case "heart":
-                if (ItemManager.instance.HeartStock == 1)
-                {
-                    buyBtnHeart.interactable = false;
-                }
-                if (ItemManager.instance.HeartStock == 0)
-                {
-                    buyBtnHeart.interactable = true;
-                    noMoney.transform.position = posHeart.transform.position;
-                    Invoke("NoMoneyMsgOff", 2.0f);
-                    noMoney.SetActive(true);
-                }
-                break;
-            case "timer":
-                if (ItemManager.instance.TimerStock == 1)
-                {
-                    buyBtnHeart.interactable = false;
-                }
-                if (ItemManager.instance.TimerStock == 0)
-                {
-                    buyBtntimer.interactable = false;
-                    noMoney.transform.position = posTimer.transform.position;
-                    Invoke("NoMoneyMsgOff", 2.0f);
-                    noMoney.SetActive(true);
-                }
-                break;
+
         }
     }
+
     public void BtnStart(int stage)
     {
         //처음에 로드한 스테이지의 lock정보를 가지고 있는 리스트의 값을 현재 눌린 스테이지의 값과 비교
         //열렸을 경우 스타트 버튼 활성화, 잠겼을 경우 스타트 버튼 비활성화
-        //1 = 열림, 0 = 잠김
-        if(StageManager.instance.stageLock[stage-1] == 1)
+        //0 = 열림, 1 = 잠김
+        if(StageManager.instance.stageLock[stage-1] == 0)
         {
             StartBtn.interactable = true;
         }
@@ -275,24 +311,42 @@ public class UIManager : MonoBehaviour
             StartBtn.interactable = false;
         }
     }
-    public void SetBuyItemUI(string name)
+    public void UpgradeEquipUI(string name)
+    {
+        if (name.Contains("Hammer"))
+        {
+            hammerUI[1].SetActive(true);
+            Invoke("BuyMsgOff", 2.0f);
+        }
+        if (name.Contains("Knife"))
+        {
+            knifeUI[1].SetActive(true);
+            Invoke("BuyMsgOff", 2.0f);
+        }
+        if (name.Contains("Grill"))
+        {
+            grillUI[1].SetActive(true);
+            Invoke("BuyMsgOff", 2.0f);
+        }
+    }
+    public void BuyItemUI(string name)
     {
         switch (name)
         {
             case "heart":
-                heartUI.SetActive(true);
-                itemInfo_Heart.SetActive(false);
-                Invoke("BuyMsgOff_Heart", 2.0f);
+                heartUI[1].SetActive(true);
+                Invoke("BuyMsgOff", 2.0f);
                 break;
             case "timer":
-                itemBuy_Timer.SetActive(true);
-                Invoke("BuyMsgOff_Timer", 2.0f);
+                timerUI[1].SetActive(true);
+                Invoke("BuyMsgOff", 2.0f);
                 break;
         }
     }
+
     // Update is called once per frame
     void Update()
     {
-        BtnItem();
+        BtnItemCheck();
     }
 }

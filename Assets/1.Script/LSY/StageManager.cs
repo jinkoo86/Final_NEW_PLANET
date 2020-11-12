@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StageManager : MonoBehaviour
 {
@@ -16,18 +17,13 @@ public class StageManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        //DBManager.instance.LoadStageDB();
     }
     private int stageStar;
     //private int stageLock;
     private int myStage;
     public List<int> stageLock = new List<int>();
     public List<int> stageStars = new List<int>();
-/*    public int StageLock
-    {
-        get { return stageLock; }
-        set { stageLock = value; }
-    }*/
+
     public int StageStar
     {
         get { return stageStar; }
@@ -39,9 +35,9 @@ public class StageManager : MonoBehaviour
         set{ myStage = value; }
     }
     GameObject textStage;
-    GameObject[] stars;
+    GameObject[] stars = new GameObject[3];
     GameObject tempStars;
-    GameObject[] planets;
+    GameObject[] planets = new GameObject[5];
     GameObject tempPlanets;
     StageNum stageNum;
     GameObject pos;
@@ -50,23 +46,39 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        UIManager.instance.SetStageBtn(myStage);
     }    
     // Update is called once per frame
     void Update()
     {
         SetStageInfo();
     }
+    public void PreStage()//스테이지 이전
+    {
+        if (myStage > 1)
+        {
+            myStage--;
+            UIManager.instance.BtnStart(myStage);
+            UIManager.instance.SetStageBtn(myStage);
+        }
+    }
+    public void NextStage()//스테이지 다음
+    {
+        if (myStage < 5)
+        {
+            myStage++;
+            UIManager.instance.BtnStart(myStage); 
+            UIManager.instance.SetStageBtn(myStage);
+        }
+    }
     public void SetPlanets()
     {
-        planets = new GameObject[5];
         tempPlanets = GameObject.Find("Planets");
         for(int i= 0; i< planets.Length; i++)//행성 정보를 넣어준다
         {
             planets[i] = tempPlanets.transform.GetChild(i).gameObject;
             planets[i].SetActive(false);
         }
-
         for (int j = 0; j < myStage; j++)//현재 스테이지의 행성을 활성화해준다
         {
             planets[j].SetActive(true);
@@ -75,26 +87,21 @@ public class StageManager : MonoBehaviour
         {
             planets[j].SetActive(false);
         }
-        //if(myStage > 1)
-        //{
         for (int j = myStage - 2; j >= 0; j--)//현재 스테이지를 제외하고 앞뒤로 검색해 행성을 비활성화 해준다
         {
             planets[j].SetActive(false);
         }
-        //}
-
     }
     public void SetStageInfo()//스테이지 정보 갱신
     {
-        textStage = GameObject.Find("Planet_Text");
-        textStage.GetComponent<Text>().text = "PLANET: " + myStage.ToString();//스테이지 넘버 입력
+        textStage = GameObject.Find("PlanetNum_Text");
+        textStage.GetComponent<TextMeshProUGUI>().text = myStage.ToString();//스테이지 넘버 입력
         SetStars();
         SetPlanets();
     }
     
     public void SetStars()
     {
-        stars = new GameObject[3];
         tempStars = GameObject.Find("Stars_Img");
         for (int i = 0; i < stars.Length; i++)//별이미지 삽입
         {
@@ -102,20 +109,12 @@ public class StageManager : MonoBehaviour
         }
         for (int i = 0; i < stageStars[myStage-1]; i++)//별개수 만큼 별이미지 활성화
         {
-            stars[i].GetComponent<Image>().enabled = true;
+            stars[i].SetActive(false);
         }
         for (int i = stageStars[myStage-1]; i < stars.Length; i++) //별개수 제외하고 별 이미지 비활성화
         {
-            stars[i].GetComponent<Image>().enabled = false;
+            stars[i].SetActive(false);
         }
-        /*for (int i = 0; i < stageStar; i++)//별개수 만큼 별이미지 활성화
-        {
-            stars[i].GetComponent<Image>().enabled = true;
-        }
-        for (int i = stageStar; i < stars.Length; i++) //별개수 제외하고 별 이미지 비활성화
-        {
-            stars[i].GetComponent<Image>().enabled = false;
-        }*/
     }
 
 }

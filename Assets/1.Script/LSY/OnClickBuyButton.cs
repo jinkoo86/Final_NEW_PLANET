@@ -11,9 +11,24 @@ public class OnClickBuyButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        exitUI = GameObject.Find("ExitCheck_UI");
+        exitUI.SetActive(false);
+    }
+    GameObject exitUI;
+    public void ClickExitBtn()//게임종료
+    {
+        exitUI.SetActive(true);
+        exitUI.transform.position = Camera.current.transform.position + new Vector3(0, 0.3f, 1);
+    }
+    public void ClickExitYesBtn()
+    {
+        Application.Quit();
+    }
+    public void ClickExitNoBtn()
+    {
+        exitUI.SetActive(false);
 
     }
- 
     public void ClickBuyHeartBtn()//하트 아이템 구매
     {
         if(ItemManager.instance.HeartStock == 0)
