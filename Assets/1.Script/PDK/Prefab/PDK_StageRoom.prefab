@@ -326,6 +326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b54b854f6742c48af1030bfb73f027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel1: {fileID: 0}
+  panel2: {fileID: 0}
+  panel3: {fileID: 0}
+  panel4: {fileID: 0}
   manual1: {fileID: 7454860116773016310}
   manual2: {fileID: 7454860115932892980}
   manual3: {fileID: 7454860116211622221}

@@ -7,6 +7,10 @@ using System.Data;
 using System;
 
 public class ToolManager : MonoBehaviour {
+    public static ToolManager Instance;
+    public void Awake() {
+        Instance = this;
+    }
     public GameObject myHammer1, myHammer2, myHammer3;
     public GameObject myKnife1, myKnife2, myKnife3;
     public GameObject myGrill1, myGrill2, myGrill3;
@@ -51,7 +55,7 @@ public class ToolManager : MonoBehaviour {
         //근데 그릴이 없어질리가??
     }
 
-    private void ToolHammerRespawn() {
+    public void ToolHammerRespawn() {
         switch (hammerLevel) {
             case 3:
                 hammer = Instantiate(myHammer3);
@@ -70,7 +74,7 @@ public class ToolManager : MonoBehaviour {
                 break;
         }
     }
-    private void ToolKnifeRespawn() {
+    public void ToolKnifeRespawn() {
         switch (knifeLevel) {
             case 3:
                 knife = Instantiate(myKnife3);

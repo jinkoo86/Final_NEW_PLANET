@@ -5,35 +5,34 @@ using OculusSampleFramework;
 
 public class Dish : MonoBehaviour {
 
-    //List<string> GreenToast = new List<string> { "ToastBread", "Sauce1" };
-    List<string> GreenToast = new List<string> { "5Toast" };
-    //List<string> PurpleToast = new List<string> { "ToastBread", "Sauce1" };
-    List<string> PurpleToast = new List<string> { "5Toast" };
+
+    List<string> GreenToast = new List<string> { "5Toast", "greenSauce" };
+    List<string> PurpleToast = new List<string> { "5Toast", "purpleSauce" };
+
+    List<string> GreenSalad = new List<string> { "2mass_lettuce", "greenSauce" };
+    List<string> PurpleSalad = new List<string> { "2mass_lettuce", "purpleSauce" };
 
     List<string> RareSteak = new List<string> { "4Steak_Rare" };
     List<string> MediumSteak = new List<string> { "5Steak_medium" };
     List<string> WelldoneSteak = new List<string> { "6Steak_Welldone" };
 
-    List<string> MiniBurger = new List<string> { "3BurgerBun_Bottom", "2Patty", "2BurgerBun_Top" };
-    //List<string> HamBurger = new List<string> { "HamburgerBreadDown", "HamburgerLet", "HamburgerPatty", "Sauce1", "Sauce2", "HamburgerBreadUp" };
-    List<string> HamBurger = new List<string> { "3BurgerBun_Bottom", "1Hamburger_lettuce", "2Patty", "2BurgerBun_Top" };
-    //List<string> CheeseBurger = new List<string> { "HamburgerBreadDown", "HamburgerLet", "HamburgerPatty", "Cheese", "Sauce1", "Sauce2", "HamburgerBreadUp" };
-    List<string> CheeseBurger = new List<string> { "3BurgerBun_Bottom", "1Hamburger_lettuce", "2Patty", "Cheese", "2BurgerBun_Top" };
+    List<string> MiniBurger = new List<string> { "3BurgerBun_Bottom", "2Patty", "Cheese", "2BurgerBun_Top" };
+    List<string> FullBurger = new List<string> { "3BurgerBun_Bottom", "2Patty", "Cheese", "1Hamburger_lettuce", "purpleSauce", "2BurgerBun_Top" };
 
-    List<string> Salad = new List<string> { "2mass_lettuce" };
+
 
     List<string> myfood = new List<string> { };
     public enum enumFood {
         none,       //0
         GreenToast,
         PurpleToast,
+        GreenSalad,
+        PurpleSalad,
         RareSteak,
         MediumSteak,
         WelldoneSteak,
         MiniBurger,
-        HamBurger,
-        CheeseBurger,
-        Salad          //9
+        FullBurger          //9
     }
     enumFood ef;
     BoxCollider myCollider;
@@ -72,6 +71,30 @@ public class Dish : MonoBehaviour {
         }
         return true;
     }
+
+    bool CheckGreenSalad() {
+        if (myfood.Count != GreenSalad.Count) {
+            return false;
+        }
+        for (int i = 0; i < myfood.Count; i++) {
+            if (myfood[i] != GreenSalad[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    bool CheckPurpleSalad() {
+        if (myfood.Count != PurpleSalad.Count) {
+            return false;
+        }
+        for (int i = 0; i < myfood.Count; i++) {
+            if (myfood[i] != PurpleSalad[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     bool CheckRareSteak() {
         if (myfood.Count != RareSteak.Count) {
             return false;
@@ -116,35 +139,12 @@ public class Dish : MonoBehaviour {
         }
         return true;
     }
-    bool CheckHamBurger() {
-        if (myfood.Count != HamBurger.Count) {
+    bool CheckFullBurger() {
+        if (myfood.Count != FullBurger.Count) {
             return false;
         }
         for (int i = 0; i < myfood.Count; i++) {
-            if (myfood[i] != HamBurger[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-    bool CheckCheeseBurger() {
-        if (myfood.Count != CheeseBurger.Count) {
-            return false;
-        }
-        for (int i = 0; i < myfood.Count; i++) {
-            if (myfood[i] != CheeseBurger[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    bool CheckSalad() {
-        if (myfood.Count != Salad.Count) {
-            return false;
-        }
-        for (int i = 0; i < myfood.Count; i++) {
-            if (myfood[i] != Salad[i]) {
+            if (myfood[i] != FullBurger[i]) {
                 return false;
             }
         }
@@ -178,6 +178,14 @@ public class Dish : MonoBehaviour {
             else if (CheckPurpleToast()) {
                 ef = enumFood.PurpleToast;
             }
+            ////////////////////////////////
+            else if (CheckGreenSalad()) {
+                ef = enumFood.GreenSalad;
+            }
+            else if (CheckPurpleSalad()) {
+                ef = enumFood.PurpleSalad;
+            }
+            //////////////////////////////////
             else if (CheckRareSteak()) {
                 ef = enumFood.RareSteak;
             }
@@ -187,17 +195,12 @@ public class Dish : MonoBehaviour {
             else if (CheckWelldoneSteak()) {
                 ef = enumFood.WelldoneSteak;
             }
+            //////////////////////////////////
             else if (CheckMiniBurger()) {
                 ef = enumFood.MiniBurger;
             }
-            else if (CheckHamBurger()) {
-                ef = enumFood.HamBurger;
-            }
-            else if (CheckCheeseBurger()) {
-                ef = enumFood.CheeseBurger;
-            }
-            else if (CheckSalad()) {
-                ef = enumFood.Salad;
+            else if (CheckFullBurger()) {
+                ef = enumFood.FullBurger;
             }
             CheckFood checkFood = other.transform.gameObject.GetComponent<CheckFood>();
             checkFood.dishFoodName = ef.ToString();

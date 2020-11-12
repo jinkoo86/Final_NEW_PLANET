@@ -37,6 +37,7 @@ public class NPCCustomer : MonoBehaviour {
     public int myCustomerNum;
 
     void Start() {
+        anim = GetComponent<Animator>();
         state = State.Search;
         //emptyTableCheck.Clear();
         //내 손님번호는 NPCSpawnManager에서 가져온후 뒤의 고객을위해 증가시킴
@@ -111,37 +112,46 @@ public class NPCCustomer : MonoBehaviour {
     }
 
     private void UpdateWait() {
+        anim.SetTrigger("OrderWait");
     }
     private void UpdateGood() {
         //돈 올리고 손님카운트 1개 제거
         //근데 음식별 돈이 또 따로 있음
-        GameManager.Instance.Profit += foodPrice;
-        NPCSpawnManager.Instance.orderNum--;
+
+        myCanvas.gameObject.SetActive(false);
         //좋은 애니메이션
-        //우선 머리위에 띄워서 확인
-        myNum.text = "G";
-        //머리위에 번호판은 끄고
-        //myCanvas.gameObject.SetActive(false);
+        anim.SetTrigger("OrderGood");
+    }
+    public void UpdateGoodFinish() {
+        GameManager.Instance.Profit += foodPrice;
+        NPCSpawnManager.Instance.OrderNum--;
         //포탈로 돌아가야하므로 타겟오브젝트 포탈로
         targetObject = GameObject.Find("EXIT");
         //그러고 이동
+        anim.SetTrigger("OrderFinish");
         state = State.Move;
         //이동하면서 CheckFood랑 ontriggerExit되면 숫자를 초기화
     }
     private void UpdateBad() {
-        //컴플레인 올리고
+
+        myCanvas.gameObject.SetActive(false);
+        //나쁜 애니메이션
+        anim.SetTrigger("OrderBad");
+
+
+    }
+    public void UpdateBadFinish() {
+        anim.SetTrigger("OrderFinish");
+        transform.rotation = Quaternion.Euler(0, -180, 0);
+        anim.Play("Walking 1", 0, 0);
         GameManager.Instance.Complain -= 1;
-        if(GameManager.Instance.Complain <= 0) {
+        if (GameManager.Instance.Complain <= 0) {
             GameManager.Instance.GameOver();
         }
-        //나쁜 애니메이션
-        //우선 머리위에 띄워서 확인
-        myNum.text = "B";
-        //머리위에 번호판은 끄고
-        //myCanvas.gameObject.SetActive(false);
         //포탈로 돌아가야하므로 타겟오브젝트 포탈로
         targetObject = GameObject.Find("EXIT");
         //그러고 이동
+
         state = State.Move;
     }
 
@@ -149,9 +159,9 @@ public class NPCCustomer : MonoBehaviour {
         //속도 빠르게하고
         speed = 15f;
         targetObject = GameObject.Find("EXIT");
+        anim.SetTrigger("Run");
         state = State.Move;
     }
 }
 
 
-    

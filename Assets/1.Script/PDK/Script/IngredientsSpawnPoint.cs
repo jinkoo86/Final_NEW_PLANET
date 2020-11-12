@@ -11,8 +11,9 @@ public class IngredientsSpawnPoint : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        foodInCheck = true;
         myname = transform.name;
+        FoodSpawn();
+        //foodInCheck = true;
     }
 
     // Update is called once per frame

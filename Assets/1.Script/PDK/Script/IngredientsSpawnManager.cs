@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class IngredientsSpawnManager : MonoBehaviour {
     public GameObject[] breads;
     public GameObject[] meats;
     public GameObject[] lettuces;
-    //빵은 FoodType0, 고기는 FoodType1, 상추는 FoodType2
+    //빵은 FoodType0, 고기는 FoodType1, 상추는 FoodType2, 치즈는 3, 탄거는 4, 검은눈알5, 초록눈알6
     public Dictionary<string, GameObject> breadDict = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> meatDict = new Dictionary<string, GameObject>();
     public Dictionary<string, GameObject> lettuceDict = new Dictionary<string, GameObject>();
@@ -31,7 +32,7 @@ public class IngredientsSpawnManager : MonoBehaviour {
     public GameObject greenEyeSpawnPoint;
 
 
-    public int stageLevel;
+    int stageLevel;
 
     GameObject foodBread, foodMeat, foodLettuce, foodCheese, foodBurned, foodBlackEye, foodGreenEye;
     // Start is called before the first frame update
@@ -56,30 +57,70 @@ public class IngredientsSpawnManager : MonoBehaviour {
         lettuceDict.Add("1Hamburger_lettuce", lettuces[1]);
         lettuceDict.Add("2mass_lettuce", lettuces[2]);
 
-        foodBread = Instantiate(breadDict["0Square_Rock"]);
-        foodBread.name = "0Square_Rock";
-        foodBread.transform.position = breadSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
+        getStageLevel();
 
-        foodMeat = Instantiate(meatDict["0BIGMeat"]);
-        foodMeat.name = "0BIGMeat";
-        foodMeat.transform.position = meatSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
+        //foodBread = Instantiate(breadDict["0Square_Rock"]);
+        //foodBread.name = "0Square_Rock";
+        //foodBread.transform.position = breadSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
-        foodLettuce = Instantiate(lettuceDict["0Cabbage"]);
-        foodLettuce.name = "0Cabbage";
-        foodLettuce.transform.position = lettuceSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
+        //foodMeat = Instantiate(meatDict["0BIGMeat"]);
+        //foodMeat.name = "0BIGMeat";
+        //foodMeat.transform.position = meatSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
-        foodCheese = Instantiate(cheese);
-        foodCheese.name = "Cheese";
-        foodCheese.transform.position = cheeseSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
+        //foodLettuce = Instantiate(lettuceDict["0Cabbage"]);
+        //foodLettuce.name = "0Cabbage";
+        //foodLettuce.transform.position = lettuceSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
-        foodBlackEye = Instantiate(blackEye);
-        foodBlackEye.name = "BlackEye";
-        foodBlackEye.transform.position = blackEyeSpawnPoint.transform.position + new Vector3(0, 0.1f, 0);
+        //foodCheese = Instantiate(cheese);
+        //foodCheese.name = "Cheese";
+        //foodCheese.transform.position = cheeseSpawnPoint.transform.position + new Vector3(0, 0.15f, 0);
 
-        foodGreenEye = Instantiate(greenEye);
-        foodGreenEye.name = "GreenEye";
-        foodGreenEye.transform.position = greenEyeSpawnPoint.transform.position + new Vector3(0, 0.1f, 0);
+        //foodBlackEye = Instantiate(blackEye);
+        //foodBlackEye.name = "BlackEye";
+        //foodBlackEye.transform.position = blackEyeSpawnPoint.transform.position + new Vector3(0, 0.1f, 0);
 
+        //foodGreenEye = Instantiate(greenEye);
+        //foodGreenEye.name = "GreenEye";
+        //foodGreenEye.transform.position = greenEyeSpawnPoint.transform.position + new Vector3(0, 0.1f, 0);
+
+    }
+
+    private void getStageLevel() {
+        stageLevel = GameManager.Instance.StageLevel;
+        switch (stageLevel) {
+            case 1:
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(4).gameObject.SetActive(true);
+                transform.GetChild(5).gameObject.SetActive(true);
+                transform.GetChild(6).gameObject.SetActive(true);
+                break;
+
+            case 2:
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(6).gameObject.SetActive(true);
+                break;
+
+            case 3:
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(3).gameObject.SetActive(true);
+                transform.GetChild(4).gameObject.SetActive(true);
+                transform.GetChild(5).gameObject.SetActive(true);
+                break;
+
+            case 4:
+                for(int i=0; i< transform.childCount; i++) {
+                    transform.GetChild(i).gameObject.SetActive(true);
+                }
+                break;
+
+            case 5:
+                for (int i = 0; i < transform.childCount; i++) {
+                    transform.GetChild(i).gameObject.SetActive(true);
+                }
+                break;
+        }
     }
 
     // Update is called once per frame

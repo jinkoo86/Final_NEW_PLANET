@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 
 
     //해당 스테이지레벨은 추후 start에서 송이꺼에서 값을 가져와야함
-    int stageLevel = 1;
+    int stageLevel = 3;
     int complainCount = 5;
     int dailyProfit = 0;
     public int orderNumber;
@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour {
 
     public Text complainText;
     public Text profitText;
+
+    public Text viewStageLevel;
+    public GameObject stage1, stage2, stage3, stage4, stage5;
 
     int robberCount;
     int killRobberCount;
@@ -64,10 +67,16 @@ public class GameManager : MonoBehaviour {
             killRobberCount = value;
         }
     }
-        public float RemainOrderTime {
+    public float RemainOrderTime {
         get { return remainOrderTime; }
         set {
             remainOrderTime = value;
+        }
+    }
+    public int StageLevel {
+        get { return stageLevel; }
+        set {
+            stageLevel = value;
         }
     }
     public int Complain {
@@ -88,11 +97,13 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         //스테이지레벨은 송이꺼에서 값을 가져와야함
-        //stageLevel = 3;
+
+        //StageLevel = GameObject.Find("StageNum").GetComponent<StageNum>().StageNumber;
         //equipLevel.Clear();
         //itemStock.Clear();
         AccessDB();
-        //stageLevel = GameObject.Find("StageNum").GetComponent<StageNum>().StageNumber;
+
+        StageMenu(stageLevel);
         GetItemDB(conn, "SELECT ItemStock FROM Item");
         GetEquipDB(conn, "SELECT EquipLevel FROM MyEquip");
         GetOrderNumDB(conn, "SELECT OrderNum From StageOrderNum WHERE StageLevel=" + stageLevel);
@@ -109,6 +120,30 @@ public class GameManager : MonoBehaviour {
     void Update() {
         //Time.timeScale = 0.1f;
 
+    }
+    void StageMenu(int stageLevel) {
+        switch (stageLevel) {
+            case 1:
+                stage1.SetActive(true);
+                viewStageLevel.text = "STAGE: 1";
+                break;
+            case 2:
+                stage2.SetActive(true);
+                viewStageLevel.text = "STAGE: 2";
+                break;
+            case 3:
+                stage3.SetActive(true);
+                viewStageLevel.text = "STAGE: 3";
+                break;
+            case 4:
+                stage4.SetActive(true);
+                viewStageLevel.text = "STAGE: 4";
+                break;
+            case 5:
+                stage5.SetActive(true);
+                viewStageLevel.text = "STAGE: 5";
+                break;
+        }
     }
 
     void GameStartOrOver(bool inputValue) {
@@ -140,7 +175,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("robberCount: " + robberCount);
         Debug.Log("dailyProfit: " + dailyProfit);
     }
-    void GameClear() {
+    public void GameClear() {
         endTime = Time.realtimeSinceStartup;
         //나머지 기능들 다 FALSE로 변경
         GameStartOrOver(false);

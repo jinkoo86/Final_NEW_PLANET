@@ -15,6 +15,7 @@ public class NPCRobber : MonoBehaviour {
     public Animator anim;
 
     GameObject targetObject;
+    public GameObject coin;
 
     // - 현재체력
     int curHP;
@@ -29,12 +30,12 @@ public class NPCRobber : MonoBehaviour {
         }
     }
     //Avoid용
-    float rightMax = 3.0f; //좌로 이동가능한 (x)최대값
-    float leftMax = -3.0f; //우로 이동가능한 (x)최대값
+    float rightMax = 2.0f; //좌로 이동가능한 (x)최대값
+    float leftMax = -2.0f; //우로 이동가능한 (x)최대값
     float currentPosition; //현재 위치(x) 저장
     float direction = 3.0f; //이동속도+방향
 
-    public float speed = 10.0f;  //이동속도(public이라 인스펙터에서 적절한값으로 수정)
+    public float speed = 3.0f;  //이동속도(public이라 인스펙터에서 적절한값으로 수정)
     Vector3 dir;                //이동할 방향
 
     public float runTime = 0.6f; //10초뒤 도망
@@ -43,6 +44,7 @@ public class NPCRobber : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        anim = GetComponent<Animator>();
         maxHP = 3;
         state = State.Search;
 
@@ -53,9 +55,7 @@ public class NPCRobber : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (curHP <= 0) {
-            state = State.Die;
-        }
+
         switch (state) {
             case State.Search: UpdateSearch(); break;
             case State.Move: UpdateMove(); break;
@@ -86,7 +86,11 @@ public class NPCRobber : MonoBehaviour {
 
             //맞는 애니메이션 필요
             Destroy(other.gameObject, 0);
+            anim.SetTrigger("Hit");
             HP -= 1;
+            if (curHP <= 0) {
+                state = State.Die;
+            }
         }
     }
 
@@ -104,6 +108,8 @@ public class NPCRobber : MonoBehaviour {
         transform.position += dir * speed * Time.deltaTime;
     }
     private void UpdateAvoid() { //입장하고나서 좌우로 피하는거
+        anim.SetTrigger("Avoid");
+        speed = 1.5f;
         currentPosition += speed * Time.deltaTime * direction;
         if (currentPosition >= rightMax) {
             direction *= -1;
@@ -125,6 +131,8 @@ public class NPCRobber : MonoBehaviour {
         }
     }
     private void UpdateRun() {
+        Debug.Log("패배");
+        anim.SetTrigger("RobberWin");
         targetObject = GameObject.Find("EXIT");
         //GameManager.Instance.Profit 감소
         GameManager.Instance.Profit -= 500;
@@ -138,14 +146,22 @@ public class NPCRobber : MonoBehaviour {
         }
     }
     private void UpdateDie() {
+        anim.Play("Death", 0, 0);
+    }
+    public void RobberDeathFinish() {
         for (int i = 0; i < NPCSpawnManager.Instance.emptyTableList.Count; i++) {
             NPCSpawnManager.Instance.emptyTableList[i] = true;
         }
-        Destroy(gameObject, 0);
         GameManager.Instance.KillRobberCount++;
-        //연출필요
-        //돈 빵빵터져야함
-        //GameManager.Instance.Profit 증가
         GameManager.Instance.Profit += 500;
+        coin.SetActive(true);
+        StartCoroutine(Wait());
+        Destroy(gameObject, 0);
+
+    }
+
+    IEnumerator Wait() {
+        yield return new WaitForSeconds(1.0f);
+        coin.SetActive(false);
     }
 }

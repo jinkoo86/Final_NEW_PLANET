@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCSpawnManager : MonoBehaviour {
 
@@ -22,9 +23,22 @@ public class NPCSpawnManager : MonoBehaviour {
     //10퍼센트의 확률로 강도 출현
     public int rndRobberValue = 99;
     //orderNum은 스테이지에서 처리해야될 고객의 숫자
-    public int orderNum;
+    int orderNum;
     //customerNum은 1부터 게임끝날때까지 쭉 늘어나는 숫자
     public int customerNum = 1;
+
+    public Text orderNumText;
+
+    public int OrderNum {
+        get { return orderNum; }
+        set {
+            orderNum = value;
+            orderNumText.text = orderNum.ToString();
+            if (orderNum <= 0) {
+                GameManager.Instance.GameClear();
+            }
+        }
+    }
 
 
 
@@ -35,6 +49,7 @@ public class NPCSpawnManager : MonoBehaviour {
             emptyTableList[i] = true;
         }
         orderNum = GameManager.Instance.orderNumber;
+        OrderNum=orderNum;
     }
     void SpawnCustomer() {
         GameObject customer = Instantiate(npcCustomer);

@@ -9,17 +9,17 @@ public class FoodManager : MonoBehaviour {
         Instance = this;
     }
     public Dictionary<string, float> foodTimeDict = new Dictionary<string, float>() {
-        { "BlackDrink", 300f },
-        {"GreenDrink", 300f},
-        {"GreenToast", 300f},
-        {"PurpleToast", 300f},
-        {"Salad",300f},
-        {"RareSteak", 400f},
-        {"MediumSteak", 500f},
-        {"WelldoneSteak", 600f},
-        {"MiniBurger", 600f},
-        {"HamBurger", 700f},
-        {"CheeseBurger", 800f}
+        {"BlackDrink", 5f },
+        {"GreenDrink", 5f},
+        {"GreenToast", 5f},
+        {"PurpleToast", 5f},
+        {"GreenSalad",5f},
+        {"PurpleSalad",5f},
+        {"RareSteak", 5f},
+        {"MediumSteak", 5f},
+        {"WelldoneSteak", 5f},
+        {"MiniBurger", 5f},
+        {"FullBurger", 5f}
     };
 
     public Dictionary<string, int> foodPriceDict = new Dictionary<string, int>() {
@@ -27,28 +27,29 @@ public class FoodManager : MonoBehaviour {
         {"GreenDrink", 100},
         {"GreenToast", 200},
         {"PurpleToast", 200},
-        {"Salad",200},
+        {"GreenSalad",200},
+        {"PurpleSalad",200},
         {"RareSteak", 500},
         {"MediumSteak", 500},
         {"WelldoneSteak", 500},
         {"MiniBurger", 300},
-        {"HamBurger", 300},
-        {"CheeseBurger", 300}
+        {"FullBurger", 300},
     };
     public Dictionary<string, float> foodRandomWeightDict = new Dictionary<string, float>() {
         {"BlackDrink", 9.09f },
         {"GreenDrink", 9.09f},
         {"GreenToast", 9.09f},
         {"PurpleToast", 9.09f},
-        {"Salad",9.09f},
+        {"GreenSalad",9.09f},
+        {"PurpleSalad",9.09f},
         {"RareSteak", 9.09f},
         {"MediumSteak", 9.09f},
         {"WelldoneSteak", 9.09f},
         {"MiniBurger", 9.09f},
-        {"HamBurger", 9.09f},
-        {"CheeseBurger", 9.09f}
+        {"FullBurger", 9.09f},
     };
 
+    public GameObject panel1, panel2, panel3, panel4;
     public Text manual1, manual2, manual3, manual4;
     List<string> dishFood = new List<string> { };
 
@@ -65,15 +66,17 @@ public class FoodManager : MonoBehaviour {
 
     public void FoodTimePlus() {
         foodTimeDict.Clear();
-        foodTimeDict.Add("GreenToast", 35f);
-        foodTimeDict.Add("PurpleToast", 35f);
-        foodTimeDict.Add("Salad", 35f);
-        foodTimeDict.Add("RareSteak", 45f);
-        foodTimeDict.Add("MediumSteak", 55f);
-        foodTimeDict.Add("WelldoneSteak", 65f);
-        foodTimeDict.Add("MiniBurger", 65f);
-        foodTimeDict.Add("HamBurger", 75f);
-        foodTimeDict.Add("CheeseBurger", 85f);
+        foodTimeDict.Add("BlackDrink", 300f);
+        foodTimeDict.Add("GreenDrink", 300f);
+        foodTimeDict.Add("GreenToast", 300f);
+        foodTimeDict.Add("PurpleToast", 300f);
+        foodTimeDict.Add("GreenSalad", 300f);
+        foodTimeDict.Add("PurpleSalad", 300f);
+        foodTimeDict.Add("RareSteak", 400f);
+        foodTimeDict.Add("MediumSteak", 500f);
+        foodTimeDict.Add("WelldoneSteak", 600f);
+        foodTimeDict.Add("MiniBurger", 600f);
+        foodTimeDict.Add("FullBurger", 700f);
     }
 
     public void OnChildTriggerEnter(string customerFood, int childNum, int customerNum) {
@@ -81,18 +84,22 @@ public class FoodManager : MonoBehaviour {
             case 0:
                 manual1.text = customerNum.ToString();
                 manual1.text += "\n" + customerFood;
+                panel1.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/" + customerFood.ToString());
                 break;
             case 1:
                 manual2.text = customerNum.ToString();
                 manual2.text += "\n" + customerFood;
+                panel2.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/" + customerFood.ToString());
                 break;
             case 2:
                 manual3.text = customerNum.ToString();
                 manual3.text += "\n" + customerFood;
+                panel3.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/" + customerFood.ToString());
                 break;
             case 3:
                 manual4.text = customerNum.ToString();
                 manual4.text += "\n" + customerFood;
+                panel4.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/" + customerFood.ToString());
                 break;
 
         }
@@ -102,15 +109,19 @@ public class FoodManager : MonoBehaviour {
         switch (childNum) {
             case 0:
                 manual1.text = "";
+                panel1.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/background");
                 break;
             case 1:
                 manual2.text = "";
+                panel2.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/background");
                 break;
             case 2:
                 manual3.text = "";
+                panel3.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/background");
                 break;
             case 3:
                 manual4.text = "";
+                panel4.GetComponent<Image>().sprite = Resources.Load<Sprite>("OrderImage/background");
                 break;
 
         }
