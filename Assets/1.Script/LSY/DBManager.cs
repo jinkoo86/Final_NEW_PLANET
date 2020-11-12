@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class DBManager : MonoBehaviour
 {
+    public Text b;
     public static DBManager instance;
     private void Awake()
     {
@@ -34,9 +35,10 @@ public class DBManager : MonoBehaviour
     void Start()
     {
         LoadItemDB();
-        LoadEquipDB();
+        //LoadEquipDB();
         LoadMoneyDB();
         LoadStageDB();
+        LoadStageLock();
     }
     // Update is called once per frame
     void Update()
@@ -45,7 +47,38 @@ public class DBManager : MonoBehaviour
         //path.text = filepath;
         //temppath.text = temp_path;
     }
-    public void SetEquipPrice()
+    public void LoadStageLock()
+    {
+        try
+        {
+            dbconn = new SqliteConnection(temp_path);
+            dbconn.Open();
+            dbcommand = dbconn.CreateCommand();
+            sqlQuery = string.Empty;
+            sqlQuery = "SELECT StageLock FROM Stage";//장비의 가격들을 가져온다
+            dbcommand.CommandText = sqlQuery;
+            reader = dbcommand.ExecuteReader();
+            int i = 0;
+            while (reader.Read())//완료한 스테이지 번호를 가져온다
+            {
+                StageManager.instance.stageLock.Add(reader.GetInt32(0));
+                i++;
+            }
+            reader.Close();
+            //
+            dbconn.Close();
+        }
+        catch (Exception e)
+        {
+            print(e);
+        }
+        finally
+        {
+            reader.Close();
+            dbconn.Close();
+        }
+    }
+    /*public void SetEquipPrice()
     {
         try
         {
@@ -76,7 +109,7 @@ public class DBManager : MonoBehaviour
             reader.Close();
             dbconn.Close();
         }
-    }
+    }*/
     public void NextStage(int stage)
     {
         if (StageManager.instance.MyStage < 5)
@@ -107,7 +140,7 @@ public class DBManager : MonoBehaviour
                 reader.Close();
                 //
                 dbconn.Close();
-                StageManager.instance.SetStageInfo();
+                UIManager.instance.BtnStart(StageManager.instance.MyStage);
             }
             catch (Exception e)
             {
@@ -156,7 +189,7 @@ public class DBManager : MonoBehaviour
                 reader.Close();
                 //
                 dbconn.Close();
-                StageManager.instance.SetStageInfo();
+                UIManager.instance.BtnStart(StageManager.instance.MyStage);
             }
             catch (Exception e)
             {
@@ -263,11 +296,6 @@ public class DBManager : MonoBehaviour
             sqlQuery = "UPDATE Equip SET EquipLock = 1 WHERE EquipLevel = " + tempLevel + " AND EquipID = '" + tempID + "'";//가져온 레벨+1의 것을 사용
             dbcommand.CommandText = sqlQuery;
 
-            /*param = new SqliteParameter();
-            param.ParameterName = "@TempLevel";
-            param.Value = tempLevel;
-            dbcmd.Parameters.Add(param);*/
-
             reader = dbcommand.ExecuteReader();
             reader.Close();
             dbconn.Close();
@@ -304,6 +332,7 @@ public class DBManager : MonoBehaviour
             }
             else
             {
+                b.text = "메소드 들어왔엄";
                 int spentMoney = myMoney - money;//내돈-값을 받은 돈 을 소비  한 돈에 넣어준다
                 sqlQuery = "UPDATE Money SET MyMoney = @SpentMoney";
                 dbcommand.CommandText = sqlQuery;
@@ -430,11 +459,6 @@ public class DBManager : MonoBehaviour
             dbconn = new SqliteConnection(temp_path);
             dbconn.Open();
             dbcommand = dbconn.CreateCommand();
-            sqlQuery = string.Empty;
-            sqlQuery = "UPDATE Money SET MyMoney = 3000";
-            dbcommand.CommandText = sqlQuery;
-            reader = dbcommand.ExecuteReader();
-            reader.Close();
 
             sqlQuery = string.Empty;
             sqlQuery = "SELECT MyMoney FROM Money";
@@ -462,7 +486,7 @@ public class DBManager : MonoBehaviour
         }
     }
     public void LoadStageDB()
-        {
+    {
         try
         {
             dbconn = new SqliteConnection(temp_path);
@@ -475,24 +499,19 @@ public class DBManager : MonoBehaviour
 
             while (reader.Read())//완료한 스테이지 번호를 가져온다
             {
-                //myStage = reader.GetInt32(0);
                 StageManager.instance.MyStage = reader.GetInt32(0);
-                //path.text = reader.GetInt32(0).ToString();
-                //Debug.Log("myStage: " + myStage);
             }
             reader.Close();
 
             sqlQuery = string.Empty;
-            sqlQuery = "SELECT StageStar FROM Stage WHERE StageLevel =" + StageManager.instance.MyStage;
+            sqlQuery = "SELECT StageStar FROM Stage";
             dbcommand.CommandText = sqlQuery;
             reader = dbcommand.ExecuteReader();
 
             while (reader.Read())//위의 스테이지의 별점을 가져온다
             {
                 //stageStar = reader.GetInt32(0);
-                StageManager.instance.StageStar = reader.GetInt32(0);
-
-                //Debug.Log("stageStar: " + stageStar);
+                StageManager.instance.stageStars.Add(reader.GetInt32(0));
             }
             reader.Close();
             dbconn.Close();
@@ -577,7 +596,7 @@ public class DBManager : MonoBehaviour
         }
         else
         {
-            filepath = Application.dataPath + "/DB.db";
+            filepath = Application.dataPath + "/StreamingAssets/DB.db";
             if (!File.Exists(filepath))
             {
                 File.Copy(Application.streamingAssetsPath + "/DB.db", filepath);

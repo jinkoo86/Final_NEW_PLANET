@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour {
         //equipLevel.Clear();
         //itemStock.Clear();
         AccessDB();
+        //stageLevel = GameObject.Find("StageNum").GetComponent<StageNum>().StageNumber;
         GetItemDB(conn, "SELECT ItemStock FROM Item");
         GetEquipDB(conn, "SELECT EquipLevel FROM MyEquip");
         GetOrderNumDB(conn, "SELECT OrderNum From StageOrderNum WHERE StageLevel=" + stageLevel);

@@ -12,6 +12,10 @@ public class OnClickUpgradeButton : MonoBehaviour
             DBManager.instance.UseMoney_Equip(EquipManager.instance.equipList[0].name, EquipManager.instance.equipList[0].price);
             EquipManager.instance.SetEquip();
         }
+        else
+        {
+            UIManager.instance.MaxLevelInfo("Hammer");
+        }
     }
     public void ClickUpgradeKnifeBtn()//칼 업그레이드 버튼
     {
@@ -21,6 +25,10 @@ public class OnClickUpgradeButton : MonoBehaviour
             DBManager.instance.UseMoney_Equip(EquipManager.instance.equipList[1].name, EquipManager.instance.equipList[1].price);
             EquipManager.instance.SetEquip();
         }
+        else
+        {
+            UIManager.instance.MaxLevelInfo("Knife");
+        }
     }
     public void ClickUpgradeGrillBtn()//그릴 업그레이드 버튼
     {
@@ -29,6 +37,10 @@ public class OnClickUpgradeButton : MonoBehaviour
         {
             DBManager.instance.UseMoney_Equip(EquipManager.instance.equipList[2].name, EquipManager.instance.equipList[2].price);
             EquipManager.instance.SetEquip();
+        }
+        else
+        {
+            UIManager.instance.MaxLevelInfo("Grill");
         }
     }
     // Start is called before the first frame update

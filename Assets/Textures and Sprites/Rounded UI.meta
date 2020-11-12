@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Aliens.meta
+guid: 49865b981d2b1b2458534121080d3090
+=======
 guid: 3477f290f2d5b53428fd8b6446a5e79d
+>>>>>>> master:Assets/Textures and Sprites/Rounded UI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
